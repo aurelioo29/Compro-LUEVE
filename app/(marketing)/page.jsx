@@ -1,0 +1,141 @@
+"use client";
+
+import { useState } from "react";
+import Modal from "../components/ui/Modal";
+import { useModalOnLoad } from "../hooks/useModalOnLoad";
+
+export default function HomePage() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const { open, setOpen } = useModalOnLoad();
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    const form = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(form.entries());
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const json = await res.json();
+    setLoading(false);
+
+    if (json.status && json.redirect) {
+      window.location.href = json.redirect;
+    } else {
+      setError(json.message || "Failed to submit");
+    }
+  }
+
+  return (
+    <main className="min-h-screen">
+      {/* HERO / Above the fold */}
+      <section className="px-4 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24">
+        {/* Satu-satunya H1 di halaman */}
+        <h1 className="font-minion-pro text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+          LUEVE
+        </h1>
+        <p className="mt-3 sm:mt-4 max-w-2xl text-neutral-600 text-base sm:text-lg">
+          Bespoke engagement &amp; wedding rings.
+        </p>
+      </section>
+
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <div className="space-y-6 sm:space-y-7">
+          <h2
+            id="modal-title"
+            className="text-center font-minion-pro text-3xl sm:text-4xl md:text-6xl text-black"
+          >
+            Send a Message to Get Our Info
+          </h2>
+
+          <p id="modal-desc" className="sr-only">
+            Fill the form to contact LUEVE via WhatsApp.
+          </p>
+
+          <form
+            aria-labelledby="modal-title"
+            aria-describedby="modal-desc"
+            className="mt-10 sm:mt-16 space-y-6 sm:space-y-10 w-full max-w-md sm:max-w-lg"
+            // onSubmit={(e) => {
+            //   e.preventDefault();
+            //   const form = e.currentTarget;
+            //   const name = form.fullname.value?.trim() || "Guest";
+            //   const phone = form.phone.value?.trim() || "";
+            //   const email = form.email.value?.trim() || "";
+            //   const text = encodeURIComponent(
+            //     `Hi LUEVE, I'm ${name}. Phone: ${phone}. Email: ${email}. I'd like to create a custom ring.`
+            //   );
+            //   window.location.href = `https://wa.me/6282168039285?text=${text}`;
+            // }}
+            onSubmit={onSubmit}
+          >
+            {/* Fullname */}
+            <div className="text-black font-poppins text-base sm:text-lg">
+              <label htmlFor="fullname" className="block">
+                Full name
+              </label>
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                autoComplete="name"
+                placeholder="e.g., Alex Tan"
+                className="mt-2 sm:mt-3 w-full border-b-2 border-black bg-transparent focus:outline-none focus:border-black/80 py-2"
+                required
+              />
+            </div>
+
+            {/* Phone */}
+            <div className="text-black font-poppins text-base sm:text-lg">
+              <label htmlFor="phone" className="block">
+                Phone / WhatsApp
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                inputMode="tel"
+                autoComplete="tel"
+                placeholder="+62…"
+                className="mt-2 sm:mt-3 w-full border-b-2 border-black bg-transparent focus:outline-none focus:border-black/80 py-2"
+                required
+              />
+            </div>
+
+            {/* Email */}
+            <div className="text-black font-poppins text-base sm:text-lg">
+              <label htmlFor="email" className="block">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autoComplete="email"
+                placeholder="you@example.com"
+                className="mt-2 sm:mt-3 w-full border-b-2 border-black bg-transparent focus:outline-none focus:border-black/80 py-2"
+              />
+            </div>
+
+            {error && <p className="text-sm text-red-600">{error}</p>}
+
+            <button
+              type="submit"
+              className="mt-8 sm:mt-10 w-full rounded-md bg-[#C5C5C5] px-4 py-3 text-black font-poppins text-base sm:text-lg tracking-widest hover:bg-[#b5b5b5] transition"
+              disabled={loading}
+            >
+              {loading ? "Submitting..." : "Submit"}
+            </button>
+          </form>
+        </div>
+      </Modal>
+    </main>
+  );
+}
