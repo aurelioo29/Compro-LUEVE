@@ -1,13 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import Modal from "../components/ui/Modal";
-import { useModalOnLoad } from "../hooks/useModalOnLoad";
+import Modal from "../../components/ui/Modal";
+import { useModalOnLoad } from "../../hooks/useModalOnLoad";
+import Navbar from "../../components/ui/Navbar";
+import { useTranslations } from "next-intl";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { open, setOpen } = useModalOnLoad();
+  const t = useTranslations();
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -35,14 +38,15 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen">
+      <Navbar />
+
       {/* HERO / Above the fold */}
       <section className="px-4 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24">
-        {/* Satu-satunya H1 di halaman */}
         <h1 className="font-minion-pro text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-          LUEVE
+          {t("home.title")}
         </h1>
         <p className="mt-3 sm:mt-4 max-w-2xl text-neutral-600 text-base sm:text-lg">
-          Bespoke engagement &amp; wedding rings.
+          {t("home.tagline")}
         </p>
       </section>
 
