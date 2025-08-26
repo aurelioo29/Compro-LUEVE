@@ -26,7 +26,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${minionPro.variable} ${poppins.variable} antialiased`}>
+      <body
+        className={`${minionPro.variable} ${poppins.variable} antialiased ${
+          process.env.NODE_ENV === "development" ? "debug-screens" : ""
+        }`}
+      >
         {children}
       </body>
     </html>
