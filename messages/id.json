@@ -2,5 +2,14 @@
   "home": {
     "title": "Selamat datang",
     "tagline": "Desain yang beneran bikin laku."
+  },
+  "navbar": {
+    "about": "Tentang",
+    "collection": "Koleksi",
+    "services": "Layanan",
+    "lang": {
+      "en": "EN",
+      "id": "ID"
+    }
   }
 }

@@ -2,5 +2,14 @@
   "home": {
     "title": "Welcome",
     "tagline": "Design that actually sells."
+  },
+  "navbar": {
+    "about": "About",
+    "collection": "Collection",
+    "services": "Services",
+    "lang": {
+      "en": "EN",
+      "id": "ID"
+    }
   }
 }
