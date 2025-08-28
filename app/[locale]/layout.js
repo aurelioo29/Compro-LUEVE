@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
+import Navbar from "../components/ui/Navbar";
+import Footer from "../components/ui/Footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -61,7 +63,9 @@ export default async function RootLayout({ children, params }) {
         }`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <Navbar />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
