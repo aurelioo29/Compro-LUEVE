@@ -4,23 +4,24 @@ import React from "react";
 import Image from "next/image";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import { useTranslations } from "next-intl";
 
 const SLIDES = [
   {
+    key: "wedding",
     src: "/images/hero/wedding-ring.svg",
-    alt: "",
-    title: "Wedding Ring",
-    desc: "lorem ipsum another this testing first but me okey",
+    altKey: "slides.wedding.title",
   },
   {
+    key: "engagement",
     src: "/images/hero/engagement-ring.svg",
-    alt: "",
-    title: "Engagement Ring",
-    desc: "lorem ipsum another this testing second but me okey",
+    altKey: "slides.engagement.title",
   },
 ];
 
 export default function Hero() {
+  const t = useTranslations("hero");
+
   return (
     <section
       aria-label="Hero vertical slider"
@@ -48,7 +49,8 @@ export default function Hero() {
             <div className="relative h-full">
               <Image
                 src={item.src}
-                alt={item.alt}
+                // alt={item.alt}
+                alt={t(item.altKey)}
                 fill
                 priority={index === 0}
                 sizes="150vw"
@@ -61,10 +63,10 @@ export default function Hero() {
               <div className="pointer-events-none absolute inset-x-4 bottom-16 md:hidden">
                 <div className="flex flex-col gap-4">
                   <h1 className="font-minion-pro text-[#450000] text-4xl leading-none">
-                    {item.title}
+                    {t(`slides.${item.key}.title`)}
                   </h1>
                   <p className="text-[#450000]/95 text-lg font-poppins leading-relaxed">
-                    {item.desc}
+                    {t(`slides.${item.key}.desc`)}
                   </p>
                 </div>
               </div>
@@ -72,13 +74,13 @@ export default function Hero() {
               {/* ===== Desktop ===== */}
               <div className="pointer-events-none absolute left-36 bottom-20 hidden md:block">
                 <h1 className="font-minion-pro text-[#450000] text-5xl lg:text-7xl leading-none">
-                  {item.title}
+                  {t(`slides.${item.key}.title`)}
                 </h1>
               </div>
 
               <div className="pointer-events-none absolute right-36 bottom-20 hidden md:block max-w-[620px]">
                 <p className="text-[#450000] text-base md:text-xl font-poppins text-right leading-relaxed">
-                  {item.desc}
+                  {t(`slides.${item.key}.desc`)}
                 </p>
               </div>
             </div>

@@ -11,5 +11,17 @@
       "en": "EN",
       "id": "ID"
     }
+  },
+  "hero": {
+    "slides": {
+      "wedding": {
+        "title": "Cincin Pernikahan",
+        "desc": "Desain abadi untuk janji seumur hidup."
+      },
+      "engagement": {
+        "title": "Cincin Tunangan",
+        "desc": "Dibuat untuk jawaban ya—indah dan selamanya."
+      }
+    }
   }
 }

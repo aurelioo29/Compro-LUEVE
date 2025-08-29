@@ -11,5 +11,17 @@
       "en": "EN",
       "id": "ID"
     }
+  },
+  "hero": {
+    "slides": {
+      "wedding": {
+        "title": "Wedding Ring",
+        "desc": "lorem ipsum another this testing first but me okey"
+      },
+      "engagement": {
+        "title": "Engagement Ring",
+        "desc": "lorem ipsum another this testing second but me okey"
+      }
+    }
   }
 }
