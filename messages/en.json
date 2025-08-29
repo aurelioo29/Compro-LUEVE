@@ -23,5 +23,11 @@
         "desc": "lorem ipsum another this testing second but me okey"
       }
     }
+  },
+  "about": {
+    "heading": "About us",
+    "imageAlt": "Two wedding rings on stones",
+    "cta": "View More",
+    "body": "At <brand>Lueve</brand>, we’re more than just jewelers—we’re your personal jewelry piece partner. Specializing in <wedding>customized wedding</wedding> and <engagement>engagement rings</engagement>, we exist to help you craft pieces that are as unique and meaningful as your love story. Every sparkle, curve, and setting is a reflection of you—your taste, your journey, your forever."
   }
 }

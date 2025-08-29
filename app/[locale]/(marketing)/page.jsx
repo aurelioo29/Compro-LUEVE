@@ -5,6 +5,7 @@ import Modal from "../../components/ui/Modal";
 import { useModalOnLoad } from "../../hooks/useModalOnLoad";
 import { useTranslations } from "next-intl";
 import Hero from "@/app/components/ui/Hero";
+import About from "@/app/components/ui/About";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
@@ -38,16 +39,11 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen">
-      {/* HERO / Above the fold */}
-      {/* <section className="px-4 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24">
-        <h1 className="font-minion-pro text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-          {t("home.title")}
-        </h1>
-        <p className="mt-3 sm:mt-4 max-w-2xl text-neutral-600 text-base sm:text-lg">
-          {t("home.tagline")}
-        </p>
-      </section> */}
+      {/* HERO */}
       <Hero />
+
+      {/* ABOUT */}
+      <About />
 
       <Modal open={open} onClose={() => setOpen(false)}>
         <div className="space-y-6 sm:space-y-7">
