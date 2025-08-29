@@ -17,9 +17,9 @@ export default function Navbar() {
   const [openServices, setOpenServices] = useState(false);
 
   return (
-    <>
+    <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
       {/* ================= DESKTOP ================= */}
-      <nav className="hidden md:flex items-center justify-center px-6 py-8 gap-20">
+      <nav className="hidden md:flex items-center justify-center px-6 py-8 gap-20 relative">
         {/* Logo */}
         <Link href={"/"} locale={locale}>
           <Image
@@ -190,7 +190,7 @@ export default function Navbar() {
       </nav>
 
       {/* ================= MOBILE / TABLET ================= */}
-      <nav className="md:hidden px-4 py-4">
+      <nav className="md:hidden px-4 py-4 relative">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href={"/"} locale={locale} className="shrink-0">
@@ -440,6 +440,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </>
+    </header>
   );
 }

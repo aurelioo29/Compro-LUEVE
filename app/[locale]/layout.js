@@ -64,7 +64,7 @@ export default async function RootLayout({ children, params }) {
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
-          {children}
+          <main className="pt-[96px] md:pt-[120px]">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>
