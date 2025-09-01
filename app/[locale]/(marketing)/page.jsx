@@ -6,6 +6,7 @@ import { useModalOnLoad } from "../../hooks/useModalOnLoad";
 import { useTranslations } from "next-intl";
 import Hero from "@/app/components/ui/Hero";
 import About from "@/app/components/ui/About";
+import Discover from "@/app/components/ui/Discover";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
@@ -44,6 +45,9 @@ export default function HomePage() {
 
       {/* ABOUT */}
       <About />
+
+      {/* DISCOVER */}
+      <Discover />
 
       <Modal open={open} onClose={() => setOpen(false)}>
         <div className="space-y-6 sm:space-y-7">

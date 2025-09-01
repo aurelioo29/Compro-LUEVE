@@ -29,5 +29,19 @@
     "imageAlt": "Dua cincin pernikahan di atas batu",
     "cta": "Lihat Selengkapnya",
     "body": "Di <brand>Lueve</brand>, kami bukan sekadar pengrajin perhiasan—kami mitra personal perhiasan Anda. Kami berfokus pada <wedding>cincin pernikahan kustom</wedding> dan <engagement>cincin tunangan</engagement>, untuk membantu Anda membuat karya yang unik dan penuh makna seperti kisah cinta Anda. Setiap kilau, lengkung, dan setting merefleksikan diri Anda—selera, perjalanan, dan selamanya."
+  },
+  "discover": {
+    "title": { "top": "TEMUKAN", "bottom": "KARYA YANG DIPESAN KHUSUS" },
+    "discover": "Lihat sekarang",
+    "wedding": {
+      "title": "Cincin Pernikahan",
+      "caption": "Setiap karya dalam koleksi kami",
+      "alt": "Tangan mengenakan cincin pernikahan"
+    },
+    "engagement": {
+      "title": "Cincin Tunangan",
+      "caption": "Saat kamu mencari yang paling pas",
+      "alt": "Tangan mengenakan cincin tunangan"
+    }
   }
 }
