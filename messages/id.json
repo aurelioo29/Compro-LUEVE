@@ -43,5 +43,38 @@
       "caption": "Saat kamu mencari yang paling pas",
       "alt": "Tangan mengenakan cincin tunangan"
     }
+  },
+  "faq": {
+    "heading": {
+      "top": "ADA PERTANYAAN?",
+      "bottom": " TENANG, KAMI JAWAB."
+    },
+    "imageAlt": "Kotak cincin dengan cincin",
+    "items": [
+      {
+        "q": "Berapa lama pembuatan cincin kustom?",
+        "a": "Pembuatan cincin kustom biasanya memakan waktu 4–6 minggu, tergantung tingkat kerumitan desain dan material yang dipilih. Kami sarankan memulai proses lebih awal agar ada cukup waktu untuk menyempurnakan setiap detail."
+      },
+      {
+        "q": "Material dan batu apa yang kalian gunakan?",
+        "a": "Kami menggunakan logam mulia berkualitas seperti emas 18K (kuning, putih, dan rose). Namun, Anda bisa meminta kadar emas yang lebih tinggi/rendah; pilihan minimal 12K hingga maksimal 20K. Untuk batu mulia, kami menyediakan berlian dan batu berharga lainnya yang autentik, seluruhnya bersertifikat dari lembaga tepercaya seperti Gemological Institute of America (GIA) untuk menjamin keaslian dan kilaunya."
+      },
+      {
+        "q": "Apakah kalian menyediakan layanan purna jual?",
+        "a": "Ya. Kami menyediakan pengukuran ukuran cincin gratis selama proses desain. Jika setelah selesai Anda butuh penyesuaian, kami juga melayani resize agar pas di jari. Termasuk pembersihan perhiasan gratis dan pelapisan ulang (re-plating) emas tanpa biaya."
+      },
+      {
+        "q": "Saya belum tahu maunya apa. Bisa dibantu desain?",
+        "a": "Tentu. Tim kami akan membimbing Anda di setiap langkah—mulai dari eksplorasi preferensi, sketsa ide, hingga finalisasi desain. Baik Anda sudah punya gambaran atau butuh inspirasi, kami siap membantu mewujudkan cincin yang benar-benar mencerminkan kisah cinta Anda."
+      },
+      {
+        "q": "Apakah kalian kirim ke luar negeri?",
+        "a": "Saat ini cincin kustom tersedia untuk pengiriman domestik dalam Indonesia. Untuk permintaan internasional, silakan hubungi tim kami secara langsung dan kami akan bantu dengan pengaturan terbaik."
+      },
+      {
+        "q": "Bagaimana jika saya butuh cincin dalam waktu cepat?",
+        "a": "Jika Anda memiliki tenggat waktu, beri tahu kami saat konsultasi. Meskipun waktu standar kami 4–6 minggu, kami mungkin dapat mengakomodasi pesanan mendesak bergantung pada desain dan jadwal produksi."
+      }
+    ]
   }
 }

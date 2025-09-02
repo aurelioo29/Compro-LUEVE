@@ -43,5 +43,38 @@
       "caption": "Whether you're looking for the perfect",
       "alt": "Hand wearing engagement ring"
     }
+  },
+  "faq": {
+    "heading": {
+      "top": "ANY QUESTIONS?",
+      "bottom": " WE GOT YOU."
+    },
+    "imageAlt": "Ring box with rings",
+    "items": [
+      {
+        "q": "How long does it take to create a custom ring?",
+        "a": "Creating a custom ring usually takes 4 to 6 weeks, depending on the complexity of the design and the materials chosen. We recommend starting the process early to ensure we have enough time to perfect every detail."
+      },
+      {
+        "q": "What materials and gemstones do you use?",
+        "a": "We use only high-quality precious metals such as 18K gold, yellow gold, white gold, and rose gold. But you can request higher / lower gold percentage. Minimum start from 12K gold and maximum 20K gold option. For gemstones, we source authentic diamonds and other precious stones, all certified by reputable institutions such as the Gemological Institute of America (GIA) to ensure their authenticity and brilliance."
+      },
+      {
+        "q": "Do you offer after self service",
+        "a": "Yes, we provide complimentary ring sizing during the design process. If you need adjustments after your ring is completed, we also offer resizing services to ensure the perfect fit. Including free jewelry cleaning and free gold re-chroming."
+      },
+      {
+        "q": "I don’t know what I want yet. Can you help me design it?",
+        "a": "Absolutely. Our team will guide you through every step from exploring your preferences to sketching ideas and finalizing the design. Whether you have a clear vision or need inspiration, we’re here to help create a ring that truly reflects your love story."
+      },
+      {
+        "q": "Do you ship internationally?",
+        "a": "Currently, our custom rings are available for domestic delivery within Indonesia. For international requests, please contact our team directly and we will be happy to assist you with the best possible arrangement."
+      },
+      {
+        "q": "What if I need the ring urgently?",
+        "a": "If you have a tight deadline, let us know during your consultation. While our standard timeline is 4–6 weeks, we may be able to accommodate urgent orders depending on the design and production schedule."
+      }
+    ]
   }
 }
