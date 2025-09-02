@@ -76,5 +76,30 @@
         "a": "Jika Anda memiliki tenggat waktu, beri tahu kami saat konsultasi. Meskipun waktu standar kami 4–6 minggu, kami mungkin dapat mengakomodasi pesanan mendesak bergantung pada desain dan jadwal produksi."
       }
     ]
+  },
+  "experience": {
+    "heading": { "top": "Pengalaman", "bottom": " Pelanggan" },
+    "tagline": "Masukan para pelanggan membantu kami menjadi lebih baik—komentar yang jujur dan saran yang berguna.",
+    "ariaLabel": "Slide pengalaman pelanggan",
+    "slides": [
+      {
+        "title": "Cincin Pernikahan",
+        "desc": "Augue ligula in felis magnis commodo cras dis massa platea pellentesque euismod adipiscing arcu est nisi accumsan interdum blandit mi.",
+        "imageSrc": "/images/experience/wedding.svg",
+        "imageAlt": "Cincin pernikahan di atas kain"
+      },
+      {
+        "title": "Cincin Tunangan",
+        "desc": "Kisah dan gaya Anda diwujudkan dalam desain yang elegan dan penuh makna.",
+        "imageSrc": "/images/experience/engagement.svg",
+        "imageAlt": "Cincin tunangan close-up"
+      },
+      {
+        "title": "Anting",
+        "desc": "Modern, berkilau, dan serbaguna—untuk hari biasa hingga momen spesial.",
+        "imageSrc": "/images/experience/earrings.svg",
+        "imageAlt": "Anting berlian"
+      }
+    ]
   }
 }

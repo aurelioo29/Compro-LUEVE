@@ -76,5 +76,33 @@
         "a": "If you have a tight deadline, let us know during your consultation. While our standard timeline is 4–6 weeks, we may be able to accommodate urgent orders depending on the design and production schedule."
       }
     ]
+  },
+  "experience": {
+    "heading": {
+      "top": "Customers",
+      "bottom": " Experience"
+    },
+    "tagline": "Our customers helped us reach the best with their good and useful comments and suggestions.",
+    "ariaLabel": "Customer Experience slides",
+    "slides": [
+      {
+        "title": "Wedding Ring",
+        "desc": "Augue ligula in felis magnis commodo cras dis massa platea pellentesque euismod adipiscing arcu est nisi accumsan interdum blandit mi.",
+        "imageSrc": "/images/experience/wedding.svg",
+        "imageAlt": "Wedding rings on soft fabric"
+      },
+      {
+        "title": "Engagement Ring",
+        "desc": "Curabitur congue lectus facilisis, feugiat lorem id, condimentum dui. Crafted to reflect your story and style.",
+        "imageSrc": "/images/experience/engagement.svg",
+        "imageAlt": "Engagement ring close-up"
+      },
+      {
+        "title": "Earrings",
+        "desc": "Versatile, modern, and brilliant—perfect for everyday elegance or special moments.",
+        "imageSrc": "/images/experience/earrings.svg",
+        "imageAlt": "Diamond earrings"
+      }
+    ]
   }
 }

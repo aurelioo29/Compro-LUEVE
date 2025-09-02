@@ -8,6 +8,7 @@ import Hero from "@/app/components/ui/Hero";
 import About from "@/app/components/ui/About";
 import Discover from "@/app/components/ui/Discover";
 import FAQ from "@/app/components/ui/FAQ";
+import CustomerExperience from "@/app/components/ui/CustomerExperience";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
@@ -49,6 +50,9 @@ export default function HomePage() {
 
       {/* DISCOVER */}
       <Discover />
+
+      {/* CUSTOMER EXPERIENCE */}
+      <CustomerExperience />
 
       {/* FAQ */}
       <FAQ />
