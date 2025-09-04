@@ -17,10 +17,12 @@ export default function Navbar() {
   const [openServices, setOpenServices] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
+    <header className="fixed inset-x-0 top-0 z-50 px-0 md:px-20">
+      {/* ================= BACKDROP ================= */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-white/55 backdrop-blur-md border-b border-black/10 shadow-sm [mask-image:linear-gradient(to_bottom,black,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)]"></div>
+
       {/* ================= DESKTOP ================= */}
-      <nav className="hidden md:flex items-center justify-center px-6 py-8 gap-20 relative">
-        {/* Logo */}
+      <nav className="hidden md:flex items-center justify-between px-6 py-8 gap-20 relative z-10">
         <Link href={"/"} locale={locale}>
           <Image
             src="/images/logo/lueve-logo.svg"
@@ -32,13 +34,13 @@ export default function Navbar() {
         </Link>
 
         {/* Menu */}
-        <ul className="flex items-center gap-8 text-[#450000] font-poppins font-medium text-xl tracking-[0.1em]">
+        <ul className="flex items-center gap-14 text-[#450000] font-poppins font-medium text-2xl tracking-[0.1em]">
           {/* About */}
           <li>
             <Link
               href="/about"
               locale={locale}
-              className="hover:opacity-70 transition-opacity uppercase"
+              className="hover:opacity-70 transition-opacity uppercase hover:font-semibold"
             >
               {t("about")}
             </Link>
@@ -49,7 +51,7 @@ export default function Navbar() {
             <Link
               href="/collection"
               locale={locale}
-              className="hover:opacity-70 transition-opacity uppercase"
+              className="hover:opacity-70 transition-opacity uppercase hover:font-semibold"
             >
               {t("collection")}
             </Link>
@@ -119,7 +121,7 @@ export default function Navbar() {
             <Link
               href="/services"
               locale={locale}
-              className="hover:opacity-70 transition-opacity uppercase"
+              className="hover:opacity-70 transition-opacity uppercase hover:font-semibold"
             >
               {t("services")}
             </Link>
@@ -190,7 +192,7 @@ export default function Navbar() {
       </nav>
 
       {/* ================= MOBILE / TABLET ================= */}
-      <nav className="md:hidden px-4 py-4 relative">
+      <nav className="md:hidden px-4 py-4 relative z-10">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href={"/"} locale={locale} className="shrink-0">
