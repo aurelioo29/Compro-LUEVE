@@ -104,5 +104,32 @@
         "imageAlt": "Diamond earrings"
       }
     ]
+  },
+  "collectionShowcase": {
+    "vertical": "Our Collection",
+    "ariaLabel": "Collection showcase slides",
+    "slides": [
+      {
+        "desc": "Explore our collection of handcrafted jewelry—each piece designed to capture emotion, celebrate connection, and stand the test of time.",
+        "imageSrc": "/images/showcase/wedding-main.svg",
+        "imageAlt": "Wedding rings on white plate",
+        "thumbSrc": "/images/showcase/diamond-main.svg",
+        "thumbAlt": "Thumbnail of diamond earrings"
+      },
+      {
+        "desc": "Explore our collection of handcrafted jewelry each piece designed to capture emotion, celebrate connection, and stand the test of time.",
+        "imageSrc": "/images/showcase/engagement-main.svg",
+        "imageAlt": "Engagement ring closeup",
+        "thumbSrc": "/images/showcase/wedding-main.svg",
+        "thumbAlt": "Thumbnail of wedding rings"
+      },
+      {
+        "desc": "Everyday sparkle or special-occasion statement—your choice, your signature. And we made it into jewelry pieces for you.",
+        "imageSrc": "/images/showcase/diamond-main.svg",
+        "imageAlt": "Diamond earrings",
+        "thumbSrc": "/images/showcase/engagement-main.svg",
+        "thumbAlt": "Thumbnail of engagement ring"
+      }
+    ]
   }
 }

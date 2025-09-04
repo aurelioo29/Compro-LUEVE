@@ -101,5 +101,32 @@
         "imageAlt": "Anting berlian"
       }
     ]
+  },
+  "collectionShowcase": {
+    "vertical": "Koleksi Kami",
+    "ariaLabel": "Slide etalase koleksi",
+    "slides": [
+      {
+        "desc": "Jelajahi koleksi perhiasan buatan tangan kami—setiap karya dirancang untuk menangkap emosi, merayakan koneksi, dan bertahan dalam ujian waktu.",
+        "imageSrc": "/images/showcase/wedding-main.svg",
+        "imageAlt": "Cincin kawin di atas piring putih",
+        "thumbSrc": "/images/showcase/diamond-main.svg",
+        "thumbAlt": "Gambar mini anting berlian"
+      },
+      {
+        "desc": "Jelajahi koleksi perhiasan buatan tangan kami; setiap karya dirancang untuk menangkap emosi, merayakan kebersamaan, dan bertahan dalam ujian waktu.",
+        "imageSrc": "/images/showcase/engagement-main.svg",
+        "imageAlt": "Close-up cincin tunangan",
+        "thumbSrc": "/images/showcase/wedding-main.svg",
+        "thumbAlt": "Gambar mini cincin kawin"
+      },
+      {
+        "desc": "Kilau harian atau pernyataan untuk momen spesial—pilihanmu, ciri khasmu. Dan kami mewujudkannya menjadi perhiasan untukmu.",
+        "imageSrc": "/images/showcase/diamond-main.svg",
+        "imageAlt": "Anting berlian",
+        "thumbSrc": "/images/showcase/engagement-main.svg",
+        "thumbAlt": "Gambar mini cincin tunangan"
+      }
+    ]
   }
 }

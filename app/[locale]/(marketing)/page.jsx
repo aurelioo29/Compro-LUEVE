@@ -9,6 +9,7 @@ import About from "@/app/components/ui/About";
 import Discover from "@/app/components/ui/Discover";
 import FAQ from "@/app/components/ui/FAQ";
 import CustomerExperience from "@/app/components/ui/CustomerExperience";
+import CollectionShowcase from "@/app/components/ui/CollectionShowcase";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
@@ -50,6 +51,9 @@ export default function HomePage() {
 
       {/* DISCOVER */}
       <Discover />
+
+      {/* OUR COLLECTION */}
+      <CollectionShowcase />
 
       {/* CUSTOMER EXPERIENCE */}
       <CustomerExperience />
