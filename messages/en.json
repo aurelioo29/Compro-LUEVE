@@ -221,5 +221,63 @@
         "overlay": "left"
       }
     ]
+  },
+  "privacy": {
+    "title": "PRIVACY POLICY",
+    "sections": [
+      {
+        "num": "01",
+        "title": "INFORMATION WE COLLECT",
+        "intro": "We may collect the following information:",
+        "list": [
+          "Name, email address, phone number, shipping address",
+          "Order details and custom preferences",
+          "Communication history (including via WhatsApp or email)"
+        ]
+      },
+      {
+        "num": "02",
+        "title": "HOW WE USE YOUR INFORMATION",
+        "paragraphs": [
+          "LUEVE began as a jewelry custom consultation dedicated to creating one-of-a-kind engagement and wedding rings. Begin with unreleased store, just a passion for artistry and devotion to detail, we started by crafting intimate pieces for clients."
+        ],
+        "sub": "Your data is used to:",
+        "list2": [
+          "Process and fulfill orders",
+          "Provide customer service and updates",
+          "Offer after-sales support",
+          "Improve our service and product offerings"
+        ],
+        "note": "We do not sell, rent, or share your personal data to third parties for marketing purposes."
+      },
+      {
+        "num": "03",
+        "title": "Information We Collect",
+        "paragraphs": [
+          "By submitting your contact information or initiating a chat via WhatsApp, you consent to receive communication from LUEVE regarding your order, promotions, or updates. You can opt out at any time."
+        ]
+      },
+      {
+        "num": "04",
+        "title": "DATA SECURITY",
+        "paragraphs": [
+          "We take reasonable steps to protect your personal information. However, no method of transmission over the internet is 100% secure."
+        ]
+      },
+      {
+        "num": "05",
+        "title": "THIRD-PARTY SERVICES",
+        "paragraphs": [
+          "If you interact with embedded services like payment gateways or WhatsApp, their respective privacy policies apply."
+        ]
+      },
+      {
+        "num": "06",
+        "title": "POLICY UPDATES",
+        "paragraphs": [
+          "This policy may be updated periodically. Continued use of our services implies your acceptance of the latest version."
+        ]
+      }
+    ]
   }
 }

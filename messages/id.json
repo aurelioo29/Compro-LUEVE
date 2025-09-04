@@ -218,5 +218,63 @@
         "overlay": "left"
       }
     ]
+  },
+  "privacy": {
+    "title": "KEBIJAKAN PRIVASI",
+    "sections": [
+      {
+        "num": "01",
+        "title": "INFORMASI YANG KAMI KUMPULKAN",
+        "intro": "Kami dapat mengumpulkan informasi berikut:",
+        "list": [
+          "Nama, alamat email, nomor telepon, alamat pengiriman",
+          "Detail pesanan dan preferensi kustom",
+          "Riwayat komunikasi (termasuk via WhatsApp atau email)"
+        ]
+      },
+      {
+        "num": "02",
+        "title": "CARA KAMI MENGGUNAKAN INFORMASI ANDA",
+        "paragraphs": [
+          "LUEVE berawal sebagai konsultasi perhiasan kustom yang didedikasikan untuk menciptakan cincin tunangan dan pernikahan yang unik. Dimulai tanpa toko ritel, berbekal hasrat pada seni dan ketelitian terhadap detail, kami merancang karya-karya intim untuk para klien."
+        ],
+        "sub": "Data Anda digunakan untuk:",
+        "list2": [
+          "Memproses dan memenuhi pesanan",
+          "Memberikan layanan pelanggan dan pembaruan",
+          "Menyediakan dukungan purna jual",
+          "Meningkatkan layanan serta penawaran produk kami"
+        ],
+        "note": "Kami tidak menjual, menyewakan, atau membagikan data pribadi Anda kepada pihak ketiga untuk tujuan pemasaran."
+      },
+      {
+        "num": "03",
+        "title": "KOMUNIKASI & PERSETUJUAN",
+        "paragraphs": [
+          "Dengan mengirimkan informasi kontak atau memulai percakapan melalui WhatsApp, Anda menyetujui untuk menerima komunikasi dari LUEVE terkait pesanan, promosi, atau pembaruan. Anda dapat berhenti berlangganan kapan saja."
+        ]
+      },
+      {
+        "num": "04",
+        "title": "KEAMANAN DATA",
+        "paragraphs": [
+          "Kami mengambil langkah yang wajar untuk melindungi informasi pribadi Anda. Namun, tidak ada metode transmisi melalui internet yang 100% aman."
+        ]
+      },
+      {
+        "num": "05",
+        "title": "LAYANAN PIHAK KETIGA",
+        "paragraphs": [
+          "Jika Anda berinteraksi dengan layanan tertanam seperti gerbang pembayaran atau WhatsApp, kebijakan privasi masing-masing layanan tersebut akan berlaku."
+        ]
+      },
+      {
+        "num": "06",
+        "title": "PEMBARUAN KEBIJAKAN",
+        "paragraphs": [
+          "Kebijakan ini dapat diperbarui secara berkala. Penggunaan layanan kami secara berkelanjutan berarti Anda menyetujui versi terbaru."
+        ]
+      }
+    ]
   }
 }
