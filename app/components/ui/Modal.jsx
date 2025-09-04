@@ -32,7 +32,7 @@ export default function Modal({ open, onClose, children }) {
     >
       {/* backdrop */}
       <div
-        className="absolute inset-0 bg-black/50"
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
