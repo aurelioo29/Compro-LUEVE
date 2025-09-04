@@ -148,5 +148,41 @@
     },
     "quote": "“Remember the moment you said ‘I do’”",
     "body": "We chose this slogan to remind every couple to always cherish the day they committed themselves to one another in the sacred bond of marriage. It’s more than a ring, it’s a timeless reminder of your most meaningful promise."
+  },
+  "whyShop": {
+    "title": "Why Shop At Lueve ?",
+    "bgAlt": "Close-up of a ring background",
+    "items": [
+      {
+        "title": "Exquisite Results, Bespoke for You",
+        "desc": "Since 2018, LUEVE has specialized in creating engagement and wedding rings that go beyond jewelry,  we craft enduring legacies. Each ring is a refined artistry, advanced techniques, and meaningful intention.",
+        "imageSrc": "/icons/why-shop/logo.svg",
+        "imageAlt": "LUEVE logo"
+      },
+      {
+        "title": "Meaningful Luxury with Lasting Benefits",
+        "desc": "LUEVE rings are designed not only to shine on the day you say 'I do', but to accompany you for a lifetime. From exceptional comfort to symbolic design storytelling, every detail is made to serve both form and emotion.",
+        "imageSrc": "/icons/why-shop/ring.svg",
+        "imageAlt": "Ring design"
+      },
+      {
+        "title": "Elite After-Sales Support",
+        "desc": "Enjoy lifetime service including complimentary ring cleaning, polishing, and resizing support. Our service doesn’t end at the delivery — it continues, just like your love.",
+        "imageSrc": "/icons/why-shop/handshake.svg",
+        "imageAlt": "Handshake symbolizing partnership"
+      },
+      {
+        "title": "Exclusivity Rooted in Your Story",
+        "desc": "No two rings are alike. Every design is created exclusively for you, inspired by your journey and craftsmanship with rare precision. With LUEVE, your love story becomes a one-of-a-kind heirloom.",
+        "imageSrc": "/icons/why-shop/heart.svg",
+        "imageAlt": "Heart symbolizing love"
+      },
+      {
+        "title": "Only the Finest Gems – GIA Certified Diamonds",
+        "desc": "Our diamonds and gemstones are exclusively selected through magnifying glass. GIA certified start from 0,20 carat each. Both in D E F color and VVS clarity because true luxury starts with trust in every stone.",
+        "imageSrc": "/icons/why-shop/gia.svg",
+        "imageAlt": "GIA logo"
+      }
+    ]
   }
 }

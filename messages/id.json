@@ -145,5 +145,41 @@
     },
     "quote": "“Ingat momen saat Anda berkata ‘I do’”",
     "body": "Kami memilih slogan ini agar setiap pasangan selalu mengenang hari ketika mereka saling berkomitmen dalam ikatan suci pernikahan. Lebih dari sekadar cincin, ini adalah pengingat abadi atas janji paling bermakna."
+  },
+  "whyShop": {
+    "title": "Mengapa Belanja di LUEVE?",
+    "bgAlt": "Latar belakang cincin (close-up)",
+    "items": [
+      {
+        "title": "Hasil Istimewa, Dibuat Khusus untuk Anda",
+        "desc": "Sejak 2018, LUEVE mengkhususkan diri membuat cincin tunangan dan pernikahan yang melampaui sekadar perhiasan—kami merangkai warisan yang abadi. Setiap cincin adalah perpaduan seni, teknik tingkat lanjut, dan niat yang bermakna.",
+        "imageSrc": "/icons/why-shop/logo.svg",
+        "imageAlt": "Logo LUEVE"
+      },
+      {
+        "title": "Kemewahan Bermakna dengan Manfaat yang Tahan Lama",
+        "desc": "Cincin LUEVE dirancang bukan hanya untuk berkilau di hari Anda mengucap 'I do', tetapi juga untuk menemani Anda seumur hidup. Dari kenyamanan istimewa hingga penceritaan desain yang simbolis, setiap detail menyeimbangkan bentuk dan emosi.",
+        "imageSrc": "/icons/why-shop/ring.svg",
+        "imageAlt": "Desain cincin"
+      },
+      {
+        "title": "Layanan Purna Jual Premium",
+        "desc": "Nikmati layanan seumur hidup termasuk pembersihan cincin gratis, pemolesan, dan bantuan ubah ukuran. Layanan kami tidak berhenti saat penyerahan—ia terus berlanjut, seperti halnya cinta Anda.",
+        "imageSrc": "/icons/why-shop/handshake.svg",
+        "imageAlt": "Jabat tangan melambangkan kemitraan"
+      },
+      {
+        "title": "Eksklusivitas yang Berakar pada Kisah Anda",
+        "desc": "Tak ada dua cincin yang sama. Setiap desain dibuat khusus untuk Anda, terinspirasi perjalanan Anda dan dikerjakan dengan ketelitian yang langka. Bersama LUEVE, kisah cinta Anda menjadi warisan yang unik.",
+        "imageSrc": "/icons/why-shop/heart.svg",
+        "imageAlt": "Hati melambangkan cinta"
+      },
+      {
+        "title": "Permata Terbaik — Berlian Bersertifikat GIA",
+        "desc": "Berlian dan batu permata kami dipilih melalui pemeriksaan kaca pembesar. Bersertifikat GIA mulai 0,20 karat, warna D–E–F dan kejernihan VVS—kemewahan sejati berawal dari kepercayaan pada setiap batu.",
+        "imageSrc": "/icons/why-shop/gia.svg",
+        "imageAlt": "Logo GIA"
+      }
+    ]
   }
 }
