@@ -184,5 +184,42 @@
         "imageAlt": "GIA logo"
       }
     ]
+  },
+  "ourStory": {
+    "title": "How Our Story Began",
+    "items": [
+      {
+        "title": "Founded in 2018",
+        "step": "01",
+        "desc": "Lueve began as a jewelry custom consultation dedicated to creating one of a kind engagement and wedding rings. Begin with unreleased store, just a passion for artistry and devotion to detail, we started by crafting intimate pieces for clients.",
+        "imageSrc": "/images/story/founded-01.svg",
+        "imageAlt": "Hands wearing rings (2018)",
+        "overlay": "right"
+      },
+      {
+        "title": "Exclusive Personal Ring",
+        "step": "02",
+        "desc": "As word spread, Lueve began to serve more couples looking for deeply personal rings something they couldn’t find in conventional jewelry stores. Every piece was handcrafted with care, for clients who valued meaning above all.",
+        "imageSrc": "/images/story/exclusive-02.svg",
+        "imageAlt": "Exclusive personal ring detail",
+        "overlay": "left"
+      },
+      {
+        "title": "A trusted Name",
+        "step": "03",
+        "desc": "As the years unfolded, more and more couples came to us not for trends, but for authenticity. With each story shared and each ring delivered, LUEVE evolved from a hidden gem into a trusted name among those who appreciate understated luxury and emotional depth in fine jewelry.",
+        "imageSrc": "/images/story/trusted-03.svg",
+        "imageAlt": "Couple’s hands wearing rings",
+        "overlay": "right"
+      },
+      {
+        "title": "LUEVE",
+        "step": "04",
+        "desc": "Whether it’s a grand wedding or an intimate proposal, LUEVE becomes part of your milestone.",
+        "imageSrc": "/images/story/lueve-04.svg",
+        "imageAlt": "Ring on fabric",
+        "overlay": "left"
+      }
+    ]
   }
 }

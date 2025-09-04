@@ -181,5 +181,42 @@
         "imageAlt": "Logo GIA"
       }
     ]
+  },
+  "ourStory": {
+    "title": "Bagaimana Kisah Kami Bermula",
+    "items": [
+      {
+        "title": "Berdiri pada 2018",
+        "step": "01",
+        "desc": "LUEVE berawal sebagai konsultasi perhiasan kustom yang didedikasikan untuk menciptakan cincin tunangan dan pernikahan yang benar-benar unik. Dimulai tanpa toko ritel, berbekal hasrat pada seni dan ketelitian terhadap detail, kami mulai merancang karya-karya intim untuk para klien.",
+        "imageSrc": "/images/story/founded-01.svg",
+        "imageAlt": "Tangan mengenakan cincin (2018)",
+        "overlay": "right"
+      },
+      {
+        "title": "Cincin Pribadi Eksklusif",
+        "step": "02",
+        "desc": "Seiring kabar menyebar, LUEVE mulai melayani lebih banyak pasangan yang mencari cincin yang sangat personal—sesuatu yang tidak mereka temukan di toko perhiasan konvensional. Setiap karya dibuat dengan penuh ketelatenan, untuk klien yang mengutamakan makna di atas segalanya.",
+        "imageSrc": "/images/story/exclusive-02.svg",
+        "imageAlt": "Detail cincin personal eksklusif",
+        "overlay": "left"
+      },
+      {
+        "title": "Nama yang Dipercaya",
+        "step": "03",
+        "desc": "Seiring waktu, semakin banyak pasangan datang bukan karena tren, melainkan karena keaslian. Dengan setiap kisah yang dibagikan dan setiap cincin yang diserahkan, LUEVE berkembang dari permata tersembunyi menjadi nama tepercaya bagi mereka yang mengapresiasi kemewahan yang subtil dan kedalaman emosi dalam perhiasan mewah.",
+        "imageSrc": "/images/story/trusted-03.svg",
+        "imageAlt": "Tangan pasangan mengenakan cincin",
+        "overlay": "right"
+      },
+      {
+        "title": "LUEVE",
+        "step": "04",
+        "desc": "Baik untuk pernikahan megah maupun lamaran yang intim, LUEVE menjadi bagian dari tonggak perjalanan Anda.",
+        "imageSrc": "/images/story/lueve-04.svg",
+        "imageAlt": "Cincin di atas kain",
+        "overlay": "left"
+      }
+    ]
   }
 }
