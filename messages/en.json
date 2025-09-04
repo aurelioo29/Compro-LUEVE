@@ -287,5 +287,38 @@
       "src": "/images/custom/hero-custom-ring.svg",
       "alt": "Custom ring on hand"
     }
+  },
+  "privilege": {
+    "title": "The Lueve Privilege",
+    "tagline": {
+      "title": "A Story Only You Can Tell",
+      "body": "At <brand>LUEVE</brand>, we don’t just design rings — we immortalize your moment in a creation that exists nowhere else in the world."
+    },
+    "left": [
+      {
+        "title": "Finding “The One”",
+        "body": "Our gem experts search far and wide for diamond or gemstone options and provide all the guidance and advice needed to choose the perfect stones."
+      },
+      {
+        "title": "Exclusivity Without Compromise",
+        "body": "From the first sketch to the final polish, every detail is crafted for you and only you."
+      }
+    ],
+    "right": [
+      {
+        "title": "Designed for Generations",
+        "body": "Our master artisans transform your vision into an heirloom — a piece worthy of being treasured not only today, but for centuries to come."
+      },
+      {
+        "title": "A Legacy of Care",
+        "body": "With our Lifetime Customer Service, your LUEVE creation remains as perfect as the day you said “yes.” Because true luxury never fades."
+      }
+    ],
+    "image": {
+      "src": "/images/custom/privilege-center.svg",
+      "alt": "Woman wearing LUEVE jewelry"
+    },
+    "cta": "Get Started",
+    "waText": "Hi LUEVE, I’d like to start my custom ring journey. Could you assist me?"
   }
 }
