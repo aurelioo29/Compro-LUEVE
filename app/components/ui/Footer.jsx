@@ -177,7 +177,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="hover:underline underline-offset-4"
               >
                 Privacy Policy
