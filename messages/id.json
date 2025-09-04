@@ -128,5 +128,22 @@
         "thumbAlt": "Gambar mini cincin tunangan"
       }
     ]
+  },
+  "aboutBrand": {
+    "title": "Tentang LUEVE",
+    "left": {
+      "heading": "Logo Merek",
+      "subheading": "Sertifikat pendaftaran merek dagang"
+    },
+    "logos": {
+      "wordmarkAlt": "Logotipe LUEVE di atas grid",
+      "markAlt": "Emblem LUEVE di atas grid"
+    },
+    "reg": {
+      "label": "Nomor Registrasi",
+      "value": "IDM000749086"
+    },
+    "quote": "“Ingat momen saat Anda berkata ‘I do’”",
+    "body": "Kami memilih slogan ini agar setiap pasangan selalu mengenang hari ketika mereka saling berkomitmen dalam ikatan suci pernikahan. Lebih dari sekadar cincin, ini adalah pengingat abadi atas janji paling bermakna."
   }
 }

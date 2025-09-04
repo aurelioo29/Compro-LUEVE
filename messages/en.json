@@ -131,5 +131,22 @@
         "thumbAlt": "Thumbnail of engagement ring"
       }
     ]
+  },
+  "aboutBrand": {
+    "title": "About LUEVE",
+    "left": {
+      "heading": "Brand Logo",
+      "subheading": "Certificate of trademark registration"
+    },
+    "logos": {
+      "wordmarkAlt": "LUEVE logotype on grid",
+      "markAlt": "LUEVE emblem on grid"
+    },
+    "reg": {
+      "label": "Registration Number",
+      "value": "IDM000749086"
+    },
+    "quote": "“Remember the moment you said ‘I do’”",
+    "body": "We chose this slogan to remind every couple to always cherish the day they committed themselves to one another in the sacred bond of marriage. It’s more than a ring, it’s a timeless reminder of your most meaningful promise."
   }
 }
