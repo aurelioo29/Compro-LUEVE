@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section
       aria-labelledby="about-heading"
-      className="px-6 md:px-10 lg:px-60 py-12 md:py-32"
+      className="px-6 md:px-10 lg:px-60 py-12 md:py-32 bg-[#EBEBEB]"
     >
       <div className="grid gap-5 lg:gap-12 lg:grid-cols-12 items-start">
         {/* LEFT: Image + maroon offset block */}
