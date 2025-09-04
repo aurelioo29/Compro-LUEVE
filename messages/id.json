@@ -276,5 +276,13 @@
         ]
       }
     ]
+  },
+  "customRingSpotlight": {
+    "body": "Mulai perjalanan kustom Anda bersama <brand>LUEVE</brand>, di mana setiap detail menceritakan kisah cinta Anda.",
+    "cta": { "label": "Mulai Sekarang" },
+    "image": {
+      "src": "/images/custom/hero-custom-ring.svg",
+      "alt": "Cincin kustom di tangan"
+    }
   }
 }

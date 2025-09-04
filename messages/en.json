@@ -279,5 +279,13 @@
         ]
       }
     ]
+  },
+  "customRingSpotlight": {
+    "body": "Begin your custom journey with <brand>LUEVE</brand>, where every detail tells your love story.",
+    "cta": { "label": "Let’s Start" },
+    "image": {
+      "src": "/images/custom/hero-custom-ring.svg",
+      "alt": "Custom ring on hand"
+    }
   }
 }
