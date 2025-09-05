@@ -320,5 +320,14 @@
     },
     "cta": "Get Started",
     "waText": "Hi LUEVE, I’d like to start my custom ring journey. Could you assist me?"
+  },
+  "engagement": {
+    "details": {
+      "astrae": {
+        "description": "Astrae is a modern and elegant engagement ring that features a stunning round brilliant diamond set in a sleek and contemporary band. The design is inspired by the beauty of the stars, with a unique setting that allows the diamond to shine brightly from every angle.",
+        "models": ["Model A", "Model B", "Model C"],
+        "bottomImg": "/placeholder.svg"
+      }
+    }
   }
 }
