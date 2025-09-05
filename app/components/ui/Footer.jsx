@@ -5,16 +5,8 @@ import { Link } from "@/lib/navigation";
 
 export default function Footer() {
   return (
-    <footer className="px-2 sm:px-4 md:px-6 py-6 md:py-8 lg:py-7">
-      <div
-        className="
-          mx-auto max-w-7xl
-          grid grid-cols-1 md:grid-cols-3 lg:grid-cols-12
-          gap-8 sm:gap-12 lg:gap-16
-          justify-items-center lg:justify-items-start    /* center mobile/tablet */
-          text-center lg:text-left                       /* center text mobile/tablet */
-        "
-      >
+    <footer className="px-2 sm:px-4 md:px-6 py-6 md:py-8 lg:py-7 border-t-2 border-[#450000]">
+      <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 justify-items-center lg:justify-items-start text-center lg:text-left">
         {/* LEFT BRAND / HOURS / SOCIAL */}
         <div className="lg:col-span-3 space-y-4 sm:space-y-6 flex flex-col items-center lg:items-start">
           <Link href="/" className="inline-block">
