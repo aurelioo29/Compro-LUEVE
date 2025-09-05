@@ -23,14 +23,18 @@ export default function Navbar() {
 
       {/* ================= DESKTOP ================= */}
       <nav className="hidden md:flex items-center justify-between px-6 py-8 gap-20 relative z-10">
-        <Link href={"/"} locale={locale}>
-          <Image
-            src="/images/logo/lueve-logo.svg"
-            alt="Lueve"
-            width={120}
-            height={64}
-            priority
-          />
+        <Link href="/" locale={locale} className="block">
+          <div className="relative h-16 w-[120px]">
+            {" "}
+            <Image
+              src="/images/logo/lueve-logo.svg"
+              alt="LUEVE"
+              fill
+              sizes="120px"
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Menu */}
@@ -201,14 +205,17 @@ export default function Navbar() {
       <nav className="md:hidden px-4 py-4 relative z-10">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href={"/"} locale={locale} className="shrink-0">
-            <Image
-              src="/images/logo/lueve-logo.svg"
-              alt="Lueve"
-              width={110}
-              height={56}
-              priority
-            />
+          <Link href="/" locale={locale} className="block">
+            <div className="relative h-14 w-[110px]">
+              <Image
+                src="/images/logo/lueve-logo.svg"
+                alt="LUEVE"
+                fill
+                sizes="110px"
+                className="object-contain"
+                priority
+              />
+            </div>
           </Link>
 
           <div className="flex items-center gap-2">

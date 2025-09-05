@@ -52,10 +52,10 @@ export default function Modal({ open, onClose, children }) {
           <Image
             src="/images/modal/background-modal.svg"
             alt="Background"
-            layout="fill"
-            objectFit="cover"
+            fill
             priority
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
+            sizes="(max-width:640px) 100vw, (max-width:1024px) 80vw, 60vw"
+            className="object-cover"
           />
         </div>
 
