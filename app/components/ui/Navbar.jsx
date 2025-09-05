@@ -71,19 +71,25 @@ export default function Navbar() {
               aria-label="Collection menu"
             >
               <div className="p-3">
-                <Link className="text-3xl mb-6 font-futura-dee tracking-wide hover:bg-[#450000]/80">
+                <Link
+                  href="/collection/engagement-rings"
+                  className="text-3xl mb-6 font-futura-dee tracking-wide hover:bg-[#450000]/80"
+                >
                   Engagement Ring
                 </Link>
                 <div className="h-[2px] w-full bg-white my-3" />
 
-                <Link className="text-3xl font-futura-dee tracking-wide hover:bg-[#450000]/80">
+                <Link
+                  href="/collection/wedding-rings"
+                  className="text-3xl font-futura-dee tracking-wide hover:bg-[#450000]/80"
+                >
                   Wedding Ring
                 </Link>
 
                 <ul className="space-y-3 tracking-wide text-2xl text-white pl-2 mt-3">
                   <li>
                     <Link
-                      href="/collection/silhouettes-of-earth"
+                      href="/collection/wedding-rings/silhouettes-of-earth"
                       locale={locale}
                       className="block hover:underline underline-offset-4"
                       role="menuitem"
@@ -93,7 +99,7 @@ export default function Navbar() {
                   </li>
                   <li>
                     <Link
-                      href="/collection/constellation-of-love"
+                      href="/collection/wedding-rings/constellation-of-love"
                       locale={locale}
                       className="block hover:underline underline-offset-4"
                       role="menuitem"
@@ -103,7 +109,7 @@ export default function Navbar() {
                   </li>
                   <li>
                     <Link
-                      href="/collection/the-heritage"
+                      href="/collection/wedding-rings/the-heritage"
                       locale={locale}
                       className="block hover:underline underline-offset-4"
                       role="menuitem"
