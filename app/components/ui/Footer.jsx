@@ -161,7 +161,7 @@ export default function Footer() {
           <ul className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-6 md:space-y-8 text-[#450000] font-poppins tracking-wider text-base sm:text-lg">
             <li>
               <Link
-                href="/terms"
+                href="/terms-conditions"
                 className="hover:underline underline-offset-4"
               >
                 Terms &amp; Conditions
