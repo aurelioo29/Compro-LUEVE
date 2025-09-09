@@ -284,5 +284,55 @@
       "src": "/images/custom/hero-custom-ring.svg",
       "alt": "Cincin kustom di tangan"
     }
+  },
+  "terms": {
+    "title": "SYARAT & KETENTUAN",
+    "bgAlt": "Latar belakang kotak perhiasan",
+    "sections": [
+      {
+        "title": "PENDAHULUAN",
+        "intro": "Selamat datang di LUEVE. Dengan mengakses situs web kami, menggunakan layanan kami, atau membeli produk kami, Anda menyetujui untuk terikat oleh Syarat & Ketentuan berikut. Harap baca dengan saksama sebelum melanjutkan."
+      },
+      {
+        "title": "PESANAN KUSTOM",
+        "list": [
+          "Semua perhiasan LUEVE dibuat berdasarkan pesanan dan dipersonalisasi sesuai preferensi klien.",
+          "Karena bersifat bespoke, pesanan tidak dapat dikembalikan setelah proses produksi dimulai.",
+          "Kami menyediakan pratinjau digital 3D dan konsultasi sebelum produksi. Setelah disetujui, perubahan tidak dapat dilakukan."
+        ]
+      },
+      {
+        "title": "PEMBAYARAN",
+        "list": [
+          "Pembayaran penuh atau uang muka yang disepakati diperlukan sebelum produksi dimulai.",
+          "Kami menerima pembayaran melalui transfer bank perusahaan atau metode lain sesuai informasi saat konsultasi.",
+          "Konfirmasi pembayaran harus dikirim dalam 24 jam untuk mengamankan slot pesanan Anda."
+        ]
+      },
+      {
+        "title": "WAKTU PENGERJAAN & PENGIRIMAN",
+        "list": [
+          "Waktu produksi umumnya 3–6 minggu, tergantung kompleksitas desain dan ketersediaan batu permata.",
+          "Kami akan memberikan perkiraan tanggal pengiriman, namun keterlambatan akibat keadaan tak terduga (mis. masalah pengiriman, keterlambatan pasokan) dapat terjadi.",
+          "Semua produk dikirim dengan nomor pelacakan. LUEVE tidak bertanggung jawab atas keterlambatan atau kesalahan penanganan oleh kurir."
+        ]
+      },
+      {
+        "title": "GARANSI PRODUK & LAYANAN PURNAJUAL",
+        "list": [
+          "Kami menyediakan layanan purnajual gratis seumur hidup termasuk pembersihan, pemolesan, dan penyesuaian ukuran (satu kali; syarat berlaku).",
+          "Garansi tidak mencakup kerusakan akibat penyalahgunaan, kecelakaan, atau perbaikan yang tidak resmi.",
+          "Sertifikat GIA hanya diberikan untuk berlian 0,20 ct ke atas."
+        ]
+      },
+      {
+        "title": "HAK KEKAYAAN INTELEKTUAL",
+        "intro": "Seluruh desain cincin, materi merek, dan konten pada situs ini merupakan milik LUEVE. Reproduksi, penyalinan, atau distribusi ulang dilarang tanpa izin tertulis."
+      },
+      {
+        "title": "HAK UNTUK MENOLAK",
+        "intro": "Kami berhak menolak proyek kustom apa pun yang bertentangan dengan nilai merek atau kemampuan produksi kami."
+      }
+    ]
   }
 }

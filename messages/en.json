@@ -329,5 +329,55 @@
         "bottomImg": "/placeholder.svg"
       }
     }
+  },
+  "terms": {
+    "title": "TERMS & CONDITIONS",
+    "bgAlt": "Background of jewelry box",
+    "sections": [
+      {
+        "title": "INTRODUCTION",
+        "intro": "Welcome to LUEVE. By accessing our website, using our services, or purchasing our products, you agree to be bound by the following Terms & Conditions. Please read them carefully before proceeding."
+      },
+      {
+        "title": "CUSTOM ORDERS",
+        "list": [
+          "All LUEVE jewelry is made-to-order and personalized based on the client’s preferences.",
+          "Due to the bespoke nature of our work, orders are non-refundable once production begins.",
+          "We provide 3D digital previews and consultation before production. Once approved, no changes can be made."
+        ]
+      },
+      {
+        "title": "PAYMENT",
+        "list": [
+          "Full payment or agreed deposit is required before production starts.",
+          "We accept payment through bank transfer or other methods as informed during consultation.",
+          "Payment confirmations must be sent within 24 hours to secure your order slot."
+        ]
+      },
+      {
+        "title": "TIMELINE & DELIVERY",
+        "list": [
+          "Production time typically ranges from 3 to 6 weeks, depending on design complexity and availability of gemstones.",
+          "We will provide estimated delivery dates, but delays due to unforeseen circumstances (e.g., shipping issues, sourcing delays) may occur.",
+          "All products are shipped with tracking. LUEVE is not liable for courier delays or mishandling."
+        ]
+      },
+      {
+        "title": "PRODUCT WARRANTY & AFTERCARE",
+        "list": [
+          "We provide lifetime complimentary after-sales services including cleaning, polishing, and resizing (one time, terms apply).",
+          "Warranty excludes damage due to misuse, accidents, or unauthorized repairs.",
+          "GIA certificates are only provided for diamonds 0.20ct and above."
+        ]
+      },
+      {
+        "title": "INTELLECTUAL PROPERTY",
+        "intro": "All ring designs, brand materials, and content on this site are the property of LUEVE. Reproduction, copying, or redistribution is strictly prohibited without written permission."
+      },
+      {
+        "title": "RIGHT TO REFUSE",
+        "intro": "We reserve the right to decline any custom project that conflicts with our brand values or production capabilities."
+      }
+    ]
   }
 }
