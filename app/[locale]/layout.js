@@ -6,6 +6,18 @@ import { NextIntlClientProvider } from "next-intl";
 import Navbar from "../components/ui/Navbar";
 import Footer from "../components/ui/Footer";
 
+const quattro = localFont({
+  src: [
+    {
+      path: "../fonts/Quattrocento-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-quattro",
+  display: "swap",
+});
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -59,9 +71,9 @@ export default async function RootLayout({ children, params }) {
     <html lang={locale}>
       <body
         suppressHydrationWarning
-        className={`${minionPro.variable} ${poppins.variable} ${
-          futuraDee.variable
-        } antialiased ${
+        className={`${quattro.variable} ${minionPro.variable} ${
+          poppins.variable
+        } ${futuraDee.variable} antialiased ${
           process.env.NODE_ENV === "development" ? "debug-screens" : ""
         }`}
       >
