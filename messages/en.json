@@ -26,12 +26,14 @@
   },
   "about": {
     "heading": "About us",
-    "imageAlt": "Two wedding rings on stones",
     "cta": "View More",
-    "body": "At <brand>Lueve</brand>, we’re more than just jewelers—we’re your personal jewelry piece partner. Specializing in <wedding>customized wedding</wedding> and <engagement>engagement rings</engagement>, we exist to help you craft pieces that are as unique and meaningful as your love story. Every sparkle, curve, and setting is a reflection of you—your taste, your journey, your forever."
+    "topRightAlt": "Rings on cushion",
+    "bottomLeftAlt": "Diamond ring close-up",
+    "bottomRightAlt": "Ring set in a box",
+    "body": "At <brand>Lueve</brand>, we provide more than just jewels. It’s your personal jewelry piece partner. Specializing in <wedding>customized wedding</wedding> and <engagement>engagement rings</engagement>, we are always ready to help you to craft pieces that are as unique and meaningful as your love story. Every spark, curves, and setting is a reflection of you your taste, your journey, your forever."
   },
   "discover": {
-    "title": { "top": "UNCOVER THE", "bottom": " BESPOKE PIECES" },
+    "title": "BESPOKE PIECES",
     "discover": "Discover now",
     "wedding": {
       "title": "Wedding Rings",
