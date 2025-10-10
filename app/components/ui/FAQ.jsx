@@ -1,16 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+
+const MAROON = "#800000"; // swap to "#450000" if you want darker
 
 export default function FAQ() {
   const t = useTranslations("faq");
-
   const raw = t.raw("items");
   const items = Array.isArray(raw) ? raw : [];
-
   const [open, setOpen] = useState(new Set());
 
   const toggle = (idx) => {
@@ -23,69 +23,103 @@ export default function FAQ() {
 
   return (
     <section aria-labelledby="faq-heading" className="py-24 md:py-28">
-      <div className="mx-auto max-w-7xl px-8 sm:px-6">
-        {/* Heading di tengah */}
+      <div className="mx-auto max-w-7xl px-6 md:px-8">
         <h2
           id="faq-heading"
-          className="text-center font-minion-pro text-[#450000] uppercase tracking-[0.12em] leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-7xl max-w-5xl mx-auto"
+          className="text-center font-minion-pro text-[#{800000}] text-[#800000] uppercase tracking-[0.12em] leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
         >
           {t("heading.top")}
           <br className="hidden sm:block" />
           {t("heading.bottom")}
         </h2>
 
-        <div className="mt-8 md:mt-20 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
-          {/* Kiri: gambar */}
-          <div className="md:col-span-5 md:self-center flex justify-center md:justify-start">
-            <div className="relative w-[220px] h-[200px] sm:w-[280px] sm:h-[250px] md:w-[360px] md:h-[320px] lg:w-[420px] lg:h-[500px]">
-              <Image
-                src="/images/faq/faq-ring.svg"
-                alt={t("imageAlt")}
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Kanan: accordion */}
-          <div className="md:col-span-7">
-            <dl className="mt-2 md:mt-0">
+        {/* Card wrapper */}
+        <div className="mt-10 md:mt-14 flex justify-center">
+          <div className="w-full max-w-2xl rounded-[28px] bg-white shadow-[0_25px_70px_rgba(0,0,0,.18)] ring-1 ring-black/5 p-5 sm:p-7 md:p-8">
+            <dl>
               {items.map((it, idx) => {
                 const isOpen = open.has(idx);
-                return (
-                  <div key={idx} className="py-1">
-                    <dt className="border-b-2 border-[#450000]">
-                      <button
-                        type="button"
-                        className="w-full flex items-center justify-between text-left font-poppins text-[#450000] text-lg sm:text-base md:text-lg py-3"
-                        aria-expanded={isOpen}
-                        aria-controls={`faq-panel-${idx}`}
-                        onClick={() => toggle(idx)}
-                      >
-                        <span>{it.q}</span>
-                        <ChevronDown
-                          className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                            isOpen ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                    </dt>
 
-                    <dd
-                      id={`faq-panel-${idx}`}
-                      className={`grid transition-[grid-template-rows,opacity] duration-200 ${
-                        isOpen
-                          ? "grid-rows-[1fr] opacity-100"
-                          : "grid-rows-[0fr] opacity-0"
-                      }`}
+                return (
+                  <div key={idx} className="py-2">
+                    {/* Header row (question + icon) */}
+                    <button
+                      type="button"
+                      onClick={() => toggle(idx)}
+                      aria-expanded={isOpen}
+                      aria-controls={`faq-panel-${idx}`}
+                      className="w-full flex items-center justify-between gap-4 py-2 text-left"
                     >
-                      <div className="overflow-hidden">
-                        <p className="pt-3 pb-5 text-[#450000]/90 text-sm md:text-base leading-7 font-poppins">
-                          {it.a}
-                        </p>
-                      </div>
-                    </dd>
+                      <span className="font-poppins text-[15px] md:text-[18px] leading-7 text-[#800000]">
+                        {it.q}
+                      </span>
+
+                      {/* right icon: chevron (closed) -> minus (open) */}
+                      <AnimatePresence initial={false} mode="wait">
+                        {isOpen ? (
+                          <motion.span
+                            key="minus"
+                            initial={{ opacity: 0, y: -4 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 4 }}
+                            transition={{ duration: 0.16 }}
+                            aria-hidden
+                            className="block"
+                          >
+                            <span
+                              className="block h-[2px] w-6 md:w-7 rounded-sm"
+                              style={{ backgroundColor: MAROON }}
+                            />
+                          </motion.span>
+                        ) : (
+                          <motion.span
+                            key="chevron"
+                            initial={{ opacity: 0, rotate: -45 }}
+                            animate={{ opacity: 1, rotate: 0 }}
+                            exit={{ opacity: 0, rotate: 45 }}
+                            transition={{ duration: 0.16 }}
+                            aria-hidden
+                            className="block"
+                          >
+                            <ChevronDown
+                              className="w-5 h-5"
+                              style={{ color: MAROON }}
+                            />
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+                    </button>
+
+                    {/* ANSWER (animated). This sits ABOVE the bottom line so the line always stays at the bottom of this item */}
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.dd
+                          id={`faq-panel-${idx}`}
+                          key="content"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{
+                            duration: 0.26,
+                            ease: [0.22, 1, 0.36, 1],
+                          }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pt-3 pb-4">
+                            <p className="text-[#800000] text-sm md:text-base leading-7 font-poppins">
+                              {it.a}
+                            </p>
+                          </div>
+                        </motion.dd>
+                      )}
+                    </AnimatePresence>
+
+                    {/* Bottom underline (ALWAYS here, open or closed) */}
+                    <div
+                      className="mt-2 h-[2px] w-full"
+                      style={{ backgroundColor: MAROON }}
+                      aria-hidden
+                    />
                   </div>
                 );
               })}
