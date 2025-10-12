@@ -21,7 +21,7 @@ const quattro = localFont({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["600", "400", "700"],
+  weight: ["400", "600", "700"],
   display: "swap",
 });
 
@@ -39,13 +39,7 @@ const minionPro = localFont({
 });
 
 const futuraDee = localFont({
-  src: [
-    {
-      path: "../fonts/futurano2dee.ttf",
-      style: "normal",
-      weight: "400",
-    },
-  ],
+  src: [{ path: "../fonts/futurano2dee.ttf", style: "normal", weight: "400" }],
   variable: "--font-futura-dee",
   display: "swap",
 });
@@ -58,24 +52,48 @@ export const metadata = {
   },
 };
 
+// --- Sanitize: ganti '.' di KEY jadi '·' agar lolos next-intl
+function sanitizeIntlKeys(input, stats) {
+  if (Array.isArray(input)) return input.map((v) => sanitizeIntlKeys(v, stats));
+  if (input && typeof input === "object") {
+    const out = {};
+    for (const [k, v] of Object.entries(input)) {
+      const hasDot = k.includes(".");
+      const safeKey = hasDot ? k.replaceAll(".", "·") : k;
+      if (hasDot) stats.count++;
+      out[safeKey] = sanitizeIntlKeys(v, stats);
+    }
+    return out;
+  }
+  return input;
+}
+
 export default async function RootLayout({ children, params }) {
   const { locale } = await params;
   let messages;
 
   try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
+    const raw = (await import(`../../messages/${locale}.json`)).default;
+
+    // jalankan sanitizer + (opsional) log di dev
+    const stats = { count: 0 };
+    messages = sanitizeIntlKeys(raw, stats);
+    if (process.env.NODE_ENV === "development" && stats.count > 0) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `[intl] Sanitized ${stats.count} message key(s) containing '.' → '·'`
+      );
+    }
   } catch (error) {
+    // bisa juga console.error(error) kalau mau lihat detailnya
     notFound();
   }
+
   return (
     <html lang={locale}>
       <body
         suppressHydrationWarning
-        className={`${quattro.variable} ${minionPro.variable} ${
-          poppins.variable
-        } ${futuraDee.variable} antialiased ${
-          process.env.NODE_ENV === "development" ? "debug-screens" : ""
-        }`}
+        className={`${quattro.variable} ${minionPro.variable} ${poppins.variable} ${futuraDee.variable} antialiased`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
