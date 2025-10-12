@@ -7,7 +7,7 @@ export default function CatalogHero({
   src,
   alt = "",
   bleedTop = true,
-  height = 420, 
+  height = 420,
 }) {
   return (
     <section
@@ -17,7 +17,7 @@ export default function CatalogHero({
     >
       {/* full-bleed container */}
       <div
-        className="relative left-1/2 -translate-x-1/2 w-[100sw] overflow-hidden h-[42vh] sm:h-[50vh] lg:h-[var(--heroH)]"
+        className="relative left-1/2 -translate-x-1/2 w-[100sw] overflow-hidden h-[42vh] sm:h-[40vh] lg:h-[var(--heroH)]"
         style={{ "--heroH": `${height}px` }}
       >
         <Image
@@ -26,7 +26,7 @@ export default function CatalogHero({
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-contain"
         />
       </div>
 
