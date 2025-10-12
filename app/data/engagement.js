@@ -27,10 +27,6 @@ const slugify = (s) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-export const EXTRA_DETAILS = {
-  astrae: { longImage: "/placeholder.svg" },
-};
-
 export const ENGAGEMENT_ITEMS = NAMES.map((name, i) => {
   const n = i + 1;
   return {
@@ -42,7 +38,13 @@ export const ENGAGEMENT_ITEMS = NAMES.map((name, i) => {
   };
 });
 
-export const ENGAGEMENT_HERO = {
-  src: "/images/collection/engagement/catalog-engagement-cover.svg",
-  alt: "Engagement collection hero",
+export const ENGAGEMENT_HERO_BY_PAGE = {
+  1: {
+    src: "/images/collection/engagement/hero-engagement-1.png",
+    alt: "Engagement collection — page 1",
+  },
+  2: {
+    src: "/images/collection/engagement/hero-engagement-2.png",
+    alt: "Engagement collection — page 2",
+  },
 };
