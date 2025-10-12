@@ -10,7 +10,6 @@ import Discover from "@/app/components/ui/Discover";
 import FAQ from "@/app/components/ui/FAQ";
 import CustomerExperience from "@/app/components/ui/CustomerExperience";
 import CollectionShowcase from "@/app/components/ui/CollectionShowcase";
-import Image from "next/image";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
@@ -44,17 +43,6 @@ export default function HomePage() {
 
   return (
     <main className="relative isolate min-h-screen">
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/background-home.svg"
-          alt="background"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-      </div>
-
       {/* HERO */}
       <Hero />
 
