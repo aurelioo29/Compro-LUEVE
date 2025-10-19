@@ -4,6 +4,8 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // output: "export",
+  trailingSlash: true,
   allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
 };
 

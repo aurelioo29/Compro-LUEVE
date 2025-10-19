@@ -1,3 +1,4 @@
+// app/[locale]/layout.jsx
 import "../globals.css";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
@@ -6,6 +7,20 @@ import { NextIntlClientProvider } from "next-intl";
 import Navbar from "../components/ui/Navbar";
 import Footer from "../components/ui/Footer";
 
+// === DAFTAR LOCALE YANG MAU DI-BUILD ===
+const LOCALES = ["id", "en"]; // ganti sesuai kebutuhan (boleh 1 aja, mis. ["id"])
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
+// Kunci supaya Next gak nerima param baru di runtime
+export const dynamicParams = false;
+// (opsional) full statis
+export const dynamic = "error";
+export const revalidate = false;
+
+// --- (kode font dan sanitizer kamu tetap sama) ---
 const quattro = localFont({
   src: [
     {
@@ -52,7 +67,7 @@ export const metadata = {
   },
 };
 
-// --- Sanitize: ganti '.' di KEY jadi '·' agar lolos next-intl
+// --- Sanitizer kamu tetap ---
 function sanitizeIntlKeys(input, stats) {
   if (Array.isArray(input)) return input.map((v) => sanitizeIntlKeys(v, stats));
   if (input && typeof input === "object") {
@@ -74,18 +89,14 @@ export default async function RootLayout({ children, params }) {
 
   try {
     const raw = (await import(`../../messages/${locale}.json`)).default;
-
-    // jalankan sanitizer + (opsional) log di dev
     const stats = { count: 0 };
     messages = sanitizeIntlKeys(raw, stats);
     if (process.env.NODE_ENV === "development" && stats.count > 0) {
-      // eslint-disable-next-line no-console
       console.warn(
         `[intl] Sanitized ${stats.count} message key(s) containing '.' → '·'`
       );
     }
   } catch (error) {
-    // bisa juga console.error(error) kalau mau lihat detailnya
     notFound();
   }
 

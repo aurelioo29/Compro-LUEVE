@@ -24,7 +24,7 @@ export default function EngagementRingsPage() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [page]);
-  
+
   const hero = ENGAGEMENT_HERO_BY_PAGE[page] || ENGAGEMENT_HERO_BY_PAGE[2];
 
   return (
@@ -32,7 +32,7 @@ export default function EngagementRingsPage() {
       <CatalogHero src={hero.src} alt={hero.alt} bleedTop height={700} />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h1 className="mt-6 text-center font-poppins text-[#450000] text-2xl md:text-3xl">
+        <h1 className="mt-6 text-center font-poppins text-[#800000] text-2xl md:text-3xl">
           Engagement
         </h1>
 
