@@ -326,7 +326,7 @@
   "engagement": {
     "details": {
       "astrae": {
-        "description": "A rose gold spiral ring with a series of diamonds surrounding the main stone. Representing an eternal promise that always returns, like the tireless orbit of the moon. A perfect combination for couples who believe in the harmonious and consistent rhythm of love.",
+        "description": "A rose gold spiral ring with a series of diamonds surrounding the main stone, Representing an eternal promise that always returns, like the tireless orbit of the moon. A perfect combination for couples who believe in the harmonious and consistent rhythm of love. ",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
@@ -347,7 +347,7 @@
         }
       },
       "aurellia": {
-        "description": "Pure light that needs no excessive ornamentation. Luminare is the personification of confident elegance. Every facet of its diamond cut is optimized to dance with light, swirling and hinting at eternity and loyalty.",
+        "description": "Pure light that needs no excessive ornamentation. Aurellia is the personification of confident elegance. Every facet of its diamond cut is optimized to dance with light, swirling and hinting at eternity and loyalty.",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
@@ -437,7 +437,7 @@
         }
       },
       "chrysalis": {
-        "description": "A gold alloy ring is like love that is strong yet retains its softness. The fluid arrangement of diamonds mimics the flow of water between the rocks, reminding us that the most beautiful love often arises from struggle.",
+        "description": "A champagne alloy ring is like love that is strong yet retains its softness. The beaded band, reminding us that the most beautiful love often arises from struggle.",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
@@ -458,7 +458,7 @@
         }
       },
       "elara": {
-        "description": "A yellow gold ring with an oval stone, surrounded by small diamonds like scattered star dust. Reflecting rare and magical love, united in one perfect form. For partners who trust each other.",
+        "description": "This ring captures the essence of calm and eternal devotion. The open design symbolizes two souls meeting in perfect harmony, while intricate side engravings evoke timeless elegance. A single brilliant-cut diamond rests at its heart, reflecting love’s quiet strength, framed by a polished finish that gleams with understated luxury.",
         "specs": {
           "centerDiamond": {
             "Weight": "0.30 ct",
@@ -499,7 +499,7 @@
         }
       },
       "luminare": {
-        "description": "This ring is inspired by the full moon captured in a diamond shadow. Its design features a diamond, a symbol of love that shines softly in the dark. Perfect for those who believe in timeless love.",
+        "description": "Inspired by the calm radiance of eternal light, Luminare captures the essence of love that never dims. <space>Every curve and delicate beaded detail is crafted to reflect harmony and timeless grace. Luminare is a symbol of love that shines quietly, yet forever.</space>",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
@@ -541,7 +541,7 @@
         }
       },
       "magnolia": {
-        "description": "Like a butterfly born from metamorphosis, this ring symbolizes love that continually evolves starting from simplicity, then developing into perfect beauty. The diamond at its center is the light of hope that guides this change.",
+        "description": "This ring symbolizes love that continually evolves starting from simplicity, then developing into perfect beauty. The center diamond is the light of hope that guides this change.",
         "specs": {
           "centerDiamond": {
             "Weight": "0.15 ct",
@@ -561,12 +561,12 @@
         }
       },
       "novaria": {
-        "description": "Like a nova blooming in the night sky, Novaria is a harmonious blend of the clarity and warmth of diamonds. This ring, which symbolizes two stories merging into one eternal melody, is now captured in a single ring.",
+        "description": "Its delicate band, adorned with marquise-shaped accents, reflects the beauty of nature’s gentle rhythm. At the center, an oval-cut diamond captures light from every angle, shimmering with quiet brilliance. Novaria whispers of elegance, warmth, and a love story that forever sparkles in time.",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
             "Weight": "0.40 ct",
-            "Shape": "Round Shape",
+            "Shape": "Oval Shape",
             "Cut": "Excellent Cut",
             "Polish": "Excellent Cut",
             "Symmetry": "Excellent Cut",
@@ -577,12 +577,12 @@
           "metal": {
             "Band Metal Color": "White, Yellow, Rose, Champagne",
             "Approx Metal Weight": "2–3 g",
-            "Metal Finishing": "Satin, Glossy"
+            "Metal Finishing": "Glossy"
           }
         }
       },
       "pavonis": {
-        "description": "This ring has a mythology symbolizing eternity, pride in authentic love, and mesmerizing beauty. Perfect for couples who want to highlight uniqueness and boldness in commitment.",
+        "description": "Pavonis embodies timeless elegance and quiet confidence. The slender band draws the eye to a single princess-cut diamond, gracefully held by four prongs that let light dance freely. Minimal yet radiant, it symbolizes a love that speaks softly but shines endlessly effortless, enduring, and beautifully sincere.",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
@@ -603,7 +603,7 @@
         }
       },
       "selena": {
-        "description": "This ring has a mythology symbolizing eternity, pride in authentic love, and mesmerizing beauty. Perfect for couples who want to highlight uniqueness and boldness in commitment.",
+        "description": "A ring surrounded by diamonds as a representation of a love symbol that never fades, always reaching the pinnacle of eternity. Perfect for our relationship full of passion, trust, and optimism.",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
@@ -624,11 +624,11 @@
         }
       },
       "stella": {
-        "description": "Pure light that needs no excessive ornamentation. Luminare is the personification of confident elegance. Every facet of its diamond cut is optimized to dance with light, swirling and hinting at eternity and loyalty.",
+        "description": "The solitaire diamond, gracefully cradled in elegant prongs, becomes the heart of its luminous design. A refined band with delicate detailing adds a whisper of sophistication, making Stella a symbol of love that shines boldly yet beautifully serene.",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
-            "Weight": "0.50 ct/pcs",
+            "Weight": "0.50 ct",
             "Shape": "Round Shape",
             "Cut": "Excellent Cut",
             "Polish": "Excellent Cut",
@@ -639,7 +639,7 @@
           },
           "metal": {
             "Band Metal Color": "White, Yellow, Rose, Champagne",
-            "Approx Metal Weight": "3–4 g",
+            "Approx Metal Weight": "2–4 g",
             "Metal Finishing": "Glossy"
           }
         }
@@ -650,7 +650,7 @@
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
             "Weight": "0.20 ct",
-            "Shape": "Princess Shape",
+            "Shape": "Emerald Shape",
             "Cut": "Excellent Cut",
             "Polish": "Excellent Cut",
             "Symmetry": "Excellent Cut",
@@ -693,12 +693,12 @@
         }
       },
       "zenith": {
-        "description": "A ring with a white gold circle and a minimalist yet elegant design. A symbol of love as a guide in life, it continues to shine even in the darkness. For those who see love as a compass towards the future.",
+        "description": "Its band is elegantly lined with princess cut diamonds, creating a continuous shimmer that mirrors eternal devotion. Sleek, refined, and endlessly radiant — Zenith is the embodiment of sophistication, where every sparkle marks a moment of unwavering love.",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
             "Weight": "0.20 ct",
-            "Shape": "Round Shape",
+            "Shape": "Princess Shape",
             "Cut": "Excellent Cut",
             "Polish": "Excellent Cut",
             "Symmetry": "Excellent Cut",
@@ -709,7 +709,7 @@
           "metal": {
             "Band Metal Color": "White, Yellow, Rose, Champagne",
             "Approx Metal Weight": "2–3 g",
-            "Metal Finishing": "Satin and Glossy"
+            "Metal Finishing": "and Glossy"
           }
         }
       }
