@@ -15,10 +15,10 @@ export default function FeaturePrivilege({
       <div className={clsx("flex", mobileJustify, "lg:justify-center")}>
         <span
           className="
-            inline-block rounded-full border border-[#450000]
+            inline-block rounded-full border border-[#800000]
             px-4 py-1 font-minion-pro text-base md:text-xl
-            text-[#450000] transition-colors
-            hover:bg-[#450000] hover:text-[#E0C698]
+            text-[#800000] transition-colors
+            hover:bg-[#800000] hover:text-[#E0C698]
           "
         >
           {title}
@@ -28,7 +28,7 @@ export default function FeaturePrivilege({
       {/* Body: zig-zag di mobile, CENTER di desktop */}
       <p
         className={clsx(
-          "mt-3 text-[#450000]/90 font-poppins text-sm md:text-base",
+          "mt-3 text-[#800000]/90 font-poppins text-sm md:text-base",
           mobileText, // mobile zig-zag
           "lg:text-center lg:max-w-[36ch] lg:mx-auto" // desktop center
         )}

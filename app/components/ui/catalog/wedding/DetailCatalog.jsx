@@ -28,7 +28,7 @@ function SpecCol({ title, items = {} }) {
             <dt className="font-minion-pro text-lg md:text-xl">
               {label.replaceAll("·", ".")}
             </dt>
-            <dd className="font-minion-pro text-lg md:text-xl text-[#450000]">
+            <dd className="font-minion-pro text-lg md:text-xl text-[#800000]">
               {Array.isArray(value) ? value.join(", ") : value}
             </dd>
           </React.Fragment>

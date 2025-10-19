@@ -20,7 +20,7 @@ export default function ProductCard({ item }) {
           />
         </div>
 
-        <p className="mt-4 text-center font-poppins text-lg md:text-xl text-[#450000]">
+        <p className="mt-4 text-center font-minion-pro text-lg md:text-2xl uppercase text-[#800000]">
           {item.name}
         </p>
       </Link>

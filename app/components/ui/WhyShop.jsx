@@ -29,7 +29,7 @@ export default function WhyShop() {
       <div className="pointer-events-none absolute inset-x-0 top-0 left-0 z-20">
         <div className="max-w-7xl px-8 sm:px-32">
           <div className="h-[6px] w-[270px] md:h-[6px] md:w-[600px]  bg-[#E0C698]" />
-          <h2 className="mt-5 md:mt-[50px] font-minion-pro text-[#450000] text-4xl md:text-7xl tracking-wide">
+          <h2 className="mt-5 md:mt-[50px] font-minion-pro text-[#800000] text-4xl md:text-7xl tracking-wide">
             {t("title")}
           </h2>
         </div>
@@ -58,10 +58,10 @@ export default function WhyShop() {
                   </span>
 
                   <div className="self-start">
-                    <h3 className="font-minion-pro text-[#450000] text-2xl md:text-4xl font-semibold md:font-normal">
+                    <h3 className="font-minion-pro text-[#800000] text-2xl md:text-4xl font-semibold md:font-normal">
                       {it.title}
                     </h3>
-                    <p className="mt-2 font-poppins text-sm md:text-base text-[#450000]/90 leading-7">
+                    <p className="mt-2 font-poppins text-sm md:text-base text-[#800000]/90 leading-7">
                       {it.desc}
                     </p>
                   </div>
@@ -80,7 +80,7 @@ export default function WhyShop() {
                   <span className="relative w-9 h-9 sm:w-11 sm:h-11 self-center">
                     <Image
                       src={it.imageSrc || "/placeholder.svg"}
-                      alt={it.imageAlt || ""}
+                      alt={it.imageAlt || ""} 
                       fill
                       sizes="50px"
                       className="object-contain"
@@ -88,10 +88,10 @@ export default function WhyShop() {
                   </span>
 
                   <div className="self-start">
-                    <h3 className="font-minion-pro text-[#450000] text-2xl md:text-4xl font-semibold md:font-normal">
+                    <h3 className="font-minion-pro text-[#800000] text-2xl md:text-4xl font-semibold md:font-normal">
                       {it.title}
                     </h3>
-                    <p className="mt-2 font-poppins text-sm md:text-base text-[#450000]/90 leading-7">
+                    <p className="mt-2 font-poppins text-sm md:text-base text-[#800000]/90 leading-7">
                       {it.desc}
                     </p>
                   </div>

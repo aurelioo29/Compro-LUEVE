@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -11,112 +11,145 @@ export default function CollectionShowcase() {
   const slides = Array.isArray(t.raw("slides")) ? t.raw("slides") : [];
 
   const [idx, setIdx] = useState(0);
-  const n = slides.length || 1;
+  const n = Math.max(slides.length, 1);
   const prev = (idx - 1 + n) % n;
   const next = (idx + 1) % n;
 
+  const [pop, setPop] = useState(false);
+  useEffect(() => {
+    setPop(true);
+    const to = setTimeout(() => setPop(false), 650);
+    return () => clearTimeout(to);
+  }, [idx]);
+
   return (
-    <section aria-labelledby="colx-heading" className="py-12 md:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 relative">
-        {/* ====== GRID CONTENT ====== */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-20 items-center">
-          {/* Left preview (dibesarin + blur) */}
-          <div className="hidden lg:block lg:col-span-3">
-            <div className="relative mx-auto w-full max-w-[360px] aspect-[4/5] overflow-hidden rounded-xl">
+    <section
+      aria-labelledby="collection-heading"
+      className="relative py-12 md:py-20 bg-white"
+    >
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <h2
+          id="collection-heading"
+          className="text-center font-serif text-[40px] sm:text-5xl md:text-6xl leading-none tracking-wide text-[#7b0f12] mb-6 md:mb-10"
+        >
+          {t("vertical")}
+        </h2>
+
+        <div className="relative">
+          {/* glow belakang kartu tengah */}
+          <div
+            aria-hidden
+            className="hidden md:block absolute inset-0 -top-6 h-[360px] mx-auto max-w-4xl blur-2xl
+                       bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.18),transparent_65%)]"
+          />
+
+          <div className="relative z-10 flex items-end justify-center gap-2 md:gap-6">
+            {/* KIRI — BESAR + 3D tilt inward */}
+            <aside
+              className="
+                relative hidden md:block w-[280px] lg:w-[340px] xl:w-[360px] aspect-[3/4]
+                rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-[0_25px_80px_rgba(0,0,0,.25)]
+                z-10 transform-gpu
+                [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]
+                [-webkit-mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]
+              "
+              style={{
+                // menghadap ke tengah: tepi kanan lebih dekat ke viewer
+                transform:
+                  "perspective(1400px) rotateY(-14deg) rotateZ(8deg) translateX(28px) translateY(16px) scale(1.02)",
+              }}
+            >
               <Image
                 src={
-                  slides[prev]?.thumbSrc ??
-                  slides[prev]?.imageSrc ??
+                  slides[prev]?.thumbSrc ||
+                  slides[prev]?.imageSrc ||
                   "/placeholder.svg"
                 }
                 alt={slides[prev]?.thumbAlt || slides[prev]?.imageAlt || ""}
                 fill
-                sizes="360px"
-                className="object-cover scale-[1.18] md:scale-[1.25] blur-[2px] md:blur-[3px]"
+                sizes="(min-width:1280px) 360px, (min-width:1024px) 340px, 280px"
+                className="object-cover"
+                priority
               />
-            </div>
-          </div>
+            </aside>
 
-          {/* Center card (NO BLUR) */}
-          <div className="lg:col-span-6 relative z-10">
-            <Splide
-              aria-label={t("ariaLabel")}
-              options={{
-                type: "loop",
-                perPage: 1,
-                autoplay: true,
-                interval: 5200,
-                speed: 700,
-                arrows: false,
-                pagination: true,
-                pauseOnHover: true,
-                pauseOnFocus: true,
-              }}
-              onMounted={(s) => setIdx(s.index)}
-              onMoved={(_, i) => setIdx(i)}
+            {/* TENGAH — slider + pop-in */}
+            <div
+              className={`relative w-[82vw] sm:w-[520px] md:w-[520px] lg:w-[560px] aspect-[3/4]
+                          rounded-2xl overflow-hidden ring-1 ring-black/5 z-30
+                          shadow-[0_30px_80px_rgba(0,0,0,0.25)]
+                          [&_.splide__track]:h-full [&_.splide__list]:h-full [&_.splide__slide]:h-full
+                          ${pop ? "animate-colx-pop" : ""}`}
             >
-              {slides.map((s, i) => (
-                <SplideSlide key={i}>
-                  <article className="relative mx-auto w-[86vw] sm:w-[82vw] md:w-[92vw] max-w-[553px] h-[75svh] min-h-[560px] sm:h-auto sm:aspect-[4/5] md:aspect-[553/809] lg:w-[553px] lg:h-[809px] lg:aspect-auto bg-[#D9C096] rounded-xl overflow-hidden">
-                    <span
-                      aria-hidden
-                      className="absolute left-4 sm:left-3 md:left-4 top-6 md:top-6 bottom-24 md:bottom-28 font-minion-pro text-white drop-shadow leading-none tracking-wider z-20 [writing-mode:vertical-rl] text-[50px] md:text-6xl lg:text-7xl"
-                    >
-                      {t("vertical")}
-                    </span>
+              <Splide
+                aria-label={t("ariaLabel")}
+                options={{
+                  type: "loop",
+                  perPage: 1,
+                  autoplay: true,
+                  interval: 4600,
+                  speed: 900,
+                  arrows: false,
+                  pagination: true,
+                  pauseOnHover: true,
+                  pauseOnFocus: true,
+                  easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+                onMounted={(s) => setIdx(s.index)}
+                onMoved={(_, i) => setIdx(i)}
+                className="h-full"
+              >
+                {slides.map((s, i) => (
+                  <SplideSlide key={i} className="relative">
+                    <Image
+                      src={s.imageSrc}
+                      alt={s.imageAlt}
+                      fill
+                      sizes="(min-width:1024px) 560px, 82vw"
+                      className="object-cover"
+                      priority={i === 0}
+                    />
+                  </SplideSlide>
+                ))}
+              </Splide>
+            </div>
 
-                    {/* blok gambar + caption dalam satu wadah */}
-                    <div className="absolute top-5 sm:top-6 md:top-8 left-10 sm:left-12 md:left-14 right-4 sm:right-8 md:right-14">
-                      {/* frame foto */}
-                      <div className="relative w-full aspect-[3/4] sm:aspect-[4/5] bg-white rounded-xl overflow-hidden shadow">
-                        <Image
-                          src={s.imageSrc}
-                          alt={s.imageAlt}
-                          fill
-                          sizes="(min-width:1024px) 525px, (min-width:640px) 82vw, 86vw"
-                          priority={i === 0}
-                          className="object-cover"
-                        />
-                      </div>
-
-                      {/* caption tepat di bawah gambar */}
-                      {s.desc && (
-                        <p className="mt-3 sm:mt-4 text-white/95 font-poppins text-sm sm:text-base md:text-[17px] leading-6 text-justify">
-                          {s.desc}
-                        </p>
-                      )}
-                    </div>
-                  </article>
-                </SplideSlide>
-              ))}
-            </Splide>
-          </div>
-
-          {/* Right preview (dibesarin + blur) */}
-          <div className="hidden lg:block lg:col-span-3">
-            <div className="relative mx-auto w-full max-w-[360px] aspect-[4/5] overflow-hidden rounded-xl">
+            {/* KANAN — BESAR + 3D tilt inward (kebalikan kiri) */}
+            <aside
+              className="
+                relative hidden md:block w-[280px] lg:w-[340px] xl:w-[360px] aspect-[3/4]
+                rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-[0_25px_80px_rgba(0,0,0,.25)]
+                z-10 transform-gpu
+                [mask-image:linear-gradient(to_left,transparent,black_12%,black_88%,transparent)]
+                [-webkit-mask-image:linear-gradient(to_left,transparent,black_12%,black_88%,transparent)]
+              "
+              style={{
+                transform:
+                  "perspective(1400px) rotateY(14deg) rotateZ(-8deg) translateX(-28px) translateY(16px) scale(1.02)",
+              }}
+            >
               <Image
                 src={
-                  slides[next]?.thumbSrc ??
-                  slides[next]?.imageSrc ??
+                  slides[next]?.thumbSrc ||
+                  slides[next]?.imageSrc ||
                   "/placeholder.svg"
                 }
                 alt={slides[next]?.thumbAlt || slides[next]?.imageAlt || ""}
                 fill
-                sizes="360px"
-                className="object-cover scale-[1.18] md:scale-[1.25] blur-[2px] md:blur-[3px]"
+                sizes="(min-width:1280px) 360px, (min-width:1024px) 340px, 280px"
+                className="object-cover"
+                priority
               />
-            </div>
+            </aside>
           </div>
-        </div>
 
-        {/* ====== BLUR OVERLAY (spotlight di tengah) ====== */}
-        <div
-          aria-hidden="true"
-          className="
-            pointer-events-none absolute inset-0 hidden lg:block backdrop-blur-[3px] [mask-image:radial-gradient(340px_540px_at_50%_55%,transparent,black)]
-            [-webkit-mask-image:radial-gradient(340px_540px_at_50%_55%,transparent,black)]"
-        />
+          {/* Caption aktif */}
+          {slides[idx]?.desc && (
+            <p className="mt-6 md:mt-10 text-center max-w-3xl mx-auto text-xs sm:text-sm md:text-[15px] leading-relaxed text-[#7b0f12]">
+              {slides[idx].desc}
+            </p>
+          )}
+        </div>
       </div>
     </section>
   );

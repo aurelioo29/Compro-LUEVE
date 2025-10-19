@@ -36,7 +36,7 @@ export default function WeddingCoverGrid() {
         >
           OUR WEDDING
         </h2>
-        <p className="mt-1 text-center font-minion-pro tracking-[0.35em] text-[#450000]/80">
+        <p className="mt-1 text-center font-minion-pro tracking-[0.35em] text-[#800000]/80">
           RING CATALOG
         </p>
 
@@ -62,7 +62,7 @@ export default function WeddingCoverGrid() {
 
               {/* label muncul saat hover */}
               <div className="absolute inset-0 flex items-center justify-center p-4">
-                <span className="opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0 font-minion-pro text-xl md:text-2xl text-[#CEA660] backdrop-blur-sm rounded-full px-5 py-2 shadow-sm bg-[#450000]">
+                <span className="opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0 font-minion-pro text-xl md:text-2xl text-[#CEA660] backdrop-blur-sm rounded-full px-5 py-2 shadow-sm bg-[#800000]">
                   {it.label}
                 </span>
               </div>

@@ -5,7 +5,7 @@ import { Link } from "@/lib/navigation";
 
 export default function Footer() {
   return (
-    <footer className="px-2 sm:px-4 md:px-6 py-6 md:py-8 lg:py-7 border-t-2 border-[#450000]">
+    <footer className="px-2 sm:px-4 md:px-6 py-6 md:py-8 lg:py-7 border-t-2 border-[#800000]">
       <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 justify-items-center lg:justify-items-start text-center lg:text-left">
         {/* LEFT BRAND / HOURS / SOCIAL */}
         <div className="lg:col-span-3 space-y-4 sm:space-y-6 flex flex-col items-center lg:items-start">
@@ -23,11 +23,11 @@ export default function Footer() {
           <section aria-labelledby="opening-hours" className="w-full">
             <h2
               id="opening-hours"
-              className="text-2xl sm:text-3xl text-[#450000] font-minion-pro"
+              className="text-2xl sm:text-3xl text-[#800000] font-minion-pro"
             >
               Opening Hours
             </h2>
-            <div className="mt-3 sm:mt-4 md:mt-6 flex items-center justify-center lg:justify-start gap-2 sm:gap-3 text-[#450000] font-poppins text-sm sm:text-base">
+            <div className="mt-3 sm:mt-4 md:mt-6 flex items-center justify-center lg:justify-start gap-2 sm:gap-3 text-[#800000] font-poppins text-sm sm:text-base">
               <ClockFading className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
               <time dateTime="11:00">11.00 AM</time>
               <span>–</span>
@@ -92,10 +92,10 @@ export default function Footer() {
 
         {/* NAVIGATION */}
         <nav className="lg:col-span-2" aria-label="Footer navigation">
-          <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#450000]">
+          <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#800000]">
             Navigation
           </h3>
-          <ul className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-6 md:space-y-8 text-[#450000] font-poppins tracking-wider text-base sm:text-lg">
+          <ul className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-6 md:space-y-8 text-[#800000] font-poppins tracking-wider text-base sm:text-lg">
             <li>
               <Link href="/" className="hover:underline underline-offset-4">
                 Home
@@ -114,10 +114,10 @@ export default function Footer() {
 
         {/* COMPANY */}
         <nav className="lg:col-span-2" aria-label="Company">
-          <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#450000]">
+          <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#800000]">
             Company
           </h3>
-          <ul className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-6 md:space-y-8 text-[#450000] font-poppins tracking-wider text-base sm:text-lg">
+          <ul className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-6 md:space-y-8 text-[#800000] font-poppins tracking-wider text-base sm:text-lg">
             <li>
               <Link
                 href="/about"
@@ -155,10 +155,10 @@ export default function Footer() {
 
         {/* RESOURCES */}
         <nav className="lg:col-span-2" aria-label="Resources">
-          <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#450000]">
+          <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#800000]">
             Resources
           </h3>
-          <ul className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-6 md:space-y-8 text-[#450000] font-poppins tracking-wider text-base sm:text-lg">
+          <ul className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-6 md:space-y-8 text-[#800000] font-poppins tracking-wider text-base sm:text-lg">
             <li>
               <Link
                 href="/terms-conditions"
@@ -180,10 +180,10 @@ export default function Footer() {
 
         {/* CONTACT */}
         <address className="lg:col-span-3 not-italic" aria-label="Contact Us">
-          <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#450000]">
+          <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#800000]">
             Contact Us
           </h3>
-          <ul className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-6 md:space-y-8 text-[#450000] font-poppins tracking-wider text-base sm:text-lg">
+          <ul className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-6 md:space-y-8 text-[#800000] font-poppins tracking-wider text-base sm:text-lg">
             <li>
               <Link
                 href="tel:081533780888"
@@ -206,7 +206,7 @@ export default function Footer() {
         </address>
       </div>
 
-      <div className="mx-auto max-w-7xl mt-8 md:mt-12 border-t border-[#450000] pt-4 md:pt-6 text-sm sm:text-base md:text-lg lg:text-xl text-[#450000] text-center font-minion-pro">
+      <div className="mx-auto max-w-7xl mt-8 md:mt-12 border-t border-[#800000] pt-4 md:pt-6 text-sm sm:text-base md:text-lg lg:text-xl text-[#800000] text-center font-minion-pro">
         <p>Copyright © {new Date().getFullYear()}. All Rights Reserved.</p>
       </div>
     </footer>

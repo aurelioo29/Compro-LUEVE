@@ -97,7 +97,7 @@ export default function Navbar() {
                 !hoverLock
                   ? "group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0"
                   : "",
-                "absolute left-[60%] -translate-x-1/2 top-full w-[150px] md:w-[225px] z-50 rounded-lg bg-[#800000]/70 text-[#E0C698] shadow-xl backdrop-blur transition-all duration-200 ease-out font-futura-dee",
+                "absolute left-[60%] -translate-x-1/2 top-full w-[150px] md:w-[225px] z-50 rounded-lg bg-[#800000]/[0.16] shadow-xl backdrop-blur-sm transition-all duration-200 ease-out font-futura-dee",
               ].join(" ")}
               role="menu"
               aria-label="Collection menu"
@@ -107,17 +107,17 @@ export default function Navbar() {
                   href="/collection/engagement-rings"
                   locale={locale}
                   onClick={hardClose}
-                  className="block text-3xl mb-6 font-futura-dee tracking-wide hover:opacity-90 transition-opacity"
+                  className="block text-3xl mb-6 font-futura-dee tracking-wide hover:opacity-90 transition-opacity text-[#800000]"
                 >
                   Engagement Ring
                 </Link>
-                <div className="h-[2px] w-full bg-white/80 my-3 transition-opacity" />
+                <div className="h-[2px] w-full bg-[#800000] my-3 transition-opacity" />
 
                 <Link
                   href="/collection/wedding-rings"
                   locale={locale}
                   onClick={hardClose}
-                  className="block text-3xl font-futura-dee tracking-wide hover:opacity-90 transition-opacity"
+                  className="block text-3xl font-futura-dee tracking-wide hover:opacity-90 transition-opacity text-[#800000]"
                 >
                   Wedding Ring
                 </Link>
@@ -128,7 +128,7 @@ export default function Navbar() {
                       href="/collection/wedding-rings/silhouettes-of-earth"
                       locale={locale}
                       onClick={hardClose}
-                      className="block hover:underline underline-offset-4 transition-[text-decoration-color] duration-200"
+                      className="block hover:underline underline-offset-4 transition-[text-decoration-color] duration-200 text-[#800000]"
                       role="menuitem"
                     >
                       Silhouettes of Earth
@@ -139,7 +139,7 @@ export default function Navbar() {
                       href="/collection/wedding-rings/constellation-of-love"
                       locale={locale}
                       onClick={hardClose}
-                      className="block hover:underline underline-offset-4 transition-[text-decoration-color] duration-200"
+                      className="block hover:underline underline-offset-4 transition-[text-decoration-color] duration-200 text-[#800000]"
                       role="menuitem"
                     >
                       Constellation of Love
@@ -150,7 +150,7 @@ export default function Navbar() {
                       href="/collection/wedding-rings/the-heritage"
                       locale={locale}
                       onClick={hardClose}
-                      className="block hover:underline underline-offset-4 transition-[text-decoration-color] duration-200"
+                      className="block hover:underline underline-offset-4 transition-[text-decoration-color] duration-200 text-[#800000]"
                       role="menuitem"
                     >
                       The Heritage
@@ -177,7 +177,7 @@ export default function Navbar() {
                 !hoverLock
                   ? "group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0"
                   : "",
-                "absolute left-1/2 -translate-x-1/2 top-full w-[150px] md:w-[150px] z-50 rounded-lg bg-[#800000] text-[#E0C698] shadow-xl backdrop-blur transition-all duration-200 ease-out font-futura-dee",
+                "absolute left-1/2 -translate-x-1/2 top-full w-[150px] md:w-[150px] z-50 rounded-lg bg-[#800000]/[0.16] shadow-xl backdrop-blur-sm transition-all duration-200 ease-out font-futura-dee",
               ].join(" ")}
               role="menu"
               aria-label="Services menu"
@@ -188,7 +188,7 @@ export default function Navbar() {
                     href="/services/custom-ring"
                     locale={locale}
                     onClick={hardClose}
-                    className="block text-2xl tracking-wide rounded-md hover:bg-[#800000]/80 transition-colors"
+                    className="block text-2xl tracking-wide rounded-md transition-colors text-[#800000]"
                     role="menuitem"
                   >
                     Custom Ring

@@ -14,7 +14,7 @@ export default function AboutStory() {
         {/* Heading */}
         <h2
           id="story-heading"
-          className="text-center font-minion-pro text-[#450000] text-4xl md:text-6xl lg:text-7xl leading-tight"
+          className="text-center font-minion-pro text-[#800000] text-4xl md:text-6xl lg:text-7xl leading-tight"
         >
           {t("title")}
         </h2>

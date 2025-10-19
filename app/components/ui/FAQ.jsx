@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-const MAROON = "#800000"; // swap to "#450000" if you want darker
+const MAROON = "#800000"; // swap to "#800000" if you want darker
 
 export default function FAQ() {
   const t = useTranslations("faq");

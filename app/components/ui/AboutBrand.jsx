@@ -16,7 +16,7 @@ export default function AboutBrand() {
         {/* Heading */}
         <h2
           id="about-brand-heading"
-          className="text-center font-minion-pro text-[#450000] text-4xl md:text-5xl lg:text-6xl"
+          className="text-center font-minion-pro text-[#800000] text-4xl md:text-5xl lg:text-6xl"
         >
           {t("title")}
         </h2>
@@ -26,11 +26,11 @@ export default function AboutBrand() {
           {/* Left */}
           <div className="lg:col-span-3">
             <div className="h-1 w-36 bg-[#E0C698] rounded-full mb-5" />
-            <h3 className="font-minion-pro text-[#450000] text-6xl">
+            <h3 className="font-minion-pro text-[#800000] text-6xl">
               {" "}
               {t("left.heading")}{" "}
             </h3>
-            <p className="mt-3 font-poppins text-[#450000] text-lg">
+            <p className="mt-3 font-poppins text-[#800000] text-lg">
               {t("left.subheading")}
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function AboutBrand() {
 
           {/* Right */}
           <div className="lg:col-span-3">
-            <p className="text-center font-poppins text-[#450000] text-xl">
+            <p className="text-center font-poppins text-[#800000] text-xl">
               <span className="block">{t("reg.label")}</span>
               <span className="mt-1 inline-block tracking-wide">
                 {t("reg.value")}
@@ -73,11 +73,11 @@ export default function AboutBrand() {
 
         {/* Bottom: Quote (left) + Body (right) */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
-          <blockquote className="font-minion-pro text-[#450000] text-2xl md:text-3xl italic font-semibold">
+          <blockquote className="font-minion-pro text-[#800000] text-2xl md:text-3xl italic font-semibold">
             {t("quote")}
           </blockquote>
 
-          <p className="font-poppins text-[#450000] text-lg leading-8 text-justify">
+          <p className="font-poppins text-[#800000] text-lg leading-8 text-justify">
             {t("body")}
           </p>
         </div>

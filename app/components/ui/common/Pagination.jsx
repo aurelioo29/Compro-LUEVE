@@ -9,7 +9,7 @@ export default function Pagination({ page, totalPages, onChange }) {
 
   return (
     <nav
-      className="mt-20 flex items-center justify-center gap-10 text-[#450000] font-poppins"
+      className="mt-20 flex items-center justify-center gap-10 text-[#800000] font-poppins"
       aria-label="Pagination"
     >
       <button
@@ -30,7 +30,7 @@ export default function Pagination({ page, totalPages, onChange }) {
           aria-current={page === n ? "page" : undefined}
           className={[
             "h-8 w-8 rounded-full text-xl font-semibold cursor-pointer",
-            page === n ? "bg-[#CEA660]" : "hover:bg-black/5 text-[#450000]",
+            page === n ? "bg-[#CEA660]" : "hover:bg-black/5 text-[#800000]",
           ].join(" ")}
         >
           {n}

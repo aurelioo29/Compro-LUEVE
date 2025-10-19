@@ -30,11 +30,8 @@ export default function Hero() {
       <Splide
         options={{
           type: "loop",
-          direction: "ttb", // vertical
-          height: "calc(100svh + 80px)", // desktop
-          breakpoints: {
-            768: { height: "calc(100svh + 90px)" }, // mobile/tablet
-          },
+          direction: "ttb", // desktop: vertical
+          height: "calc(100dvh + 80px)",
           autoplay: true,
           interval: 5000,
           speed: 800,
@@ -42,6 +39,12 @@ export default function Hero() {
           pauseOnFocus: true,
           arrows: false,
           pagination: true,
+          breakpoints: {
+            768: {
+              direction: "ltr", // mobile: horizontal -> scroll page aman
+              height: "calc(100dvh - 0px)", // atau "auto" kalau prefer
+            },
+          },
         }}
       >
         {SLIDES.map((item, index) => (
@@ -62,10 +65,10 @@ export default function Hero() {
               {/* ===== Mobile: ===== */}
               <div className="pointer-events-none absolute inset-x-4 bottom-16 md:hidden">
                 <div className="flex flex-col gap-4">
-                  <h1 className="font-minion-pro text-[#450000] text-4xl leading-none">
+                  <h1 className="font-minion-pro text-[#800000] text-4xl leading-none">
                     {t(`slides.${item.key}.title`)}
                   </h1>
-                  <p className="text-[#450000]/95 text-lg font-poppins leading-relaxed">
+                  <p className="text-[#800000]/95 text-lg font-poppins leading-relaxed">
                     {t(`slides.${item.key}.desc`)}
                   </p>
                 </div>
@@ -73,13 +76,13 @@ export default function Hero() {
 
               {/* ===== Desktop ===== */}
               <div className="pointer-events-none absolute left-36 bottom-20 hidden md:block">
-                <h1 className="font-minion-pro text-[#450000] text-5xl lg:text-7xl leading-none">
+                <h1 className="font-minion-pro text-[#800000] text-5xl lg:text-7xl leading-none">
                   {t(`slides.${item.key}.title`)}
                 </h1>
               </div>
 
               <div className="pointer-events-none absolute right-36 bottom-20 hidden md:block max-w-[620px]">
-                <p className="text-[#450000] text-base md:text-xl font-poppins text-right leading-relaxed">
+                <p className="text-[#800000] text-base md:text-xl font-poppins text-right leading-relaxed">
                   {t(`slides.${item.key}.desc`)}
                 </p>
               </div>

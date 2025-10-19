@@ -46,9 +46,9 @@ export default function StoryCard({
         <div
           className={`flex flex-col ${
             textLeft ? "border-l-4 pl-2" : "border-r-4 pr-2"
-          } gap-2 border-[#450000]`}
+          } gap-2 border-[#800000]`}
         >
-          <h3 className="font-minion-pro text-[#450000] text-3xl sm:text-2xl md:text-4xl uppercase">
+          <h3 className="font-minion-pro text-[#800000] text-3xl sm:text-2xl md:text-4xl uppercase">
             {item.title}
           </h3>
           {item.step && (
@@ -58,7 +58,7 @@ export default function StoryCard({
           )}
         </div>
 
-        <p className="mt-2 font-poppins text-sm sm:text-sm md:text-base leading-6 text-[#450000]/90">
+        <p className="mt-2 font-poppins text-sm sm:text-sm md:text-base leading-6 text-[#800000]/90">
           {item.desc}
         </p>
       </div>

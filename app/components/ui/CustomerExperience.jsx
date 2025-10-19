@@ -18,7 +18,7 @@ export default function CustomerExperience() {
           <div className="lg:col-span-7">
             <h2
               id="exp-heading"
-              className="font-minion-pro text-[#450000] leading-none text-5xl md:text-6xl lg:text-7xl"
+              className="font-minion-pro text-[#800000] leading-none text-5xl md:text-6xl lg:text-7xl"
             >
               <span className="block">{t("heading.top")}</span>
               <span className="ml-3 sm:ml-6 md:ml-12">
@@ -27,7 +27,7 @@ export default function CustomerExperience() {
             </h2>
           </div>
 
-          <p className="lg:col-span-5 text-[#450000] font-poppins text-sm md:text-base lg:text-lg text-right">
+          <p className="lg:col-span-5 text-[#800000] font-poppins text-sm md:text-base lg:text-lg text-right">
             {t("tagline")}
           </p>
         </div>
@@ -52,24 +52,23 @@ export default function CustomerExperience() {
         >
           {slides.map((s, i) => (
             <SplideSlide key={i}>
-              <div className="grid grid-cols-1 lg:grid-cols-12 items-start">
-                {/* Kiri: judul pita + deskripsi */}
-                <div className="lg:col-span-7 mt-5 md:mt-20">
-                  {/* Pita abu-abu */}
-                  <div className="bg-[#D9D9D9] w-full">
-                    <h3 className="px-6 py-3 font-minion-pro text-[#450000] leading-none text-4xl sm:text-4xl lg:text-5xl">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-start">
+                {/* Kiri: pita + quote */}
+                <div className="lg:col-span-7 lg:col-end-8 mt-6 md:mt-16">
+                  <div className="bg-[#E0C698] w-full lg:-mr-px">
+                    <h3 className="px-6 py-4 font-minion-pro text-[#800000] leading-none text-4xl lg:text-5xl">
                       {s.title}
                     </h3>
                   </div>
 
-                  <p className="mt-6 text-[#450000] font-poppins text-sm sm:text-base lg:text-lg max-w-2xl">
+                  <p className="mt-6 text-[#800000] font-poppins text-sm sm:text-base lg:text-lg max-w-2xl">
                     {s.desc}
                   </p>
                 </div>
 
                 {/* Kanan: gambar */}
-                <div className="lg:col-span-5 mt-10 md:mt-0">
-                  <div className="relative mx-auto w-[82%] sm:w-[70%] max-w-[340px] aspect-[4/3] md:w-full md:max-w-none overflow-hidden rounded-xl">
+                <div className="lg:col-span-5 lg:col-start-8 mt-10 md:mt-0">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
                     <Image
                       src={s.imageSrc}
                       alt={s.imageAlt}
