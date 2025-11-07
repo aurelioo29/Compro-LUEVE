@@ -40,7 +40,7 @@ export default function Modal({ open, onClose, children }) {
       {/* panel (responsive) */}
       <div
         className="
-          relative z-10 w-full
+          relative z-50 w-full
           max-w-[calc(100%-2rem)] sm:max-w-sm md:max-w-2xl lg:max-w-6xl
           sm:h-[600px] md:h-[650px] lg:h-[700px]
           rounded-xl sm:rounded-2xl lg:rounded-3xl
