@@ -73,30 +73,39 @@
     ]
   },
   "experience": {
-    "heading": {
-      "top": "Customers",
-      "bottom": " Experience"
-    },
-    "tagline": "Our customers helped us reach the best with their good and useful comments and suggestions.",
-    "ariaLabel": "Customer Experience slides",
+    "heading": { "top": "Customer", "bottom": " Experience" },
+    "tagline": "Our customers’ honest comments and helpful suggestions make us better.",
+    "ariaLabel": "Customer experience slides",
     "slides": [
       {
-        "title": "Wedding Ring",
-        "desc": "Augue ligula in felis magnis commodo cras dis massa platea pellentesque euismod adipiscing arcu est nisi accumsan interdum blandit mi.",
-        "imageSrc": "/images/experience/wedding.svg",
-        "imageAlt": "Wedding rings on soft fabric"
+        "title": "Kevin & Tiara",
+        "desc": "From the very beginning, I could feel Lueve was different. I’d visited a few brands to look for wedding rings, and the team here was incredibly patient helping me choose the right model. When the rings arrived, I was amazed—the details are refined, the inside fits comfortably, and the diamonds shine beautifully. It feels like the true definition of my wedding ring. Thank you, Lueve.",
+        "imageSrc": "/images/experience/kevin-tiara.jpeg",
+        "imageAlt": "Kevin & Tiara"
       },
       {
-        "title": "Engagement Ring",
-        "desc": "Curabitur congue lectus facilisis, feugiat lorem id, condimentum dui. Crafted to reflect your story and style.",
-        "imageSrc": "/images/experience/engagement.svg",
-        "imageAlt": "Engagement ring close-up"
+        "title": "Peter",
+        "desc": "The service was fast and reassuring from start to finish. I ordered a proposal ring and was worried about timing, but everything was completed right on schedule—and the result exceeded expectations. During the proposal, the first thing she said was, “Wow… the ring is so beautiful.” I was pretty proud. Thank you, Lueve.",
+        "imageSrc": "/images/experience/peter.jpg",
+        "imageAlt": "Peter"
       },
       {
-        "title": "Earrings",
-        "desc": "Versatile, modern, and brilliant—perfect for everyday elegance or special moments.",
-        "imageSrc": "/images/experience/earrings.svg",
-        "imageAlt": "Diamond earrings"
+        "title": "Rico & Monica",
+        "desc": "I didn’t expect such a simple ring to carry this much pride when it’s truly yours. The design is elegant and it’s comfortable on the finger—nothing feels off while wearing it. Thank you!",
+        "imageSrc": "/images/experience/rico-monica.jpg",
+        "imageAlt": "Rico & Monica"
+      },
+      {
+        "title": "William & Clarisa",
+        "desc": "From the first consultation, the admin responded quickly and explained the material options in great detail. When the rings were finished, I fell in love immediately and felt excited for the day. The result was even better than we expected at first.",
+        "imageSrc": "/images/experience/william-carissa.jpg",
+        "imageAlt": "William & Clarisa"
+      },
+      {
+        "title": "Edward",
+        "desc": "Finally engaged. I didn’t expect this ring could mean so much to her. Thank you, Lueve.",
+        "imageSrc": "/images/experience/edward.jpg",
+        "imageAlt": "Edward"
       }
     ]
   },
