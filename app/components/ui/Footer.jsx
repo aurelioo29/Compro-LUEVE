@@ -46,7 +46,7 @@ export default function Footer() {
           <ul className="flex items-center justify-center lg:justify-start gap-5 sm:gap-6 pt-1">
             <li>
               <Link
-                href="https://instagram.com/"
+                href="https://www.instagram.com/lueve.official"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -66,27 +66,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="https://facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                <span className="sr-only">Facebook</span>
-                <span className="relative inline-block w-6 h-6">
-                  <Image
-                    src="/icons/social-media/facebook.svg"
-                    alt=""
-                    fill
-                    sizes="24px"
-                    className="object-contain"
-                    unoptimized
-                  />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://tiktok.com/"
+                href="http://www.tiktok.com/@lueve.official"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
