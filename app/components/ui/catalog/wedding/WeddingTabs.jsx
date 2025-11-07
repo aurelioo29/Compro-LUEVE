@@ -21,18 +21,18 @@ export default function WeddingTabs() {
   return (
     <nav className="mx-auto max-w-7xl px-4 sm:px-6">
       <h1 className="mt-19 text-center font-poppins text-[#800000] text-2xl md:text-3xl">
-        Wedding
+        Wedding Ring
       </h1>
 
-      <ul className="flex flex-wrap justify-evenly my-16 font-poppins text-[#800000]">
+      <ul className="flex justify-evenly my-16 font-poppins text-[#800000]">
         {WEDDING_TABS.map((it) => {
           const active = pathname === it.href;
           return (
             <li key={it.href}>
               <Link
                 href={it.href}
-                className={`text-base md:text-lg hover:opacity-80 transition-opacity ${
-                  active ? "font-semibold underline-offset-4 decoration-2" : ""
+                className={`text-base md:text-2xl hover:opacity-80 mr-[82px] transition-opacity ${
+                  active ? "font-bold underline-offset-4 decoration-2" : ""
                 }`}
               >
                 {it.label}

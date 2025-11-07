@@ -16,7 +16,7 @@ export default function FeaturePrivilege({
         <span
           className="
             inline-block rounded-full border border-[#800000]
-            px-4 py-1 font-minion-pro text-base md:text-xl
+            px-4 py-1 font-minion-pro text-base md:text-2xl
             text-[#800000] transition-colors
             hover:bg-[#800000] hover:text-[#E0C698]
           "

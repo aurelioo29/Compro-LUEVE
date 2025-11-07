@@ -166,14 +166,14 @@ export default function DetailCatalog({ item, scope }) {
 
           <div className="lg:col-span-7">
             <dl className="grid grid-cols-[max-content_1fr] gap-x-20 gap-y-2 items-start [&_dt]:m-0 [&_dd]:m-0">
-              <dt className="font-poppins text-[15px] md:text-[20px] tracking-normal text-[#800000]/85">
+              <dt className="font-minion-pro text-[15px] md:text-[20px] tracking-normal text-[#800000]/85">
                 Name
               </dt>
               <dd className="font-minion-pro text-[#800000] uppercase tracking-[0.045em] text-[15px] md:text-[20px]">
                 {item.name}
               </dd>
 
-              <dt className="font-poppins text-[15px] md:text-[20px] tracking-normal text-[#800000]/85">
+              <dt className="font-minion-pro text-[15px] md:text-[20px] tracking-normal text-[#800000]/85">
                 Meaning
               </dt>
               <dd>

@@ -43,12 +43,12 @@ export default function Navbar() {
 
       {/* ================= DESKTOP ================= */}
       <nav
-        className="hidden md:flex items-center justify-between px-6 py-8 gap-20 relative z-10"
+        className="hidden md:flex items-center justify-between px-6 py-4 gap-20 relative z-10"
         // buka kunci hover hanya saat mouse benar-benar keluar area navbar
         onMouseLeave={() => setHoverLock(false)}
       >
         <Link href="/" locale={locale} className="block" onClick={hardClose}>
-          <div className="relative h-16 w-[120px]">
+          <div className="relative h-24 w-[180px]">
             <Image
               src="/images/logo/lueve-logo.svg"
               alt="LUEVE"
@@ -209,14 +209,14 @@ export default function Navbar() {
             className="group inline-flex items-center gap-3 rounded-full px-3.5 py-1 bg-[#800000] text-[#CEA66D] shadow-sm font-poppins hover:brightness-[1.05] active:scale-[0.98] transition-all"
           >
             <span className="text-md font-semibold">
-              {other === "en" ? t("lang.en") : t("lang.id")}
+              {other === "en" ? t("lang.id") : t("lang.en")}
             </span>
             <span className="relative w-[30px] h-[30px] overflow-hidden">
               <Image
                 src={
                   other === "en"
-                    ? "/icons/flags/en-US.svg"
-                    : "/icons/flags/id-ID.svg"
+                    ? "/icons/flags/id-ID.svg"
+                    : "/icons/flags/en-US.svg"
                 }
                 alt={other === "en" ? "English" : "Indonesian"}
                 fill

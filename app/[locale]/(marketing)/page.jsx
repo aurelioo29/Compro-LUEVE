@@ -53,7 +53,7 @@ export default function HomePage() {
       <Discover />
 
       {/* OUR COLLECTION */}
-      <CollectionShowcase />
+      {/* <CollectionShowcase /> */}
 
       {/* CUSTOMER EXPERIENCE */}
       <CustomerExperience />
