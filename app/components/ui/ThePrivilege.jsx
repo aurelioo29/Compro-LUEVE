@@ -3,7 +3,8 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+
 import FeaturePrivilege from "./FeaturePrivilege";
 import { motion } from "framer-motion";
 
@@ -14,7 +15,7 @@ export default function ThePrivilege() {
   const right = Array.isArray(t.raw("right")) ? t.raw("right") : [];
   const image = t.raw("image") || {};
 
-  const waPhone = "6282168039285";
+  const waPhone = "6281533780888";
   const waHref = `https://wa.me/${waPhone}?text=${encodeURIComponent(
     t("waText")
   )}`;
@@ -41,20 +42,18 @@ export default function ThePrivilege() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Title */}
         <motion.h2
-          className="text-center font-minion-pro text-[#800000] text-4xl md:text-6xl lg:text-7xl leading-tight"
+          className="text-center font-minion-pro text-[#800000] text-4xl md:text-6xl lg:text-[90px] leading-tight max-w-sm mx-auto"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.6 }}
           variants={fadeUp}
         >
-          {t.rich("title", {
-            brand: (chunks) => <span className="text-[#CEA660]">{chunks}</span>,
-          })}
+          {t("title")}
         </motion.h2>
 
         {/* Grid utama */}
         <motion.div
-          className="mt-10 md:mt-36 grid grid-cols-1 lg:grid-cols-3 gap-y-10 lg:gap-14 items-start"
+          className="mt-10 md:mt-24 grid grid-cols-1 lg:grid-cols-3 gap-y-10 lg:gap-14 items-start"
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -149,11 +148,11 @@ export default function ThePrivilege() {
               href={waHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-[#800000] px-5 py-2 text-[#800000] font-futura-dee hover:border-[#CEA660]"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#800000] px-5 py-2 text-[#800000] font-poppins hover:border-[#CEA660]"
               aria-label={t("cta")}
             >
               {t("cta")}
-              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 bg-[#CEA660] rounded-full" />
             </a>
           </motion.div>
         </motion.div>
