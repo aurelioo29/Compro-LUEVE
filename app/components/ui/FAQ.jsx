@@ -1,17 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-const MAROON = "#800000"; // swap to "#800000" if you want darker
+// AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+const MAROON = "#800000";
 
 export default function FAQ() {
   const t = useTranslations("faq");
   const raw = t.raw("items");
   const items = Array.isArray(raw) ? raw : [];
   const [open, setOpen] = useState(new Set());
+
+  useEffect(() => {
+    AOS.init({
+      duration: 650,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 60,
+    });
+  }, []);
 
   const toggle = (idx) => {
     setOpen((prev) => {
@@ -22,11 +35,17 @@ export default function FAQ() {
   };
 
   return (
-    <section aria-labelledby="faq-heading" className="py-24 md:py-28">
+    <section
+      aria-labelledby="faq-heading"
+      className="py-24 md:py-28"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+    >
       <div className="mx-auto max-w-7xl px-6 md:px-8">
         <h2
           id="faq-heading"
-          className="text-center font-minion-pro text-[#{800000}] text-[#800000] uppercase tracking-[0.12em] leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+          className="text-center font-minion-pro text-[#800000] uppercase tracking-[0.12em] leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+          data-aos="fade-up"
         >
           {t("heading.top")}
           <br className="hidden sm:block" />
@@ -34,14 +53,19 @@ export default function FAQ() {
         </h2>
 
         {/* Card wrapper */}
-        <div className="mt-10 md:mt-14 flex justify-center">
+        <div className="mt-10 md:mt-14 flex justify-center" data-aos="zoom-in">
           <div className="w-full max-w-2xl rounded-[28px] bg-white shadow-[0_25px_70px_rgba(0,0,0,.18)] ring-1 ring-black/5 p-5 sm:p-7 md:p-8">
             <dl>
               {items.map((it, idx) => {
                 const isOpen = open.has(idx);
 
                 return (
-                  <div key={idx} className="py-2">
+                  <div
+                    key={idx}
+                    className="py-2"
+                    data-aos="fade-up"
+                    data-aos-delay={Math.min(idx * 80, 400)}
+                  >
                     {/* Header row (question + icon) */}
                     <button
                       type="button"
@@ -90,7 +114,7 @@ export default function FAQ() {
                       </AnimatePresence>
                     </button>
 
-                    {/* ANSWER (animated). This sits ABOVE the bottom line so the line always stays at the bottom of this item */}
+                    {/* ANSWER (animated height) */}
                     <AnimatePresence initial={false}>
                       {isOpen && (
                         <motion.dd
@@ -114,7 +138,7 @@ export default function FAQ() {
                       )}
                     </AnimatePresence>
 
-                    {/* Bottom underline (ALWAYS here, open or closed) */}
+                    {/* Bottom underline */}
                     <div
                       className="mt-2 h-[2px] w-full"
                       style={{ backgroundColor: MAROON }}
