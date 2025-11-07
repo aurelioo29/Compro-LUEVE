@@ -13,16 +13,9 @@
     }
   },
   "hero": {
-    "slides": {
-      "wedding": {
-        "title": "Wedding Ring",
-        "desc": "lorem ipsum another this testing first but me okey"
-      },
-      "engagement": {
-        "title": "Engagement Ring",
-        "desc": "lorem ipsum another this testing second but me okey"
-      }
-    }
+    "headlineLine1": "Honor Your Promise",
+    "headlineLine2": "Through Ring",
+    "desc": "Every great love story begins with a promise. <strong>Lueve</strong> was born to honor that promise through rings that capture the essence of forever. With passion, artistry, and trust at its core, Lueve turns your special moments into timeless treasures."
   },
   "about": {
     "heading": "About us",
@@ -291,15 +284,15 @@
     }
   },
   "privilege": {
-    "title": "The Lueve Privilege",
+    "title": "Lueve Privilege",
     "tagline": {
       "title": "A Story Only You Can Tell",
-      "body": "At <brand>LUEVE</brand>, we don’t just design rings — we immortalize your moment in a creation that exists nowhere else in the world."
+      "body": "At LUEVE, we don’t just design any  rings. We also  immortalize your moment in a creation that exists nowhere else in the world."
     },
     "left": [
       {
         "title": "Finding “The One”",
-        "body": "Our gem experts search far and wide for diamond or gemstone options and provide all the guidance and advice needed to choose the perfect stones."
+        "body": "Our gem experts search widely for diamonds or gemstones options and provide all the guidance and advice needed to choose the perfect stones."
       },
       {
         "title": "Exclusivity Without Compromise",
@@ -309,7 +302,7 @@
     "right": [
       {
         "title": "Designed for Generations",
-        "body": "Our master artisans transform your vision into an heirloom — a piece worthy of being treasured not only today, but for centuries to come."
+        "body": "Our master artisans transform your vision into a reality. A piece worthy of being treasured not only today, but for centuries to come."
       },
       {
         "title": "A Legacy of Care",

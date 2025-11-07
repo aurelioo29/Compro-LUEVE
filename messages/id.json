@@ -13,16 +13,9 @@
     }
   },
   "hero": {
-    "slides": {
-      "wedding": {
-        "title": "Cincin Pernikahan",
-        "desc": "Desain abadi untuk janji seumur hidup."
-      },
-      "engagement": {
-        "title": "Cincin Tunangan",
-        "desc": "Dibuat untuk jawaban ya—indah dan selamanya."
-      }
-    }
+    "headlineLine1": "Tepati Janjimu",
+    "headlineLine2": "Melalui Cincin",
+    "desc": "Setiap kisah cinta yang indah berawal dari sebuah janji. <strong>Lueve</strong> lahir untuk menghormati janji itu melalui cincin yang menangkap esensi keabadian. Dengan penuh hasrat, seni, dan kepercayaan di dalamnya, Lueve mengubah momen istimewamu menjadi kenangan abadi."
   },
   "about": {
     "heading": "Tentang kami",
@@ -1303,7 +1296,7 @@
     }
   },
   "privilege": {
-    "title": "The LUEVE Privilege",
+    "title": "LUEVE Privilege",
     "tagline": {
       "title": "Kisah yang Hanya Bisa Kamu Ceritakan",
       "body": "Di <brand>LUEVE</brand>, kami tidak sekadar merancang cincin — kami mengabadikan momenmu dalam sebuah kreasi yang tak ada duanya di dunia."
