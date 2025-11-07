@@ -42,7 +42,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className="relative isolate min-h-screen">
+    <main className="relative min-h-screen">
       {/* HERO */}
       <Hero />
 
@@ -78,17 +78,6 @@ export default function HomePage() {
             aria-labelledby="modal-title"
             aria-describedby="modal-desc"
             className="mt-10 sm:mt-16 space-y-6 sm:space-y-10 w-full max-w-md sm:max-w-lg"
-            // onSubmit={(e) => {
-            //   e.preventDefault();
-            //   const form = e.currentTarget;
-            //   const name = form.fullname.value?.trim() || "Guest";
-            //   const phone = form.phone.value?.trim() || "";
-            //   const email = form.email.value?.trim() || "";
-            //   const text = encodeURIComponent(
-            //     `Hi LUEVE, I'm ${name}. Phone: ${phone}. Email: ${email}. I'd like to create a custom ring.`
-            //   );
-            //   window.location.href = `https://wa.me/6282168039285?text=${text}`;
-            // }}
             onSubmit={onSubmit}
           >
             {/* Fullname */}
