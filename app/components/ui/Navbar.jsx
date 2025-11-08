@@ -5,12 +5,18 @@ import Image from "next/image";
 import { Search, ChevronDown, Menu, X } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/lib/navigation";
+import SearchBar from "./SearchBar";
+import { buildRingsIndexFromMessages } from "@/lib/rings-index";
 
 export default function Navbar() {
   const t = useTranslations("navbar");
   const locale = useLocale();
   const pathname = usePathname();
   const other = locale === "en" ? "id" : "en";
+  const index = React.useMemo(
+    () => buildRingsIndexFromMessages(locale, { withAlt: true }),
+    [locale]
+  );
 
   const [open, setOpen] = useState(false); // mobile main
   const [openCollection, setOpenCollection] = useState(false);
@@ -226,13 +232,13 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <button
-            type="button"
-            aria-label="Search"
-            className="p-2 rounded-full hover:bg-black/5 active:bg-black/10 transition-colors"
-          >
-            <Search className="w-5 h-5 text-[#800000]" />
-          </button>
+          <SearchBar
+            index={index}
+            locale={locale}
+            onNavigate={hardClose}
+            placeholder={locale === "id" ? "Cari cincin…" : "Search rings…"}
+            className="max-w-xl" // <— NEW, biar stretch
+          />
         </div>
       </nav>
 
@@ -282,14 +288,6 @@ export default function Navbar() {
 
             <button
               type="button"
-              aria-label="Search"
-              className="p-2 rounded-full hover:bg-black/5 active:bg-black/10 transition-colors"
-            >
-              <Search className="w-5 h-5 text-[#800000]" />
-            </button>
-
-            <button
-              type="button"
               aria-expanded={open}
               aria-controls="mobile-menu"
               onClick={() => setOpen((s) => !s)}
@@ -308,6 +306,17 @@ export default function Navbar() {
               </span>
             </button>
           </div>
+        </div>
+
+        {/* SearchBar di baris sendiri (full width) */}
+        <div className="mt-3">
+          <SearchBar
+            index={index}
+            locale={locale}
+            onNavigate={hardClose}
+            placeholder={locale === "id" ? "Cari cincin…" : "Search rings…"}
+            className="max-w-2xl" // <— NEW, biar stretch
+          />
         </div>
 
         {/* Panel slide down */}
