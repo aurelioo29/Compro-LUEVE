@@ -15,8 +15,14 @@ const WEDDING_TABS = [
   { href: "/collection/wedding-rings/the-heritage", label: "The Heritage" },
 ];
 
+function normalize(p = "") {
+  const noSlash = p.replace(/\/+$/, "");
+  return noSlash.replace(/^\/(en|id)(?=\/)/, "");
+}
+
 export default function WeddingTabs() {
   const pathname = usePathname();
+  const current = normalize(pathname);
 
   return (
     <nav className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -24,16 +30,22 @@ export default function WeddingTabs() {
         Wedding Ring
       </h1>
 
-      <ul className="flex justify-evenly my-16 font-poppins text-[#800000]">
+      <ul className="my-20 flex justify-center text-center gap-x-10 md:gap-x-44 font-poppins text-[#800000] md:mr-16 ">
         {WEDDING_TABS.map((it) => {
-          const active = pathname === it.href;
+          const href = normalize(it.href);
+          // pakai startsWith biar aktif juga di sub-route /the-heritage/*
+          const active = current === href || current.startsWith(href + "/");
+
           return (
             <li key={it.href}>
               <Link
                 href={it.href}
-                className={`text-base md:text-2xl hover:opacity-80 mr-[82px] transition-opacity ${
-                  active ? "font-bold underline-offset-4 decoration-2" : ""
-                }`}
+                className={[
+                  "text-base md:text-2xl transition-opacity hover:opacity-80",
+                  active
+                    ? "font-semibold underline-offset-4 decoration-2"
+                    : "font-normal",
+                ].join(" ")}
               >
                 {it.label}
               </Link>

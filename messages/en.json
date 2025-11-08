@@ -328,7 +328,7 @@
   "engagement": {
     "details": {
       "astrae": {
-        "description": "A rose gold spiral ring with a series of diamonds surrounding the main stone, Representing an eternal promise that always returns, like the tireless orbit of the moon. A perfect combination for couples who believe in the harmonious and consistent rhythm of love. ",
+        "description": "A rose gold spiral ring with a series of diamonds surrounding the main stone, Representing an eternal promise that always returns, like the tireless orbit of the moon. A perfect combination for couples who believe in the harmonious and consistent rhythm of love.",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
@@ -342,7 +342,7 @@
             "Type": "Natural Diamond"
           },
           "metal": {
-            "Band Metal Color": "White, Yellow, Rose, Champagne",
+            "Band Metal Color": "White, Yellow,  Rose, Champagne,",
             "Approx Metal Weight": "8–10 g",
             "Metal Finishing": "Satin"
           }
@@ -406,7 +406,7 @@
           },
           "metal": {
             "Band Metal Color": "White, Yellow, Rose, Champagne",
-            "Approx Metal Weight": "5 - 7 g",
+            "Approx Metal Weight": "5-7 g",
             "Metal Finishing": "Glossy"
           }
         }
@@ -439,7 +439,7 @@
         }
       },
       "chrysalis": {
-        "description": "A champagne alloy ring is like love that is strong yet retains its softness. The beaded band, reminding us that the most beautiful love often arises from struggle.",
+        "description": "A champagne alloy ring is like love that is strong yet retains its softness. The beaded band , reminding us that the most beautiful love often arises from struggle.",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
@@ -455,7 +455,7 @@
           "metal": {
             "Band Metal Color": "White, Yellow, Rose, Champagne",
             "Approx Metal Weight": "3–4 g",
-            "Metal Finishing": "Satin and Half Round Beaded "
+            "Metal Finishing": "Satin and Half Round Beaded"
           }
         }
       },
@@ -463,7 +463,7 @@
         "description": "This ring captures the essence of calm and eternal devotion. The open design symbolizes two souls meeting in perfect harmony, while intricate side engravings evoke timeless elegance. A single brilliant-cut diamond rests at its heart, reflecting love’s quiet strength, framed by a polished finish that gleams with understated luxury.",
         "specs": {
           "centerDiamond": {
-            "Weight": "0.30 ct",
+            "Weight": "0.15 ct",
             "Shape": "Round Shape",
             "Cut": "Excellent Cut",
             "Polish": "Excellent Cut",
@@ -506,7 +506,7 @@
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
             "Weight": "0.20 ct",
-            "Shape": "Round Shape",
+            "Shape": "Emerald Shape",
             "Cut": "Excellent Cut",
             "Polish": "Excellent Cut",
             "Symmetry": "Excellent Cut",
@@ -584,12 +584,12 @@
         }
       },
       "pavonis": {
-        "description": "Pavonis embodies timeless elegance and quiet confidence. The slender band draws the eye to a single princess-cut diamond, gracefully held by four prongs that let light dance freely. Minimal yet radiant, it symbolizes a love that speaks softly but shines endlessly effortless, enduring, and beautifully sincere.",
+        "description": "Pavonis embodies timeless elegance and quiet confidence. The slender band draws the eye to a single princess-cut diamond, gracefully held by four prongs that let light dance freely.  Minimal yet radiant, it symbolizes a love that speaks softly but shines endlessly effortless, enduring, and beautifully sincere.",
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
             "Weight": "0.30 ct",
-            "Shape": "Round Shape",
+            "Shape": "Princess Shape",
             "Cut": "Excellent Cut",
             "Polish": "Excellent Cut",
             "Symmetry": "Excellent Cut",
@@ -610,7 +610,7 @@
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
             "Weight": "0.20 ct",
-            "Shape": "Round Shape",
+            "Shape": "Princess Shape",
             "Cut": "Excellent Cut",
             "Polish": "Excellent Cut",
             "Symmetry": "Excellent Cut",
@@ -641,7 +641,7 @@
           },
           "metal": {
             "Band Metal Color": "White, Yellow, Rose, Champagne",
-            "Approx Metal Weight": "2–4 g",
+            "Approx Metal Weight": "3–4 g",
             "Metal Finishing": "Glossy"
           }
         }
@@ -699,7 +699,7 @@
         "specs": {
           "centerDiamond": {
             "Grading & Certification": "Natural GIA Diamond",
-            "Weight": "0.20 ct",
+            "Weight": "0.30 ct",
             "Shape": "Princess Shape",
             "Cut": "Excellent Cut",
             "Polish": "Excellent Cut",

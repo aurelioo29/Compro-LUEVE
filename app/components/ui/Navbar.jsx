@@ -117,7 +117,7 @@ export default function Navbar() {
                   href="/collection/wedding-rings"
                   locale={locale}
                   onClick={hardClose}
-                  className="block text-3xl font-futura-dee tracking-wide hover:opacity-90 transition-opacity text-[#800000]"
+                  className="block text-3xl pl-1 font-futura-dee tracking-wide hover:opacity-90 transition-opacity text-[#800000]"
                 >
                   Wedding Ring
                 </Link>

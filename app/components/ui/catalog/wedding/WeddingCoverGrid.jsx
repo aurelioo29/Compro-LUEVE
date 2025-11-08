@@ -8,19 +8,19 @@ const ITEMS = [
   {
     href: "/collection/wedding-rings/constellation-of-love",
     label: "Constellation of Love",
-    src: "/images/collection/wedding/weeding-cover-01.svg",
+    src: "/images/collection/wedding/col.jpg",
     alt: "Constellation of Love cover",
   },
   {
     href: "/collection/wedding-rings/silhouettes-of-earth",
     label: "Silhouette of Earth",
-    src: "/images/collection/wedding/weeding-cover-02.svg",
+    src: "/images/collection/wedding/soe.png",
     alt: "Silhouette of Earth cover",
   },
   {
     href: "/collection/wedding-rings/the-heritage",
     label: "The Heritage",
-    src: "/images/collection/wedding/weeding-cover-03.svg",
+    src: "/images/collection/wedding/heritage.png",
     alt: "The Heritage cover",
   },
 ];
@@ -45,7 +45,7 @@ export default function WeddingCoverGrid() {
             <Link
               key={it.label}
               href={it.href}
-              className="group relative block aspect-[3/4] rounded-xl overflow-hidden shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#CEA660]"
+              className="group relative block aspect-[4/5] rounded-xl overflow-hidden shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#CEA660]"
               aria-label={it.label}
             >
               <Image
@@ -54,7 +54,7 @@ export default function WeddingCoverGrid() {
                 fill
                 priority={i === 0}
                 sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                className="object-cover transition duration-300 group-hover:blur-[2px] group-focus-visible:blur-[2px] group-hover:scale-[1.02]"
+                className="object-contain transition duration-300 group-hover:blur-[2px] group-focus-visible:blur-[2px] group-hover:scale-[1.02]"
               />
 
               {/* scrim tipis biar teks kebaca */}

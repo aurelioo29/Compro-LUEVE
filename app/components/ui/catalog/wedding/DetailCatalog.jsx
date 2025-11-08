@@ -17,12 +17,26 @@ function SpecCol({ title, items = {} }) {
     ([k, v]) => String(k || "").trim() && String(v || "").trim()
   );
   if (!rows.length) return null;
+
   return (
     <div>
-      <h3 className="text-center font-poppins text-[#800000] text-xl md:text-2xl font-semibold">
+      <h3 className="text-center font-minion-pro text-[#800000] text-xl md:text-2xl font-semibold">
         {title}
       </h3>
-      <dl className="mt-6 grid grid-cols-[max-content_1fr] gap-x-10 gap-y-1.5 [&_dt]:m-0 [&_dd]:m-0 [&_dt]:leading-tight [&_dd]:leading-tight text-[#800000]">
+
+      {/* pusatkan dl */}
+      <dl
+        className="
+          mt-10 mx-auto w-fit
+          grid grid-cols-[max-content_max-content]
+          gap-x-10 gap-y-1.5
+          items-center
+          [&_dt]:m-0 [&_dd]:m-0
+          [&_dt]:leading-tight [&_dd]:leading-tight
+          text-[#800000]
+          justify-items-start
+        "
+      >
         {rows.map(([label, value]) => (
           <React.Fragment key={label}>
             <dt className="font-minion-pro text-lg md:text-xl">
@@ -37,6 +51,7 @@ function SpecCol({ title, items = {} }) {
     </div>
   );
 }
+
 function DottedDividers({ count }) {
   if (count < 2) return null;
   const positions = Array.from(
@@ -186,14 +201,14 @@ export default function DetailCatalog({ item, scope }) {
         {/* DETAIL */}
         <div className="mt-16 md:mt-20">
           <div className="text-center">
-            <h2 className="font-minion-pro text-[#D9C293] tracking-[0.18em] text-3xl md:text-4xl">
+            <h2 className="font-minion-pro text-[#D9C293] tracking-widest text-3xl md:text-4xl font-bold">
               DETAIL
             </h2>
             <div className="mt-5 mx-0 md:mx-6 border-t-[4px] border-[#D9C293]" />
           </div>
 
           <div
-            className={`relative mt-10 md:mt-12 pt-6 grid grid-cols-1 ${gridCols} gap-12 md:gap-20`}
+            className={`relative mt-10 md:mt-8 pt-6 grid grid-cols-1 ${gridCols} gap-12 md:gap-20`}
           >
             <DottedDividers count={colCount} />
             {groups.map((g, idx) => (
