@@ -7,19 +7,23 @@ import "@splidejs/react-splide/css";
 import { useTranslations } from "next-intl";
 
 const SLIDES = [
-  // Landscape
   {
     src: "/images/hero/home-page-1.jpg",
     alt: "Wedding rings on paper background",
-    focal: "[object-position:70%_40%]", // dorong fokus ke kanan
-    fit: "cover",
+    focal: "[object-position:70%_40%]",
+    fit: "cover", // tetap full-bleed
   },
-  // Portrait
   {
-    src: "/images/hero/home-page-2.jpg",
-    alt: "Ring box with rings",
-    focal: "[object-position:60%_55%]", // sedikit kanan-bawah
-    fit: "contain", // <-- ini kuncinya untuk portrait
+    src: "/images/hero/home-page-2.png",
+    alt: "Wedding rings on paper background",
+    focal: "[object-position:60%_55%]", // boleh kamu eksperimen
+    fit: "contain-desktop", // <–– beda di sini
+  },
+  {
+    src: "/images/hero/home-page-3.png",
+    alt: "Wedding rings on paper background",
+    focal: "[object-position:70%_40%]",
+    fit: "cover",
   },
 ];
 
@@ -59,16 +63,17 @@ export default function Hero() {
                 priority={i === 0}
                 sizes="100vw"
                 className={[
-                  // === FIT ===
+                  // FIT
                   s.fit === "contain"
-                    ? "object-contain bg-white" // portrait: SELALU contain (mobile+desktop)
-                    : "object-cover", // landscape: cover
+                    ? "object-contain bg-white"
+                    : s.fit === "contain-desktop"
+                    ? "object-cover md:object-contain bg-white"
+                    : "object-cover",
 
-                  // === POSITION ===
+                  // POSITION
                   "object-center",
                   s.fit !== "contain" && s.focal ? `md:${s.focal}` : "",
 
-                  // guard
                   "will-change-transform",
                 ].join(" ")}
               />

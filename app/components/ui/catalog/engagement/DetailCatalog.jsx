@@ -94,7 +94,7 @@ function Paragraphs({ text }) {
       {parts.map((p, i) => (
         <p
           key={i}
-          className="font-poppins text-[#800000]/90 text-[15px] md:text-[20px] leading-[1.7] text-justify"
+          className="font-minion-pro text-[#800000]/90 text-[15px] md:text-[20px] leading-[1.7] text-justify"
         >
           {p}
         </p>
@@ -200,7 +200,7 @@ export default function DetailCatalog({ item, scope }) {
         {/* DETAIL */}
         <div className="mt-16 md:mt-20">
           <div className="text-center">
-            <h2 className="font-minion-pro text-[#D9C293] tracking-widest text-3xl md:text-4xl font-bold">
+            <h2 className="font-minion-pro text-[#D9C293] tracking-widest text-3xl md:text-4xl font-semibold">
               DETAIL
             </h2>
             <div className="mt-5 mx-0 md:mx-6 border-t-[4px] border-[#D9C293]" />

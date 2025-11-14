@@ -269,18 +269,18 @@ export default function Navbar() {
                          hover:brightness-[1.05] active:scale-[0.98] transition-all"
             >
               <span className="text-xs font-semibold font-poppins">
-                {other === "en" ? t("lang.en") : t("lang.id")}
+                {other === "en" ? t("lang.id") : t("lang.en")}
               </span>
               <span className="relative w-[25px] h-[25px] overflow-hidden">
                 <Image
                   src={
                     other === "en"
-                      ? "/icons/flags/en-US.svg"
-                      : "/icons/flags/id-ID.svg"
+                      ? "/icons/flags/id-ID.svg"
+                      : "/icons/flags/en-US.svg"
                   }
                   alt={other === "en" ? "English" : "Indonesian"}
                   fill
-                  sizes="22px"
+                  sizes="30px"
                   className="object-cover"
                 />
               </span>
