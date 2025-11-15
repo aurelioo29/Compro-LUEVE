@@ -11,13 +11,14 @@ const SLIDES = [
     src: "/images/hero/home-page-1.jpg",
     alt: "Wedding rings on paper background",
     focal: "[object-position:70%_40%]",
-    fit: "cover", // tetap full-bleed
+    fit: "cover",
+    flipX: true,
   },
   {
     src: "/images/hero/home-page-2.png",
     alt: "Wedding rings on paper background",
-    focal: "[object-position:60%_55%]", // boleh kamu eksperimen
-    fit: "contain-desktop", // <–– beda di sini
+    focal: "[object-position:60%_55%]",
+    fit: "cover",
   },
   {
     src: "/images/hero/home-page-3.png",
@@ -42,14 +43,17 @@ export default function Hero() {
           direction: "ttb",
           height: "calc(100dvh + 80px)",
           autoplay: true,
-          interval: 5000,
+          interval: 3000,
           speed: 800,
           pauseOnHover: true,
           pauseOnFocus: true,
           arrows: false,
           pagination: true,
           breakpoints: {
-            1024: { direction: "ltr", height: "calc(100dvh - 0px)" },
+            1024: {
+              direction: "ltr",
+              height: "80vh",
+            },
           },
         }}
       >
@@ -63,16 +67,19 @@ export default function Hero() {
                 priority={i === 0}
                 sizes="100vw"
                 className={[
-                  // FIT
+                  // FIT:
+                  // - kalau slide minta "contain" → selalu contain
+                  // - kalau "cover" → mobile contain, md+ cover
                   s.fit === "contain"
                     ? "object-contain bg-white"
-                    : s.fit === "contain-desktop"
-                    ? "object-cover md:object-contain bg-white"
-                    : "object-cover",
+                    : "object-contain md:object-cover bg-white",
 
-                  // POSITION
+                  // POSITION (baru kepakai di md+ supaya nggak ganggu mobile)
                   "object-center",
-                  s.fit !== "contain" && s.focal ? `md:${s.focal}` : "",
+                  s.focal ? `md:${s.focal}` : "",
+
+                  // FLIP X hanya di md+
+                  s.flipX ? "md:-scale-x-100" : "",
 
                   "will-change-transform",
                 ].join(" ")}
@@ -102,7 +109,7 @@ export default function Hero() {
 
         {/* Paragraf kanan bawah */}
         <p
-          className="absolute right-10 lg:right-20 bottom-8 max-w-[680px]
+          className="absolute right-10 lg:right-20 bottom-8 max-w-[950px]
              text-right text-[#800000] font-poppins
              text-[clamp(0.9rem,1.2vw,1.05rem)] leading-relaxed
              pointer-events-auto"
@@ -113,15 +120,16 @@ export default function Hero() {
       </div>
 
       {/* Mobile / Tablet */}
-      <div className="md:hidden absolute inset-x-5 bottom-16">
-        <div className="flex flex-col gap-4">
-          <h1 className="font-minion-pro text-[#800000] leading-tight text-[clamp(1.75rem,7vw,2.25rem)]">
+      <div className="md:hidden">
+        <div className="px-4 pt-6 pb-8 bg-white space-y-3">
+          <h1 className="font-minion-pro text-[#800000] leading-tight text-[clamp(1.6rem,6vw,2.1rem)]">
             {t("headlineLine1")}
             <br />
             <span className="block">{t("headlineLine2")}</span>
           </h1>
+
           <p
-            className="text-[#800000]/95 text-[clamp(0.95rem,3.8vw,1.05rem)] font-poppins leading-relaxed"
+            className="text-[#800000]/95 text-[clamp(0.9rem,3.6vw,1rem)] font-poppins leading-relaxed"
             dangerouslySetInnerHTML={{
               __html: t.raw ? t.raw("desc") : String(t("desc")),
             }}
