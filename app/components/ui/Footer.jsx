@@ -16,7 +16,7 @@ export default function Footer() {
         "
       >
         {/* 1) BRAND / HOURS / SOCIAL — mobile: col-span-3 (2 kolom) */}
-        <div className="col-span-3 md:col-span-1 lg:col-span-3 space-y-4 sm:space-y-6 flex flex-col items-center lg:items-start">
+        <div className="col-span-3 md:col-span-1 lg:col-span-3 space-y-4 sm:space-y-6 flex flex-col items-center lg:items-start lg:order-1">
           <Link href="/" className="inline-block">
             <Image
               src="/images/logo/lueve-logo.svg"
@@ -89,7 +89,7 @@ export default function Footer() {
 
         {/* 2) CONTACT — mobile: col-span-3 (2 kolom) */}
         <address
-          className="col-span-3 md:col-span-1 lg:col-span-3 not-italic mt-8 md:mt-0"
+          className="col-span-3 md:col-span-1 lg:col-span-3 not-italic mt-8 md:mt-0 lg:order-5"
           aria-label="Contact Us"
         >
           <h3 className="font-minion-pro text-[#800000] text-2xl sm:text-3xl leading-tight">
@@ -122,7 +122,7 @@ export default function Footer() {
 
         {/* 3) NAVIGATION — mobile: col-span-2 (3 kolom) */}
         <nav
-          className="col-span-2 md:col-span-1 lg:col-span-2"
+          className="col-span-2 md:col-span-1 lg:col-span-2 lg:order-2"
           aria-label="Footer navigation"
         >
           <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#800000]">
@@ -147,7 +147,7 @@ export default function Footer() {
 
         {/* 4) COMPANY — mobile: col-span-2 (3 kolom) */}
         <nav
-          className="col-span-2 md:col-span-1 lg:col-span-2"
+          className="col-span-2 md:col-span-1 lg:col-span-2 lg:order-3"
           aria-label="Company"
         >
           <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#800000]">
@@ -191,7 +191,7 @@ export default function Footer() {
 
         {/* 5) RESOURCES — mobile: col-span-2 (3 kolom) */}
         <nav
-          className="col-span-2 md:col-span-1 lg:col-span-2"
+          className="col-span-2 md:col-span-1 lg:col-span-2 lg:order-4"
           aria-label="Resources"
         >
           <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#800000]">
