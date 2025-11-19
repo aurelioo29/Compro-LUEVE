@@ -10,6 +10,7 @@ const ITEMS = [
     label: "Constellation of Love",
     src: "/images/collection/wedding/col.jpg",
     alt: "Constellation of Love cover",
+    rotate: "-rotate-270",
   },
   {
     href: "/collection/wedding-rings/silhouettes-of-earth",
@@ -54,13 +55,14 @@ export default function WeddingCoverGrid() {
                 fill
                 priority={i === 0}
                 sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                className="object-contain transition duration-300 group-hover:blur-[2px] group-focus-visible:blur-[2px] group-hover:scale-[1.02]"
+                className={[
+                  "object-cover transition duration-300 group-hover:blur-[2px] group-focus-visible:blur-[2px] group-hover:scale-[1.02]",
+                  it.rotate ?? "",
+                ].join(" ")}
               />
 
-              {/* scrim tipis biar teks kebaca */}
+              {/* scrim & label tetap sama */}
               <div className="pointer-events-none absolute inset-0 bg-black/0 transition group-hover:bg-black/10 group-focus-visible:bg-black/10" />
-
-              {/* label muncul saat hover */}
               <div className="absolute inset-0 flex items-center justify-center p-4">
                 <span className="opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0 font-minion-pro text-xl md:text-2xl text-[#CEA660] backdrop-blur-sm rounded-full px-5 py-2 shadow-sm bg-[#800000]">
                   {it.label}

@@ -30,7 +30,7 @@ export default function CollectionShowcase() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2
           id="collection-heading"
-          className="text-center font-serif text-[40px] sm:text-5xl md:text-6xl leading-none tracking-wide text-[#7b0f12] mb-6 md:mb-10"
+          className="text-center font-minion-pro text-[40px] sm:text-5xl md:text-6xl leading-none tracking-wide text-[#7b0f12] mb-6 md:mb-10"
         >
           {t("vertical")}
         </h2>
@@ -39,25 +39,20 @@ export default function CollectionShowcase() {
           {/* glow belakang kartu tengah */}
           <div
             aria-hidden
-            className="hidden md:block absolute inset-0 -top-6 h-[360px] mx-auto max-w-4xl blur-2xl
-                       bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.18),transparent_65%)]"
+            className="hidden md:block absolute inset-0 top-6 h-[360px] mx-auto max-w-4xl blur-2xl bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.18),transparent_65%)]"
           />
 
-          <div className="relative z-10 flex items-end justify-center gap-2 md:gap-6">
-            {/* KIRI — BESAR + 3D tilt inward */}
+          {/* ===== WRAPPER 3 KARTU ===== */}
+          <div className="relative mx-auto mt-4 h-[360px] sm:h-[380px] md:h-[420px] lg:h-[460px] max-w-5xl">
+            {/* KIRI */}
             <aside
               className="
-                relative hidden md:block w-[280px] lg:w-[340px] xl:w-[360px] aspect-[3/4]
-                rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-[0_25px_80px_rgba(0,0,0,.25)]
-                z-10 transform-gpu
-                [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]
-                [-webkit-mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]
-              "
-              style={{
-                // menghadap ke tengah: tepi kanan lebih dekat ke viewer
-                transform:
-                  "perspective(1400px) rotateY(-14deg) rotateZ(8deg) translateX(28px) translateY(16px) scale(1.02)",
-              }}
+        absolute left-0 sm:left-4 md:left-6 top-10
+        hidden md:block w-[42%] max-w-[320px] aspect-[3/4]
+        rounded-2xl overflow-hidden ring-1 ring-black/5
+        shadow-[0_18px_55px_rgba(0,0,0,.18)]
+        transform-gpu -rotate-9 translate-y-4
+      "
             >
               <Image
                 src={
@@ -67,19 +62,22 @@ export default function CollectionShowcase() {
                 }
                 alt={slides[prev]?.thumbAlt || slides[prev]?.imageAlt || ""}
                 fill
-                sizes="(min-width:1280px) 360px, (min-width:1024px) 340px, 280px"
+                sizes="(min-width:1280px) 320px, (min-width:1024px) 280px, 42vw"
                 className="object-cover"
                 priority
               />
             </aside>
 
-            {/* TENGAH — slider + pop-in */}
+            {/* TENGAH – SPLIDE */}
             <div
-              className={`relative w-[82vw] sm:w-[520px] md:w-[520px] lg:w-[560px] aspect-[3/4]
-                          rounded-2xl overflow-hidden ring-1 ring-black/5 z-30
-                          shadow-[0_30px_80px_rgba(0,0,0,0.25)]
-                          [&_.splide__track]:h-full [&_.splide__list]:h-full [&_.splide__slide]:h-full
-                          ${pop ? "animate-colx-pop" : ""}`}
+              className={`
+    absolute left-1/2 top-0 -translate-x-1/2
+    w-[72%] sm:w-[55%] md:w-[48%] max-w-[420px] aspect-[3/4]
+    rounded-2xl overflow-hidden ring-1 ring-black/5
+    shadow-[0_30px_80px_rgba(0,0,0,0.25)]
+    bg-white z-20
+    ${pop ? "animate-colx-pop" : ""}
+  `}
             >
               <Splide
                 aria-label={t("ariaLabel")}
@@ -97,15 +95,15 @@ export default function CollectionShowcase() {
                 }}
                 onMounted={(s) => setIdx(s.index)}
                 onMoved={(_, i) => setIdx(i)}
-                className="h-full"
+                className="collection-splide h-full"
               >
                 {slides.map((s, i) => (
-                  <SplideSlide key={i} className="relative">
+                  <SplideSlide key={i}>
                     <Image
                       src={s.imageSrc}
                       alt={s.imageAlt}
                       fill
-                      sizes="(min-width:1024px) 560px, 82vw"
+                      sizes="(min-width:1024px) 420px, 72vw"
                       className="object-cover"
                       priority={i === 0}
                     />
@@ -114,19 +112,15 @@ export default function CollectionShowcase() {
               </Splide>
             </div>
 
-            {/* KANAN — BESAR + 3D tilt inward (kebalikan kiri) */}
+            {/* KANAN */}
             <aside
               className="
-                relative hidden md:block w-[280px] lg:w-[340px] xl:w-[360px] aspect-[3/4]
-                rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-[0_25px_80px_rgba(0,0,0,.25)]
-                z-10 transform-gpu
-                [mask-image:linear-gradient(to_left,transparent,black_12%,black_88%,transparent)]
-                [-webkit-mask-image:linear-gradient(to_left,transparent,black_12%,black_88%,transparent)]
-              "
-              style={{
-                transform:
-                  "perspective(1400px) rotateY(14deg) rotateZ(-8deg) translateX(-28px) translateY(16px) scale(1.02)",
-              }}
+        absolute right-0 sm:right-4 md:right-6 top-10
+        hidden md:block w-[42%] max-w-[320px] aspect-[3/4]
+        rounded-2xl overflow-hidden ring-1 ring-black/5
+        shadow-[0_18px_55px_rgba(0,0,0,.18)]
+        transform-gpu rotate-9 translate-y-4
+      "
             >
               <Image
                 src={
@@ -136,7 +130,7 @@ export default function CollectionShowcase() {
                 }
                 alt={slides[next]?.thumbAlt || slides[next]?.imageAlt || ""}
                 fill
-                sizes="(min-width:1280px) 360px, (min-width:1024px) 340px, 280px"
+                sizes="(min-width:1280px) 320px, (min-width:1024px) 280px, 42vw"
                 className="object-cover"
                 priority
               />
@@ -145,7 +139,7 @@ export default function CollectionShowcase() {
 
           {/* Caption aktif */}
           {slides[idx]?.desc && (
-            <p className="mt-6 md:mt-10 text-center max-w-3xl mx-auto text-xs sm:text-sm md:text-[15px] leading-relaxed text-[#7b0f12]">
+            <p className="mt-6 md:mt-36 font-poppins text-center max-w-3xl mx-auto text-xs sm:text-sm md:text-[15px] leading-relaxed text-[#7b0f12]">
               {slides[idx].desc}
             </p>
           )}
