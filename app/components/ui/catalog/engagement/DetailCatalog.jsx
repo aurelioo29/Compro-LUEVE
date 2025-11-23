@@ -59,14 +59,19 @@ function SpecCol({ title, items = {} }) {
 
 function DottedDividers({ count }) {
   if (count < 2) return null;
+
   const positions = Array.from(
     { length: count - 1 },
     (_, i) => ((i + 1) / count) * 100
   );
+
   return (
     <div
       aria-hidden
-      className="hidden md:block absolute inset-y-6 left-0 right-0 pointer-events-none"
+      className="
+        hidden md:block absolute inset-y-6 left-0 right-0
+        pointer-events-none
+      "
     >
       {positions.map((pct, idx) => (
         <span
@@ -110,6 +115,7 @@ function Paragraphs({ text }) {
 function Reveal({ children, delay = 0 }) {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -120,6 +126,7 @@ function Reveal({ children, delay = 0 }) {
     io.observe(el);
     return () => io.disconnect();
   }, []);
+
   return (
     <div
       ref={ref}
@@ -158,12 +165,16 @@ export default function DetailCatalog({ item, scope }) {
 
   const gridCols =
     colCount === 3
-      ? "md:grid-cols-3"
+      ? "md:grid-cols-[auto_auto_auto] md:justify-center"
       : colCount === 2
-      ? "md:grid-cols-2"
+      ? "md:grid-cols-[auto_auto] md:justify-center"
       : "md:grid-cols-1";
 
-  const gridAlign = colCount === 1 ? "md:justify-items-center" : "";
+  // center items always; 1-col needs item centering too
+  const gridAlign = "md:justify-items-center";
+
+  // IMPORTANT: shrink wrapper to content on md+ so dotted dividers align
+  const gridWrap = colCount >= 2 ? "md:w-fit md:mx-auto" : "";
 
   return (
     <section className="py-12 md:py-20">
@@ -218,10 +229,7 @@ export default function DetailCatalog({ item, scope }) {
           </div>
 
           <div
-            className={`relative mt-10 md:mt-8 pt-6 grid grid-cols-1 ${gridCols} ${gridAlign}
-              gap-12 md:gap-y-16 md:gap-x-10 lg:gap-x-14
-              md:justify-items-center
-            `}
+            className={`relative mt-10 md:mt-8 pt-6 grid grid-cols-1 ${gridCols} ${gridAlign} ${gridWrap} gap-12 md:gap-y-16 md:gap-x-16 lg:gap-x-20 xl:gap-x-24`}
           >
             <DottedDividers count={colCount} />
             {groups.map((g, idx) => (
