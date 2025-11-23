@@ -35,7 +35,7 @@ export default function CollectionShowcase() {
           {t("vertical")}
         </h2>
 
-        <div className="relative">
+        <div className="relative md:mt-20">
           {/* glow belakang kartu tengah */}
           <div
             aria-hidden
@@ -43,16 +43,21 @@ export default function CollectionShowcase() {
           />
 
           {/* ===== WRAPPER 3 KARTU ===== */}
-          <div className="relative mx-auto mt-4 h-[360px] sm:h-[380px] md:h-[420px] lg:h-[460px] max-w-5xl">
+          <div className="relative mx-auto mt-4 h-[360px] sm:h-[380px] md:h-[420px] lg:h-[520px] xl:h-[560px] 2xl:h-[600px] max-w-6xl">
             {/* KIRI */}
             <aside
               className="
-        absolute left-0 sm:left-4 md:left-6 top-10
-        hidden md:block w-[42%] max-w-[320px] aspect-[3/4]
-        rounded-2xl overflow-hidden ring-1 ring-black/5
-        shadow-[0_18px_55px_rgba(0,0,0,.18)]
-        transform-gpu -rotate-9 translate-y-4
-      "
+    absolute left-0 sm:left-4 md:left-6 top-10
+    hidden md:block
+    w-[38%] md:w-[34%] lg:w-[36%] xl:w-[34%] 2xl:w-[32%]
+    max-w-[280px] lg:max-w-[320px] xl:max-w-[360px] 2xl:max-w-[400px]
+    aspect-[3/4]
+    rounded-2xl overflow-hidden ring-1 ring-black/5
+    shadow-[0_18px_55px_rgba(0,0,0,.18)]
+    transform-gpu -rotate-9 translate-y-4
+    -translate-x-[10%] md:-translate-x-[18%] lg:-translate-x-[22%] xl:-translate-x-[26%] 2xl:-translate-x-[30%]
+    z-10
+  "
             >
               <Image
                 src={
@@ -72,7 +77,9 @@ export default function CollectionShowcase() {
             <div
               className={`
     absolute left-1/2 top-0 -translate-x-1/2
-    w-[72%] sm:w-[55%] md:w-[48%] max-w-[420px] aspect-[3/4]
+    w-[72%] sm:w-[55%] md:w-[48%] lg:w-[44%] xl:w-[42%] 2xl:w-[40%]
+    max-w-[420px] lg:max-w-[480px] xl:max-w-[520px] 2xl:max-w-[560px]
+    aspect-[3/4]
     rounded-2xl overflow-hidden ring-1 ring-black/5
     shadow-[0_30px_80px_rgba(0,0,0,0.25)]
     bg-white z-20
@@ -93,8 +100,8 @@ export default function CollectionShowcase() {
                   pauseOnFocus: true,
                   easing: "cubic-bezier(0.22, 1, 0.36, 1)",
                 }}
-                onMounted={(s) => setIdx(s.index)}
-                onMoved={(_, i) => setIdx(i)}
+                onMounted={(s) => setIdx(s.index % slides.length)}
+                onMoved={(s) => setIdx(s.index % slides.length)}
                 className="collection-splide h-full"
               >
                 {slides.map((s, i) => (
@@ -115,12 +122,17 @@ export default function CollectionShowcase() {
             {/* KANAN */}
             <aside
               className="
-        absolute right-0 sm:right-4 md:right-6 top-10
-        hidden md:block w-[42%] max-w-[320px] aspect-[3/4]
-        rounded-2xl overflow-hidden ring-1 ring-black/5
-        shadow-[0_18px_55px_rgba(0,0,0,.18)]
-        transform-gpu rotate-9 translate-y-4
-      "
+    absolute right-0 sm:right-4 md:right-6 top-10
+    hidden md:block
+    w-[38%] md:w-[34%] lg:w-[36%] xl:w-[34%] 2xl:w-[32%]
+    max-w-[280px] lg:max-w-[320px] xl:max-w-[360px] 2xl:max-w-[400px]
+    aspect-[3/4]
+    rounded-2xl overflow-hidden ring-1 ring-black/5
+    shadow-[0_18px_55px_rgba(0,0,0,.18)]
+    transform-gpu rotate-9 translate-y-4
+    translate-x-[10%] md:translate-x-[18%] lg:translate-x-[22%] xl:translate-x-[26%] 2xl:translate-x-[30%]
+    z-10
+  "
             >
               <Image
                 src={
@@ -139,7 +151,7 @@ export default function CollectionShowcase() {
 
           {/* Caption aktif */}
           {slides[idx]?.desc && (
-            <p className="mt-6 md:mt-36 font-poppins text-center max-w-3xl mx-auto text-xs sm:text-sm md:text-[15px] leading-relaxed text-[#7b0f12]">
+            <p className="mt-6 md:mt-20 font-poppins text-center max-w-3xl mx-auto text-xs sm:text-sm md:text-[15px] leading-relaxed text-[#7b0f12]">
               {slides[idx].desc}
             </p>
           )}
