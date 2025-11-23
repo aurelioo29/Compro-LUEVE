@@ -12,6 +12,7 @@ function safeRaw(t, key, fallback) {
     return fallback;
   }
 }
+
 function SpecCol({ title, items = {} }) {
   const rows = Object.entries(items).filter(
     ([k, v]) => String(k || "").trim() && String(v || "").trim()
@@ -19,27 +20,31 @@ function SpecCol({ title, items = {} }) {
   if (!rows.length) return null;
 
   return (
-    <div>
+    <div
+      className="
+        w-full
+        md:max-w-[320px] lg:max-w-[360px] xl:max-w-[380px]
+        mx-auto
+      "
+    >
       <h3 className="text-center font-minion-pro text-[#800000] text-xl md:text-2xl font-semibold">
         {title}
       </h3>
 
-      {/* pusatkan dl */}
       <dl
         className="
-          mt-10 mx-auto w-fit
-          grid grid-cols-[max-content_max-content]
+          mt-8 md:mt-10
+          grid grid-cols-[max-content_1fr]
           gap-x-10 gap-y-1.5
-          items-center
+          items-start
           [&_dt]:m-0 [&_dd]:m-0
           [&_dt]:leading-tight [&_dd]:leading-tight
           text-[#800000]
-          justify-items-start
         "
       >
         {rows.map(([label, value]) => (
           <React.Fragment key={label}>
-            <dt className="font-minion-pro text-lg md:text-xl">
+            <dt className="font-minion-pro text-lg md:text-xl whitespace-nowrap">
               {label.replaceAll("·", ".")}
             </dt>
             <dd className="font-minion-pro text-lg md:text-xl text-[#800000]">
@@ -73,15 +78,14 @@ function DottedDividers({ count }) {
     </div>
   );
 }
+
 function Paragraphs({ text }) {
   const raw = String(text ?? "");
 
-  // 1) normalize HTML-escaped tags & line endings
   const normalized = raw
-    .replace(/&lt;\s*\/?\s*space\s*&gt;/gi, "<space>") // &lt;space&gt; -> <space>
+    .replace(/&lt;\s*\/?\s*space\s*&gt;/gi, "<space>")
     .replace(/\r\n/g, "\n");
 
-  // 2) split by multiple markers
   const parts = normalized
     .split(/(?:<\/?space>|<space\s*\/?>|\n{2,}|<br\s*\/?>)/gi)
     .map((s) => s.trim())
@@ -90,7 +94,7 @@ function Paragraphs({ text }) {
   if (!parts.length) return null;
 
   return (
-    <div className="space-y-10 md:space-y-14">
+    <div className="space-y-10 md:space-y-8">
       {parts.map((p, i) => (
         <p
           key={i}
@@ -102,6 +106,7 @@ function Paragraphs({ text }) {
     </div>
   );
 }
+
 function Reveal({ children, delay = 0 }) {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
@@ -129,15 +134,13 @@ function Reveal({ children, delay = 0 }) {
 }
 
 /* -------- REUSABLE DETAIL -------- */
-/**
- * @param {object} props
- * @param {object} props.item  // {slug, name, image, alt}
- * @param {string|string[]} props.scope // "heritage" | "col" | "soe" ... (tanpa '.details') atau array fallback
- */
 export default function DetailCatalog({ item, scope }) {
   const scopes = Array.isArray(scope) ? scope : [scope];
   const t = useTranslations("engagement.details");
+
+  // ambil detail berdasar slug
   const detail = safeRaw(t, item.slug, null);
+
   const description = detail?.description ?? "";
   const specs = detail?.specs ?? {};
   const pictures = detail?.picture ?? null;
@@ -151,8 +154,16 @@ export default function DetailCatalog({ item, scope }) {
     specs.metal && { title: "METAL", items: specs.metal },
   ].filter(Boolean);
 
-  const colCount = groups.length || 2;
-  const gridCols = colCount === 3 ? "md:grid-cols-3" : "md:grid-cols-2";
+  const colCount = groups.length;
+
+  const gridCols =
+    colCount === 3
+      ? "md:grid-cols-3"
+      : colCount === 2
+      ? "md:grid-cols-2"
+      : "md:grid-cols-1";
+
+  const gridAlign = colCount === 1 ? "md:justify-items-center" : "";
 
   return (
     <section className="py-12 md:py-20">
@@ -207,7 +218,10 @@ export default function DetailCatalog({ item, scope }) {
           </div>
 
           <div
-            className={`relative mt-10 md:mt-8 pt-6 grid grid-cols-1 ${gridCols} gap-12 md:gap-20`}
+            className={`relative mt-10 md:mt-8 pt-6 grid grid-cols-1 ${gridCols} ${gridAlign}
+              gap-12 md:gap-y-16 md:gap-x-10 lg:gap-x-14
+              md:justify-items-center
+            `}
           >
             <DottedDividers count={colCount} />
             {groups.map((g, idx) => (
