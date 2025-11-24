@@ -112,22 +112,67 @@
   },
   "collectionShowcase": {
     "vertical": "Koleksi Kami",
-    "ariaLabel": "Slide etalase koleksi",
+    "desc": "Jelajahi koleksi perhiasan buatan tangan kami—setiap karya dirancang untuk menangkap emosi, merayakan koneksi, dan bertahan dalam ujian waktu.",
     "slides": [
       {
-        "desc": "Jelajahi koleksi perhiasan buatan tangan kami—setiap karya dirancang untuk menangkap emosi, merayakan koneksi, dan bertahan dalam ujian waktu.",
         "imageSrc": "/images/showcase/center.jpg",
         "imageAlt": "Wedding rings on white plate"
       },
       {
-        "desc": "Jelajahi koleksi perhiasan buatan tangan kami; setiap karya dirancang untuk menangkap emosi, merayakan kebersamaan, dan bertahan dalam ujian waktu.",
         "imageSrc": "/images/showcase/right.jpg",
         "imageAlt": "Engagement ring closeup"
       },
       {
-        "desc": "Kilau harian atau pernyataan untuk momen spesial—pilihanmu, ciri khasmu. Dan kami mewujudkannya menjadi perhiasan untukmu.",
         "imageSrc": "/images/showcase/left.jpg",
         "imageAlt": "Diamond earrings"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-4.jpg",
+        "imageAlt": "pic-4"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-5.jpg",
+        "imageAlt": "pic-5"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-6.jpg",
+        "imageAlt": "pic-6"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-7.jpg",
+        "imageAlt": "pic-7"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-8.jpg",
+        "imageAlt": "pic-8"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-9.jpg",
+        "imageAlt": "pic-9"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-10.jpg",
+        "imageAlt": "pic-10"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-11.jpg",
+        "imageAlt": "pic-11"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-12.jpg",
+        "imageAlt": "pic-12"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-13.jpg",
+        "imageAlt": "pic-13"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-14.jpg",
+        "imageAlt": "pic-14"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-15.jpg",
+        "imageAlt": "pic-15"
       }
     ]
   },

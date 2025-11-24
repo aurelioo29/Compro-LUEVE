@@ -7,8 +7,7 @@ import { NextIntlClientProvider } from "next-intl";
 import Navbar from "../components/ui/Navbar";
 import Footer from "../components/ui/Footer";
 
-// === DAFTAR LOCALE YANG MAU DI-BUILD ===
-const LOCALES = ["id", "en"]; // ganti sesuai kebutuhan (boleh 1 aja, mis. ["id"])
+const LOCALES = ["en", "id"];
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -101,7 +100,7 @@ export default async function RootLayout({ children, params }) {
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} data-scroll-behavior="smooth">
       <body
         suppressHydrationWarning
         className={`${quattro.variable} ${minionPro.variable} ${poppins.variable} ${futuraDee.variable} antialiased`}

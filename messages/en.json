@@ -111,22 +111,67 @@
   },
   "collectionShowcase": {
     "vertical": "Our Collection",
-    "ariaLabel": "Collection showcase slides",
+    "desc": "Explore our collections of handcrafted jewelry each pieces designed to capture emotion, celebrate connections, and stand the test of time.",
     "slides": [
       {
-        "desc": "Explore our collection of handcrafted jewelry—each piece designed to capture emotion, celebrate connection, and stand the test of time.",
         "imageSrc": "/images/showcase/center.jpg",
         "imageAlt": "Wedding rings on white plate"
       },
       {
-        "desc": "Explore our collection of handcrafted jewelry each piece designed to capture emotion, celebrate connection, and stand the test of time.",
         "imageSrc": "/images/showcase/right.jpg",
         "imageAlt": "Engagement ring closeup"
       },
       {
-        "desc": "Everyday sparkle or special-occasion statement—your choice, your signature. And we made it into jewelry pieces for you.",
         "imageSrc": "/images/showcase/left.jpg",
         "imageAlt": "Diamond earrings"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-4.jpg",
+        "imageAlt": "pic-4"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-5.jpg",
+        "imageAlt": "pic-5"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-6.jpg",
+        "imageAlt": "pic-6"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-7.jpg",
+        "imageAlt": "pic-7"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-8.jpg",
+        "imageAlt": "pic-8"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-9.jpg",
+        "imageAlt": "pic-9"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-10.jpg",
+        "imageAlt": "pic-10"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-11.jpg",
+        "imageAlt": "pic-11"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-12.jpg",
+        "imageAlt": "pic-12"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-13.jpg",
+        "imageAlt": "pic-13"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-14.jpg",
+        "imageAlt": "pic-14"
+      },
+      {
+        "imageSrc": "/images/showcase/pic-15.jpg",
+        "imageAlt": "pic-15"
       }
     ]
   },
@@ -164,19 +209,19 @@
         "imageAlt": "Ring design"
       },
       {
-        "title": "Elite After-Sales Support",
-        "desc": "Enjoy lifetime service including complimentary ring cleaning, polishing, and resizing support. Our service doesn’t end at the delivery — it continues, just like your love.",
+        "title": "Elite Service Support",
+        "desc": "Enjoy lifetime service including complimentary ring cleaning, polishing, and resizing support. Our service doesn’t end at the delivery that continues, just like your love.",
         "imageSrc": "/icons/why-shop/handshake.svg",
         "imageAlt": "Handshake symbolizing partnership"
       },
       {
         "title": "Exclusivity Rooted in Your Story",
-        "desc": "No two rings are alike. Every design is created exclusively for you, inspired by your journey and craftsmanship with rare precision. With LUEVE, your love story becomes a one-of-a-kind heirloom.",
+        "desc": "No two rings are alike. Every design is created exclusively for you, inspired by your journey and craftsmanship with rare precision. With LUEVE, your love story becomes a one of a kind heirloom.",
         "imageSrc": "/icons/why-shop/heart.svg",
         "imageAlt": "Heart symbolizing love"
       },
       {
-        "title": "Only the Finest Gems – GIA Certified Diamonds",
+        "title": "Only the Finest Gems",
         "desc": "Our diamonds and gemstones are exclusively selected through magnifying glass. GIA certified start from 0,20 carat each. Both in D E F color and VVS clarity because true luxury starts with trust in every stone.",
         "imageSrc": "/icons/why-shop/gia.svg",
         "imageAlt": "GIA logo"
@@ -197,7 +242,7 @@
       {
         "title": "Exclusive Personal Ring",
         "step": "02",
-        "desc": "As word spread, Lueve began to serve more couples looking for deeply personal rings something they couldn’t find in conventional jewelry stores. Every piece was handcrafted with care, for clients who valued meaning above all.",
+        "desc": "As word spread, Lueve began to serve more couples that are  looking for deep personal rings. Something they couldn’t find in conventional jewelry stores. Every piece was handcrafted with care, for clients who valued meaning above all.",
         "imageSrc": "/images/story/exclusive-02.svg",
         "imageAlt": "Exclusive personal ring detail",
         "overlay": "left"
@@ -279,7 +324,7 @@
     ]
   },
   "customRingSpotlight": {
-    "body": "Begin your custom journey with <brand>LUEVE</brand>, where every detail tells your love story.",
+    "body": "Begin your custom journey with <brand>LUEVE</brand>, where every details tell your love story.",
     "cta": { "label": "Let’s Started" },
     "image": {
       "src": "/images/custom/hero-custom-ring.svg",

@@ -207,7 +207,7 @@ export default function Navbar() {
 
         {/* Language toggle + Search */}
         <div className="flex items-center gap-4">
-          <Link
+          {/* <Link
             href={pathname || "/"}
             locale={other}
             prefetch={false}
@@ -230,7 +230,7 @@ export default function Navbar() {
                 className="object-cover"
               />
             </span>
-          </Link>
+          </Link> */}
 
           <SearchBar
             index={index}
@@ -260,7 +260,7 @@ export default function Navbar() {
 
           {/* right controls */}
           <div className="flex items-center gap-2">
-            <Link
+            {/* <Link
               href={pathname || "/"}
               locale={other}
               prefetch={false}
@@ -284,7 +284,7 @@ export default function Navbar() {
                   className="object-cover"
                 />
               </span>
-            </Link>
+            </Link> */}
 
             <button
               type="button"
