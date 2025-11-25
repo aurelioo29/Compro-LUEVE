@@ -48,10 +48,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -130,32 +126,36 @@ html {
   }
 }
 
-@keyframes colx-pop {
-  0% {
-    transform: scale(0.96) translateY(8px);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
-  }
-  50% {
-    transform: scale(1.02) translateY(-6px);
-    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.3);
-  }
-  100% {
-    transform: scale(1) translateY(0);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
-  }
+@import "swiper/css";
+@import "swiper/css/effect-coverflow";
+@import "swiper/css/pagination";
+
+.collection-coverflow {
+  padding-top: 10px;
+  padding-bottom: 40px; /* space for dots */
 }
 
-.animate-colx-pop {
-  animation: colx-pop 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+.collection-coverflow-slide {
+  width: clamp(220px, 40vw, 420px);
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.collection-splide,
-.collection-splide .splide__track,
-.collection-splide .splide__list,
-.collection-splide .splide__slide {
-  height: 100%;
+.collection-coverflow .swiper-slide {
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.collection-coverflow .swiper-slide-active {
+  opacity: 1;
 }
 
-.collection-splide .splide__slide {
-  position: relative;
+/*  */
+.collection-coverflow-left .swiper-wrapper {
+  justify-content: flex-start; /* paksa start dari kiri */
+}
+
+.collection-coverflow-left .swiper {
+  overflow: visible; /* biar coverflow depth gak kepotong */
 }
