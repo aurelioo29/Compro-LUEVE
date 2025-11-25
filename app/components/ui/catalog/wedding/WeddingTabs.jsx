@@ -27,10 +27,10 @@ export default function WeddingTabs() {
   return (
     <nav className="mx-auto max-w-7xl px-4 sm:px-6">
       <h1 className="mt-19 text-center font-poppins text-[#800000] text-2xl md:text-3xl">
-        Wedding Ring
+        Wedding
       </h1>
 
-      <ul className="my-20 flex justify-center text-center gap-x-10 md:gap-x-44 font-poppins text-[#800000] md:mr-16 ">
+      <ul className="my-12 flex justify-center text-center gap-x-10 md:gap-x-24 font-poppins text-[#800000] md:mr-16 ">
         {WEDDING_TABS.map((it) => {
           const href = normalize(it.href);
           // pakai startsWith biar aktif juga di sub-route /the-heritage/*
@@ -41,7 +41,7 @@ export default function WeddingTabs() {
               <Link
                 href={it.href}
                 className={[
-                  "text-base md:text-2xl transition-opacity hover:opacity-80",
+                  "text-[9px] md:text-2xl transition-opacity hover:opacity-80",
                   active
                     ? "font-semibold underline-offset-4 decoration-2"
                     : "font-normal",

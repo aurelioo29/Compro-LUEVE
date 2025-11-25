@@ -13,7 +13,7 @@ function safeRaw(t, key, fallback) {
   }
 }
 
-function SpecCol({ title, items = {} }) {
+function SpecCol({ title, items = {}, className = "" }) {
   const rows = Object.entries(items).filter(
     ([k, v]) => String(k || "").trim() && String(v || "").trim()
   );
@@ -21,11 +21,12 @@ function SpecCol({ title, items = {} }) {
 
   return (
     <div
-      className="
+      className={`
         w-full
-        md:max-w-[320px] lg:max-w-[360px] xl:max-w-[380px]
+        md:max-w-[360px] lg:max-w-[380px] xl:max-w-[420px]
         mx-auto
-      "
+        ${className}
+      `}
     >
       <h3 className="text-center font-minion-pro text-[#800000] text-xl md:text-2xl font-semibold">
         {title}
@@ -69,7 +70,8 @@ function DottedDividers({ count }) {
     <div
       aria-hidden
       className="
-        hidden md:block absolute inset-y-6 left-0 right-0
+        hidden md:block absolute left-0 right-0
+        top-12 bottom-4
         pointer-events-none
       "
     >
@@ -145,7 +147,6 @@ export default function DetailCatalog({ item, scope }) {
   const scopes = Array.isArray(scope) ? scope : [scope];
   const t = useTranslations("engagement.details");
 
-  // ambil detail berdasar slug
   const detail = safeRaw(t, item.slug, null);
 
   const description = detail?.description ?? "";
@@ -163,18 +164,29 @@ export default function DetailCatalog({ item, scope }) {
 
   const colCount = groups.length;
 
+  const paddingLeft = colCount === 2 ? "md:pl-6" : "md:pl-0";
+
   const gridCols =
     colCount === 3
-      ? "md:grid-cols-[auto_auto_auto] md:justify-center"
+      ? "md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]"
       : colCount === 2
-      ? "md:grid-cols-[auto_auto] md:justify-center"
+      ? "md:grid-cols-2"
       : "md:grid-cols-1";
 
-  // center items always; 1-col needs item centering too
-  const gridAlign = "md:justify-items-center";
+  const gridGaps =
+    colCount === 2
+      ? "md:gap-x-28 lg:gap-x-36 xl:gap-x-44"
+      : "md:gap-x-16 lg:gap-x-20 xl:gap-x-24";
 
-  // IMPORTANT: shrink wrapper to content on md+ so dotted dividers align
-  const gridWrap = colCount >= 2 ? "md:w-fit md:mx-auto" : "";
+  // ✅ 3 cols center, 2 cols stretch left-right
+  const gridAlign =
+    colCount === 2 ? "md:justify-items-stretch" : "md:justify-items-center";
+
+  const gridWrap = "md:w-full md:mx-auto";
+
+  const gridInset = colCount === 2 ? "md:px-16 lg:px-20" : "";
+
+  const detailRuleMx = colCount === 2 ? "md:mx-16 lg:mx-20" : "md:mx-2";
 
   return (
     <section className="py-12 md:py-20">
@@ -202,14 +214,14 @@ export default function DetailCatalog({ item, scope }) {
 
           <div className="lg:col-span-7">
             <dl className="grid grid-cols-[max-content_1fr] gap-x-20 gap-y-2 items-start [&_dt]:m-0 [&_dd]:m-0">
-              <dt className="font-poppins text-[15px] md:text-[20px] tracking-normal text-[#800000]/85">
+              <dt className="font-minion-pro text-[15px] md:text-[20px] tracking-normal text-[#800000]">
                 Name
               </dt>
               <dd className="font-minion-pro text-[#800000] uppercase tracking-[0.045em] text-[15px] md:text-[20px]">
                 {item.name}
               </dd>
 
-              <dt className="font-poppins text-[15px] md:text-[20px] tracking-normal text-[#800000]/85">
+              <dt className="font-minion-pro text-[15px] md:text-[20px] tracking-normal text-[#800000]">
                 Meaning
               </dt>
               <dd>
@@ -222,19 +234,38 @@ export default function DetailCatalog({ item, scope }) {
         {/* DETAIL */}
         <div className="mt-16 md:mt-20">
           <div className="text-center">
-            <h2 className="font-minion-pro text-[#D9C293] tracking-widest text-3xl md:text-4xl font-semibold">
+            <h2 className="font-minion-pro text-[#D9C293] tracking-widest text-3xl md:text-4xl font-[400]">
               DETAIL
             </h2>
-            <div className="mt-5 mx-0 md:mx-6 border-t-[4px] border-[#D9C293]" />
+            <div
+              className={`mt-5 mx-0 ${detailRuleMx} border-t-[4px] border-[#D9C293]`}
+            />
           </div>
 
           <div
-            className={`relative mt-10 md:mt-8 pt-6 grid grid-cols-1 ${gridCols} ${gridAlign} ${gridWrap} gap-12 md:gap-y-16 md:gap-x-16 lg:gap-x-20 xl:gap-x-24`}
+            className={`relative mt-10 md:mt-8 pt-6 grid grid-cols-1
+              ${gridCols} ${gridAlign} ${gridWrap} ${gridGaps} ${gridInset}
+              gap-12 md:gap-y-16`}
           >
             <DottedDividers count={colCount} />
-            {groups.map((g, idx) => (
-              <SpecCol key={idx} title={g.title} items={g.items} />
-            ))}
+
+            {groups.map((g, idx) => {
+              const isMiddle = colCount === 3 && idx === 1; // SIDE DIAMOND column
+              return (
+                <SpecCol
+                  key={idx}
+                  title={g.title}
+                  items={g.items}
+                  className={
+                    colCount === 2
+                      ? `md:mx-0 md:max-w-none md:w-full ${paddingLeft}`
+                      : isMiddle
+                      ? "md:justify-self-center"
+                      : "md:justify-self-stretch"
+                  }
+                />
+              );
+            })}
           </div>
         </div>
 
@@ -251,12 +282,6 @@ export default function DetailCatalog({ item, scope }) {
                     sizes="(min-width:768px) 50vw, 100vw"
                     className="object-contain transition-transform duration-500 ease-out will-change-transform motion-safe:group-hover:scale-[1.03] motion-safe:group-hover:rotate-[0.25deg]"
                   />
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 overflow-hidden rounded-md"
-                  >
-                    <span className="absolute top-0 -left-1/3 h-full w-1/3 bg-white/20 blur-[2px] -skew-x-12 translate-x-[-160%] transition-transform duration-700 ease-out motion-safe:group-hover:translate-x-[360%]" />
-                  </span>
                 </div>
               </Reveal>
             )}
@@ -270,12 +295,6 @@ export default function DetailCatalog({ item, scope }) {
                     sizes="(min-width:768px) 50vw, 100vw"
                     className="object-contain transition-transform duration-500 ease-out will-change-transform motion-safe:group-hover:scale-[1.03] motion-safe:group-hover:-rotate-[0.25deg]"
                   />
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 overflow-hidden rounded-md"
-                  >
-                    <span className="absolute top-0 -left-1/3 h-full w-1/3 bg-white/20 blur-[2px] -skew-x-12 translate-x-[-160%] transition-transform duration-700 ease-out motion-safe:group-hover:translate-x-[360%]" />
-                  </span>
                 </div>
               </Reveal>
             )}

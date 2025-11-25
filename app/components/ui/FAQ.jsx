@@ -44,7 +44,7 @@ export default function FAQ() {
       <div className="mx-auto max-w-7xl px-6 md:px-8">
         <h2
           id="faq-heading"
-          className="text-center font-minion-pro text-[#800000] uppercase tracking-[0.12em] leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+          className="text-center font-minion-pro text-[#800000] uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
           data-aos="fade-up"
         >
           {t("heading.top")}
@@ -54,7 +54,7 @@ export default function FAQ() {
 
         {/* Card wrapper */}
         <div className="mt-10 md:mt-14 flex justify-center" data-aos="zoom-in">
-          <div className="w-full max-w-2xl rounded-[28px] bg-white shadow-[0_25px_70px_rgba(0,0,0,.18)] ring-1 ring-black/5 p-5 sm:p-7 md:p-8">
+          <div className="w-full max-w-3xl rounded-[28px] bg-white shadow-[0_25px_70px_rgba(0,0,0,.18)] ring-1 ring-black/5 p-5 sm:p-7 md:p-8">
             <dl>
               {items.map((it, idx) => {
                 const isOpen = open.has(idx);
@@ -74,7 +74,7 @@ export default function FAQ() {
                       aria-controls={`faq-panel-${idx}`}
                       className="w-full flex items-center justify-between gap-4 py-2 text-left"
                     >
-                      <span className="font-poppins text-[15px] md:text-[18px] leading-7 text-[#800000]">
+                      <span className="font-poppins text-[15px] md:text-[21px] leading-7 text-[#800000]">
                         {it.q}
                       </span>
 
@@ -130,7 +130,7 @@ export default function FAQ() {
                           className="overflow-hidden"
                         >
                           <div className="pt-3 pb-4">
-                            <p className="text-[#800000] text-sm md:text-base leading-7 font-poppins">
+                            <p className="text-[#800000] text-sm md:text-[18px] leading-7 font-poppins">
                               {it.a}
                             </p>
                           </div>

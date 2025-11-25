@@ -42,7 +42,7 @@ export default function ThePrivilege() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Title */}
         <motion.h2
-          className="text-center font-minion-pro text-[#800000] text-4xl md:text-6xl lg:text-[90px] leading-tight max-w-sm mx-auto"
+          className="text-center font-minion-pro text-[#800000] text-4xl md:text-6xl lg:text-[90px] leading-20 max-w-sm mx-auto"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.6 }}

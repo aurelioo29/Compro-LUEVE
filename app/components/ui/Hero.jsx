@@ -44,7 +44,7 @@ export default function Hero() {
           height: "calc(100dvh + 80px)",
           autoplay: true,
           interval: 3000,
-          speed: 800,
+          speed: 500,
           pauseOnHover: true,
           pauseOnFocus: true,
           arrows: false,

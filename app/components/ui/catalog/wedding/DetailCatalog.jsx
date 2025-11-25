@@ -12,7 +12,8 @@ function safeRaw(t, key, fallback) {
     return fallback;
   }
 }
-function SpecCol({ title, items = {} }) {
+
+function SpecCol({ title, items = {}, className = "" }) {
   const rows = Object.entries(items).filter(
     ([k, v]) => String(k || "").trim() && String(v || "").trim()
   );
@@ -20,11 +21,12 @@ function SpecCol({ title, items = {} }) {
 
   return (
     <div
-      className="
+      className={`
         w-full
         md:max-w-[320px] lg:max-w-[360px] xl:max-w-[380px]
         mx-auto
-      "
+        ${className}
+      `}
     >
       <h3 className="text-center font-minion-pro text-[#800000] text-xl md:text-2xl font-semibold">
         {title}
@@ -68,7 +70,8 @@ function DottedDividers({ count }) {
     <div
       aria-hidden
       className="
-        hidden md:block absolute inset-y-6 left-0 right-0
+        hidden md:block absolute left-0 right-0
+        top-12 bottom-4
         pointer-events-none
       "
     >
@@ -82,12 +85,21 @@ function DottedDividers({ count }) {
     </div>
   );
 }
+
 function Paragraphs({ text }) {
-  const parts = String(text)
-    .split(/<\/?space>/gi)
+  const raw = String(text ?? "");
+
+  const normalized = raw
+    .replace(/&lt;\s*\/?\s*space\s*&gt;/gi, "<space>")
+    .replace(/\r\n/g, "\n");
+
+  const parts = normalized
+    .split(/(?:<\/?space>|<space\s*\/?>|\n{2,}|<br\s*\/?>)/gi)
     .map((s) => s.trim())
     .filter(Boolean);
+
   if (!parts.length) return null;
+
   return (
     <div className="space-y-10 md:space-y-8">
       {parts.map((p, i) => (
@@ -101,9 +113,11 @@ function Paragraphs({ text }) {
     </div>
   );
 }
+
 function Reveal({ children, delay = 0 }) {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -114,6 +128,7 @@ function Reveal({ children, delay = 0 }) {
     io.observe(el);
     return () => io.disconnect();
   }, []);
+
   return (
     <div
       ref={ref}
@@ -128,17 +143,11 @@ function Reveal({ children, delay = 0 }) {
 }
 
 /* -------- REUSABLE DETAIL -------- */
-/**
- * @param {object} props
- * @param {object} props.item  // {slug, name, image, alt}
- * @param {string|string[]} props.scope // "heritage" | "col" | "soe" ... (tanpa '.details') atau array fallback
- */
 export default function DetailCatalog({ item, scope }) {
-  // dukung satu scope atau array scopes (fallback berurutan)
+  // support scope single / array fallback
   const scopes = Array.isArray(scope) ? scope : [scope];
   const t = useTranslations(); // root translator
 
-  // cari detail pertama yang ketemu di salah satu scope
   let detail = {};
   for (const s of scopes) {
     const d = safeRaw(t, `${s}.details.${item.slug}`, null);
@@ -162,18 +171,29 @@ export default function DetailCatalog({ item, scope }) {
   ].filter(Boolean);
 
   const colCount = groups.length;
+
+  // padding kecil untuk 2 col biar gak terlalu nempel
+  const paddingLeft = colCount === 2 ? "md:pl-6" : "md:pl-0";
+
+  // ✅ 3 col: kiri - tengah(auto) - kanan
   const gridCols =
     colCount === 3
-      ? "md:grid-cols-[auto_auto_auto] md:justify-center"
+      ? "md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]"
       : colCount === 2
-      ? "md:grid-cols-[auto_auto] md:justify-center"
+      ? "md:grid-cols-2"
       : "md:grid-cols-1";
 
-  // center items always; 1-col needs item centering too
-  const gridAlign = "md:justify-items-center";
+  const gridGaps =
+    colCount === 2
+      ? "md:gap-x-28 lg:gap-x-36 xl:gap-x-44"
+      : "md:gap-x-16 lg:gap-x-20 xl:gap-x-24";
 
-  // IMPORTANT: shrink wrapper to content on md+ so dotted dividers align
-  const gridWrap = colCount >= 2 ? "md:w-fit md:mx-auto" : "";
+  // ✅ 3 cols center, 2 cols stretch left-right
+  const gridAlign =
+    colCount === 2 ? "md:justify-items-stretch" : "md:justify-items-center";
+
+  const gridWrap =
+    colCount === 3 ? "md:w-full md:mx-auto" : "md:w-full md:mx-auto";
 
   return (
     <section className="py-12 md:py-20">
@@ -228,12 +248,29 @@ export default function DetailCatalog({ item, scope }) {
           </div>
 
           <div
-            className={`relative mt-10 md:mt-8 pt-6 grid grid-cols-1 ${gridCols} ${gridAlign} ${gridWrap} gap-12 md:gap-y-16 md:gap-x-16 lg:gap-x-20 xl:gap-x-24`}
+            className={`relative mt-10 md:mt-8 pt-6 grid grid-cols-1
+              ${gridCols} ${gridAlign} ${gridWrap} ${gridGaps}
+              gap-12 md:gap-y-16`}
           >
             <DottedDividers count={colCount} />
-            {groups.map((g, idx) => (
-              <SpecCol key={idx} title={g.title} items={g.items} />
-            ))}
+
+            {groups.map((g, idx) => {
+              const isMiddle = colCount === 3 && idx === 1; // SIDE DIAMOND
+              return (
+                <SpecCol
+                  key={idx}
+                  title={g.title}
+                  items={g.items}
+                  className={
+                    colCount === 2
+                      ? `md:mx-0 md:max-w-none md:w-full ${paddingLeft}`
+                      : isMiddle
+                      ? "md:justify-self-center"
+                      : "md:justify-self-stretch"
+                  }
+                />
+              );
+            })}
           </div>
         </div>
 

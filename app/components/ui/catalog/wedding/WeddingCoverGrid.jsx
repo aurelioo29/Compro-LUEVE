@@ -8,9 +8,9 @@ const ITEMS = [
   {
     href: "/collection/wedding-rings/constellation-of-love",
     label: "Constellation of Love",
-    src: "/images/collection/wedding/col.jpg",
+    src: "/images/collection/wedding/pic-2.png",
     alt: "Constellation of Love cover",
-    rotate: "-rotate-270",
+    // rotate: "-rotate-270", 
   },
   {
     href: "/collection/wedding-rings/silhouettes-of-earth",

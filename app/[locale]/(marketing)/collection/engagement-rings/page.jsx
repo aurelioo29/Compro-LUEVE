@@ -32,7 +32,7 @@ export default function EngagementRingsPage() {
       <CatalogHero src={hero.src} alt={hero.alt} bleedTop height={700} />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h1 className="mt-6 text-center font-poppins text-[#800000] text-2xl md:text-3xl">
+        <h1 className="mt-20 mb-12 text-center font-poppins text-[#800000] text-2xl md:text-3xl">
           Engagement
         </h1>
 

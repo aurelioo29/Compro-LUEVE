@@ -24,7 +24,7 @@ export default function Footer() {
               width={200}
               height={106}
               priority
-              className="w-40 sm:w-48 md:w-[200px] h-auto"
+              className="w-40 sm:w-48 md:w-[240px] h-auto object-contain object-left md:-ml-6"
             />
           </Link>
 
@@ -122,7 +122,7 @@ export default function Footer() {
 
         {/* 3) NAVIGATION — mobile: col-span-2 (3 kolom) */}
         <nav
-          className="col-span-2 md:col-span-1 lg:col-span-2 lg:order-2"
+          className="col-span-2 md:col-span-1 lg:col-span-2 lg:order-3"
           aria-label="Footer navigation"
         >
           <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#800000]">
@@ -147,7 +147,7 @@ export default function Footer() {
 
         {/* 4) COMPANY — mobile: col-span-2 (3 kolom) */}
         <nav
-          className="col-span-2 md:col-span-1 lg:col-span-2 lg:order-3"
+          className="col-span-2 md:col-span-1 lg:col-span-2 lg:order-2"
           aria-label="Company"
         >
           <h3 className="font-minion-pro text-2xl sm:text-3xl text-[#800000]">

@@ -6,7 +6,6 @@ export default function StoryCard({
   overlayLeft,
   textLeft = true,
   priority,
-  // AOS props (opsional—datang dari parent)
   contentAos = "fade-up",
   contentDelay = 0,
   imgAos = "fade",
@@ -15,6 +14,10 @@ export default function StoryCard({
   stepDelay = 0,
   descDelay = 0,
 }) {
+  // tweak these if you want even wider/narrower later
+  const blurWidth = "w-[60%] md:w-[55%] lg:w-[52%]";
+  const contentWidth = "w-[60%] md:w-[55%] lg:w-[52%]";
+
   return (
     <article
       className="
@@ -26,7 +29,7 @@ export default function StoryCard({
       "
       aria-label={`${item.title}${item.step ? ` — ${item.step}` : ""}`}
     >
-      {/* Foto (fill parent yang auto-height) */}
+      {/* Foto */}
       <div
         className="absolute inset-0 -z-10"
         data-aos={imgAos}
@@ -42,35 +45,36 @@ export default function StoryCard({
         />
       </div>
 
-      {/* BLUR setengah sisi */}
+      {/* BLUR setengah sisi (lebih lebar) */}
       <div
         className={[
-          "absolute inset-y-0 w-1/2 z-0",
+          "absolute inset-y-0 z-0",
+          blurWidth,
           overlayLeft ? "right-0" : "left-0",
           "backdrop-blur-[7px]",
         ].join(" ")}
         aria-hidden
       />
 
-      {/* Gradient bawah halus (bantu kontras teks) */}
+      {/* Gradient bawah */}
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/70 to-transparent z-10"
         aria-hidden
       />
 
-      {/* KONTEN */}
+      {/* KONTEN (ikut melebar) */}
       <div
         className={[
           "relative z-20 flex flex-col justify-start gap-2",
           "py-6 sm:py-8 mt-10 md:mt-24",
+          contentWidth,
           textLeft
-            ? "ml-auto w-1/2 pl-5 sm:pl-7 pr-4 text-left"
-            : "mr-auto w-1/2 pr-5 sm:pr-7 pl-4 text-right",
+            ? "ml-auto pl-5 sm:pl-7 pr-4 text-left"
+            : "mr-auto pr-5 sm:pr-7 pl-4 text-right",
         ].join(" ")}
         data-aos={contentAos}
         data-aos-delay={contentDelay}
       >
-        {/* Title + Step (stagger kecil via delay berbeda) */}
         <div
           className={`flex flex-col ${
             textLeft ? "border-l-4 pl-2" : "border-r-4 pr-2"
@@ -93,7 +97,6 @@ export default function StoryCard({
           )}
         </div>
 
-        {/* Deskripsi */}
         <p
           className="mt-2 font-poppins text-sm sm:text-sm md:text-base leading-6 text-[#800000]/90"
           data-aos="fade-up"
