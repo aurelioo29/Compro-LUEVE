@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             {s.intro && (
-              <p className="font-poppins text-[#800000] text-sm sm:text-base leading-7">
+              <p className="font-poppins text-[#800000] text-sm sm:text-lg leading-7">
                 {s.intro}
               </p>
             )}
@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
               s.paragraphs.map((p, j) => (
                 <p
                   key={j}
-                  className="font-poppins text-[#800000] text-sm sm:text-base leading-7"
+                  className="font-poppins text-[#800000] text-sm sm:text-lg leading-7"
                 >
                   {p}
                 </p>
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Daftar poin (pertama) */}
             {Array.isArray(s.list) && s.list.length > 0 && (
-              <ul className="list-disc pl-5 font-poppins text-[#800000] text-sm sm:text-base leading-7 space-y-1">
+              <ul className="list-disc pl-5 font-poppins text-[#800000] text-sm sm:text-lg leading-7 space-y-1">
                 {s.list.map((li, k) => (
                   <li key={k}>{li}</li>
                 ))}
@@ -58,25 +58,18 @@ export default function PrivacyPolicyPage() {
 
             {/* Subjudul kecil sebelum daftar kedua */}
             {s.sub && (
-              <p className="font-poppins text-[#800000] text-sm sm:text-base leading-7">
+              <p className="font-poppins text-[#800000] text-sm sm:text-lg leading-7">
                 {s.sub}
               </p>
             )}
 
             {/* Daftar poin (kedua) */}
             {Array.isArray(s.list2) && s.list2.length > 0 && (
-              <ul className="list-disc pl-5 font-poppins text-[#800000] text-sm sm:text-base leading-7 space-y-1">
+              <ul className="list-disc pl-5 font-poppins text-[#800000] text-sm sm:text-lg leading-7 space-y-1">
                 {s.list2.map((li, k) => (
                   <li key={k}>{li}</li>
                 ))}
               </ul>
-            )}
-
-            {/* Catatan */}
-            {s.note && (
-              <p className="font-poppins text-[#800000] text-sm sm:text-base leading-7">
-                {s.note}
-              </p>
             )}
           </article>
         ))}

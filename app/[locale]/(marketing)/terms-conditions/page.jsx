@@ -53,13 +53,13 @@ export default function TermsConditionsPage() {
 
                 <div className="flex items-start gap-2">
                   {sec.intro && (
-                    <p className="mt-2 font-poppins text-sm md:text-base leading-7 text-[#800000]/90">
+                    <p className="mt-2 font-poppins text-sm md:text-lg leading-7 text-[#800000]/90">
                       {sec.intro}
                     </p>
                   )}
 
                   {Array.isArray(sec.list) && sec.list.length > 0 && (
-                    <ul className="mt-3 list-disc pl-6 font-poppins text-sm md:text-base leading-7 text-[#800000]/90 space-y-1.5">
+                    <ul className="mt-3 list-disc pl-6 font-poppins text-sm md:text-lg leading-7 text-[#800000]/90 space-y-1.5">
                       {sec.list.map((point, idx) => (
                         <li key={idx}>{point}</li>
                       ))}
@@ -67,12 +67,12 @@ export default function TermsConditionsPage() {
                   )}
 
                   {sec.sub && (
-                    <p className="mt-3 font-poppins text-sm md:text-base text-[#800000]">
+                    <p className="mt-3 font-poppins text-sm md:text-lg text-[#800000]">
                       <span className="font-semibold">{sec.sub}</span>
                     </p>
                   )}
                   {Array.isArray(sec.list2) && sec.list2.length > 0 && (
-                    <ul className="mt-2 list-disc pl-6 font-poppins text-sm md:text-base leading-7 text-[#800000]/90 space-y-1.5">
+                    <ul className="mt-2 list-disc pl-6 font-poppins text-sm md:text-lg leading-7 text-[#800000]/90 space-y-1.5">
                       {sec.list2.map((point, idx) => (
                         <li key={idx}>{point}</li>
                       ))}
@@ -80,7 +80,7 @@ export default function TermsConditionsPage() {
                   )}
 
                   {sec.note && (
-                    <p className="mt-3 font-poppins text-sm md:text-base text-[#800000]/80">
+                    <p className="mt-3 font-poppins text-sm md:text-lg text-[#800000]/80">
                       {sec.note}
                     </p>
                   )}
