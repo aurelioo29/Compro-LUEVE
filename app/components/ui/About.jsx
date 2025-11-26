@@ -76,10 +76,10 @@ export default function About() {
           </div>
 
           {/* ==== RIGHT COLUMN (2 foto vertikal) ==== */}
-          <div className="flex flex-col gap-6 lg:gap-8 items-start lg:h-full lg:justify-center">
+          <div className="flex flex-col gap-6 lg:gap-8 items-stretch lg:items-start lg:h-full lg:justify-center">
             {/* Top right image – lebih tinggi */}
             <div
-              className="relative w-full max-w-[420px] aspect-[4/4] overflow-hidden lg:rounded-tr-[150px]"
+              className="relative w-full max-w-full lg:max-w-[420px] aspect-[4/4] overflow-hidden lg:rounded-tr-[150px]"
               data-aos="fade-left"
               data-aos-delay="80"
             >
@@ -95,7 +95,7 @@ export default function About() {
 
             {/* Bottom right image – lebih pendek tapi LEBAR SAMA */}
             <div
-              className="relative w-full max-w-[420px] aspect-[3/3] overflow-hidden lg:rounded-br-[150px]"
+              className="relative w-full max-w-full lg:max-w-[420px] aspect-[3/3] overflow-hidden lg:rounded-br-[150px]"
               data-aos="fade-right"
               data-aos-delay="80"
             >

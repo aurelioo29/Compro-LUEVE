@@ -15,7 +15,7 @@ export default function Footer() {
           text-center lg:text-left
         "
       >
-        {/* 1) BRAND / HOURS / SOCIAL — mobile: col-span-3 (2 kolom) */}
+        {/* BRAND / HOURS / SOCIAL */}
         <div className="col-span-3 md:col-span-1 lg:col-span-3 space-y-4 sm:space-y-6 flex flex-col items-center lg:items-start lg:order-1">
           <Link href="/" className="inline-block">
             <Image
@@ -87,7 +87,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* 2) CONTACT — mobile: col-span-3 (2 kolom) */}
+        {/* CONTACT US */}
         <address
           className="col-span-3 md:col-span-1 lg:col-span-3 not-italic mt-8 md:mt-0 lg:order-5"
           aria-label="Contact Us"
@@ -96,7 +96,8 @@ export default function Footer() {
             Contact Us
           </h3>
 
-          <ul className="mt-3 md:mt-10 space-y-4 md:space-y-8 text-[#800000] font-poppins text-sm md:text-lg leading-tight">
+          {/* ⬇️ disamain dengan nav/ company / resources */}
+          <ul className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-6 md:space-y-8 text-[#800000] font-poppins text-sm md:text-lg leading-tight">
             <li className="flex items-center justify-center md:justify-start gap-2 md:gap-3">
               <Phone className="w-4 h-4 md:w-5 md:h-5 shrink-0" />
               <Link
@@ -120,7 +121,7 @@ export default function Footer() {
           </ul>
         </address>
 
-        {/* 3) NAVIGATION — mobile: col-span-2 (3 kolom) */}
+        {/* NAVIGATION */}
         <nav
           className="col-span-2 md:col-span-1 lg:col-span-2 lg:order-3"
           aria-label="Footer navigation"
@@ -145,7 +146,7 @@ export default function Footer() {
           </ul>
         </nav>
 
-        {/* 4) COMPANY — mobile: col-span-2 (3 kolom) */}
+        {/* COMPANY */}
         <nav
           className="col-span-2 md:col-span-1 lg:col-span-2 lg:order-2"
           aria-label="Company"
@@ -189,7 +190,7 @@ export default function Footer() {
           </ul>
         </nav>
 
-        {/* 5) RESOURCES — mobile: col-span-2 (3 kolom) */}
+        {/* RESOURCES */}
         <nav
           className="col-span-2 md:col-span-1 lg:col-span-2 lg:order-4"
           aria-label="Resources"
