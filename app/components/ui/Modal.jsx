@@ -40,12 +40,14 @@ export default function Modal({ open, onClose, children }) {
       {/* panel (responsive) */}
       <div
         className="
-          relative z-50 w-full
-          max-w-[calc(100%-2rem)] sm:max-w-sm md:max-w-2xl lg:max-w-6xl
-          sm:h-[600px] md:h-[650px] lg:h-[700px]
-          rounded-xl sm:rounded-2xl lg:rounded-3xl
-          p-6 sm:p-8 lg:p-8 shadow-xl overflow-hidden
-          text-white"
+        relative z-50 w-full
+        max-w-[calc(100%-2rem)]
+        sm:max-w-sm
+        md:max-w-xl      
+        lg:max-w-6xl     
+        sm:h-[600px]
+        md:h-[720px]
+        rounded-xl sm:rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-8 shadow-xl overflow-hidden text-white"
       >
         {/* background image layer */}
         <div className="absolute inset-0">

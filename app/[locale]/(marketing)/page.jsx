@@ -65,7 +65,7 @@ export default function HomePage() {
         <div className="space-y-6 sm:space-y-7">
           <h2
             id="modal-title"
-            className="text-center font-minion-pro text-3xl sm:text-4xl md:text-6xl text-black"
+            className="text-center font-minion-pro text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black"
           >
             Send a Message to Get Our Info
           </h2>
