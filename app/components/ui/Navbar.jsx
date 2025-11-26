@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
-import { Search, ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/lib/navigation";
 import SearchBar from "./SearchBar";
@@ -49,8 +49,7 @@ export default function Navbar() {
 
       {/* ================= DESKTOP ================= */}
       <nav
-        className="hidden md:flex items-center justify-between px-6 py-4 gap-20 relative z-10"
-        // buka kunci hover hanya saat mouse benar-benar keluar area navbar
+        className="hidden lg:flex items-center justify-between px-6 py-4 gap-20 relative z-10"
         onMouseLeave={() => setHoverLock(false)}
       >
         <Link href="/" locale={locale} className="block" onClick={hardClose}>
@@ -237,13 +236,13 @@ export default function Navbar() {
             locale={locale}
             onNavigate={hardClose}
             placeholder={locale === "id" ? "Cari cincin…" : "Search rings…"}
-            className="max-w-xl" // <— NEW, biar stretch
+            className="w-full sm:w-full md:w-full max-w-none"
           />
         </div>
       </nav>
 
       {/* ================= MOBILE / TABLET ================= */}
-      <nav className="md:hidden px-4 py-4 relative z-10">
+      <nav className="lg:hidden px-4 py-4 relative z-10">
         <div className="flex items-center justify-between">
           <Link href="/" locale={locale} className="block" onClick={hardClose}>
             <div className="relative h-14 w-[110px]">
@@ -315,7 +314,7 @@ export default function Navbar() {
             locale={locale}
             onNavigate={hardClose}
             placeholder={locale === "id" ? "Cari cincin…" : "Search rings…"}
-            className="max-w-2xl" // <— NEW, biar stretch
+            className="w-full max-w-none"
           />
         </div>
 

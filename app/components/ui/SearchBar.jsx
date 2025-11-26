@@ -135,7 +135,7 @@ export default function SearchBar({
   }, [open]);
 
   return (
-    <div className={`relative w-full sm:w-72 md:w-80 min-w-0 ${className}`}>
+    <div className={`relative w-full min-w-0 ${className}`}>
       <div className="flex items-center gap-2 rounded-full bg-white/70 px-3 py-2 ring-1 ring-[#800000]/20 focus-within:ring-2 focus-within:ring-[#800000]/60 transition">
         <Search className="w-4 h-4 text-[#800000]" />
         <input
