@@ -36,7 +36,7 @@ function SpecCol({ title, items = {}, className = "" }) {
         className="
           mt-8 md:mt-10
           grid grid-cols-[max-content_1fr]
-          gap-x-10 gap-y-1.5
+          gap-x-3 gap-y-2
           items-start
           [&_dt]:m-0 [&_dd]:m-0
           [&_dt]:leading-tight [&_dd]:leading-tight
@@ -248,7 +248,7 @@ export default function DetailCatalog({ item, scope }) {
           </div>
 
           <div
-            className={`relative mt-10 md:mt-8 pt-6 grid grid-cols-1
+            className={`relative mt-10 md:mt-0 pt-6 grid grid-cols-1
               ${gridCols} ${gridAlign} ${gridWrap} ${gridGaps}
               gap-12 md:gap-y-16`}
           >
