@@ -109,7 +109,7 @@ export default function Hero() {
 
         {/* Paragraf kanan bawah */}
         <p
-          className="absolute right-10 lg:right-20 bottom-8 max-w-[950px]
+          className="absolute right-10 lg:right-20 bottom-8 max-w-[680px]
              text-right text-[#800000] font-poppins
              text-[clamp(0.9rem,1.2vw,1.05rem)] leading-relaxed
              pointer-events-auto"

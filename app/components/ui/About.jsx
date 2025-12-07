@@ -61,7 +61,12 @@ export default function About() {
 
             {/* Big image bawah kiri */}
             <div
-              className="relative w-full aspect-[16/9] md:aspect-[18/11] overflow-hidden lg:rounded-tl-[260px]"
+              className="
+    relative w-full
+    aspect-[16/9] md:aspect-[18/11]
+    lg:aspect-[4/2.6]
+    overflow-hidden lg:rounded-tl-[260px]
+  "
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -95,7 +100,12 @@ export default function About() {
 
             {/* Bottom right image – lebih pendek tapi LEBAR SAMA */}
             <div
-              className="relative w-full max-w-full lg:max-w-[420px] aspect-[3/3] overflow-hidden lg:rounded-br-[150px]"
+              className="
+    relative w-full max-w-full lg:max-w-[420px]
+    aspect-[3/3]
+    lg:aspect-[3/3]
+    overflow-hidden lg:rounded-br-[150px]
+  "
               data-aos="fade-right"
               data-aos-delay="80"
             >

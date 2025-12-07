@@ -15,8 +15,8 @@ export default function StoryCard({
   descDelay = 0,
 }) {
   // tweak these if you want even wider/narrower later
-  const blurWidth = "w-[60%] md:w-[55%] lg:w-[52%]";
-  const contentWidth = "w-[60%] md:w-[55%] lg:w-[52%]";
+  const blurWidth = "w-[78%] md:w-[70%] lg:w-[60%]";
+  const contentWidth = "w-[72%] md:w-[65%] lg:w-[60%]";
 
   return (
     <article
@@ -82,7 +82,7 @@ export default function StoryCard({
           data-aos="fade-up"
           data-aos-delay={titleDelay}
         >
-          <h3 className="font-minion-pro text-[#800000] text-3xl sm:text-2xl md:text-4xl uppercase">
+          <h3 className="font-minion-pro text-[#800000] text-3xl sm:text-2xl md:text-[32px] uppercase">
             {item.title}
           </h3>
 
@@ -98,7 +98,11 @@ export default function StoryCard({
         </div>
 
         <p
-          className="mt-2 font-poppins text-sm sm:text-sm md:text-base leading-6 text-[#800000]/90"
+          className={[
+            "mt-2 font-poppins text-sm sm:text-sm md:text-base leading-6 text-[#800000]/90",
+            "max-w-[80%]",
+            textLeft ? "mr-auto text-left" : "ml-auto text-right",
+          ].join(" ")}
           data-aos="fade-up"
           data-aos-delay={descDelay}
         >

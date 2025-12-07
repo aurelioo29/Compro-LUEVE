@@ -130,17 +130,6 @@ export default function Navbar() {
                 <ul className="space-y-3 tracking-wide text-2xl text-white pl-2 mt-3">
                   <li>
                     <Link
-                      href="/collection/wedding-rings/silhouettes-of-earth"
-                      locale={locale}
-                      onClick={hardClose}
-                      className="block hover:underline underline-offset-4 transition-[text-decoration-color] duration-200 text-[#800000]"
-                      role="menuitem"
-                    >
-                      Silhouettes of Earth
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/collection/wedding-rings/constellation-of-love"
                       locale={locale}
                       onClick={hardClose}
@@ -148,6 +137,17 @@ export default function Navbar() {
                       role="menuitem"
                     >
                       Constellation of Love
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/collection/wedding-rings/silhouettes-of-earth"
+                      locale={locale}
+                      onClick={hardClose}
+                      className="block hover:underline underline-offset-4 transition-[text-decoration-color] duration-200 text-[#800000]"
+                      role="menuitem"
+                    >
+                      Silhouettes of Earth
                     </Link>
                   </li>
                   <li>
@@ -405,22 +405,22 @@ export default function Navbar() {
                       <ul className="mt-2 space-y-2 text-[19px] normal-case tracking-normal pl-2">
                         <li>
                           <Link
-                            href="/collection/wedding-rings/silhouettes-of-earth"
-                            locale={locale}
-                            onClick={hardClose}
-                            className="block px-1 py-1 rounded text-white hover:underline underline-offset-4 transition-[text-decoration-color]"
-                          >
-                            Silhouettes of Earth
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
                             href="/collection/wedding-rings/constellation-of-love"
                             locale={locale}
                             onClick={hardClose}
                             className="block px-1 py-1 rounded text-white hover:underline underline-offset-4 transition-[text-decoration-color]"
                           >
                             Constellation of Love
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/collection/wedding-rings/silhouettes-of-earth"
+                            locale={locale}
+                            onClick={hardClose}
+                            className="block px-1 py-1 rounded text-white hover:underline underline-offset-4 transition-[text-decoration-color]"
+                          >
+                            Silhouettes of Earth
                           </Link>
                         </li>
                         <li>

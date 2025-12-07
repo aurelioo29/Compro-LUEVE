@@ -55,7 +55,7 @@
         "a": "We use only high-quality precious metals such as 18K gold, yellow gold, white gold, and rose gold. But you can request higher / lower gold percentage. Minimum start from 12K gold and maximum 20K gold option. For gemstones, we source authentic diamonds and other precious stones, all certified by reputable institutions such as the Gemological Institute of America (GIA) to ensure their authenticity and brilliance."
       },
       {
-        "q": "Do you offer after self service",
+        "q": "Do you offer after self service?",
         "a": "Yes, we provide complimentary ring sizing during the design process. If you need adjustments after your ring is completed, we also offer resizing services to ensure the perfect fit. Including free jewelry cleaning and free gold re-chroming."
       },
       {
@@ -74,7 +74,7 @@
   },
   "experience": {
     "heading": { "top": "Customer", "bottom": " Experience" },
-    "tagline": "Our customers’ honest comments and helpful suggestions make us better.",
+    "tagline": "Our customers helped us reach the best with their good and useful comments and suggestions.",
     "ariaLabel": "Customer experience slides",
     "slides": [
       {
@@ -189,7 +189,7 @@
       "label": "Registration Number",
       "value": "IDM000749086"
     },
-    "quote": "“Remember the moment you said ‘I do’”",
+    "quote": "“Remember the moment you said ‘I do’ ”",
     "body": "We chose this slogan to remind every couple to always cherish the day they committed themselves to one another in the sacred bond of marriage. It’s more than a ring, it’s a timeless reminder of your most meaningful promise."
   },
   "whyShop": {
