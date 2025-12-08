@@ -30,7 +30,7 @@ export default function WeddingTabs() {
         Wedding
       </h1>
 
-      <ul className="my-12 flex justify-center text-center gap-x-10 md:gap-x-24 font-poppins text-[#800000] md:mr-16 ">
+      <ul className="my-12 flex justify-center text-center gap-x-10 md:gap-x-24 font-poppins text-[#800000] md:mr-[105px]">
         {WEDDING_TABS.map((it) => {
           const href = normalize(it.href);
           // pakai startsWith biar aktif juga di sub-route /the-heritage/*

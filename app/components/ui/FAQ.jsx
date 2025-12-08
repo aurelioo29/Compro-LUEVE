@@ -40,6 +40,7 @@ export default function FAQ() {
       className="py-24 md:py-28"
       data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
+      id="q-n-a"
     >
       <div className="mx-auto max-w-7xl px-6 md:px-8">
         <h2
@@ -140,7 +141,7 @@ export default function FAQ() {
 
                     {/* Bottom underline */}
                     <div
-                      className="mt-2 h-[2px] w-full"
+                      className="mt-2 h-px w-full"
                       style={{ backgroundColor: MAROON }}
                       aria-hidden
                     />

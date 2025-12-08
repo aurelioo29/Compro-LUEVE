@@ -1,10 +1,10 @@
 const NAMES_COL = ["Cassiopeia", "Crux", "Cygnus", "Orion", "Perseus", "Pyxis"];
 const NAMES_SOE = [
-  "Acacia",
+  "Orchid",
   "Camellia",
   "Deep Rooted Tree",
   "Eternal Flame",
-  "Orchid",
+  "Acacia",
   "Rain Shower",
 ];
 const NAMES_HERITAGE = [

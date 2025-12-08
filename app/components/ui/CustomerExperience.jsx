@@ -24,7 +24,7 @@ export default function CustomerExperience() {
   }, []);
 
   return (
-    <section aria-labelledby="exp-heading" className="py-12 md:py-16">
+    <section aria-labelledby="exp-heading" className="py-12 md:py-16" id="customer-experience">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Heading baris atas */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">

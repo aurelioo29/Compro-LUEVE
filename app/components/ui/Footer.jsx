@@ -137,7 +137,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="/collection"
+                href="/collection/wedding-rings/"
                 className="hover:underline underline-offset-4"
               >
                 Our Collection
@@ -165,7 +165,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="/services"
+                href="/#q-n-a"
                 className="hover:underline underline-offset-4"
               >
                 Services
@@ -173,7 +173,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="/reviews"
+                href="/#customer-experience"
                 className="hover:underline underline-offset-4"
               >
                 Reviews

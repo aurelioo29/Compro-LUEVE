@@ -1,16 +1,47 @@
 "use client";
 
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+
+/* -------- SCROLL REVEAL -------- */
+function Reveal({ children, delay = 0 }) {
+  const ref = useRef(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const io = new IntersectionObserver(
+      ([e]) => e.isIntersecting && setShow(true),
+      { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transform-gpu transition-all duration-700 ease-out ${
+        show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default function TermsConditionsPage() {
   const t = useTranslations("terms");
   const sections = Array.isArray(t.raw("sections")) ? t.raw("sections") : [];
 
   return (
-    // tarik ke belakang navbar
     <section className="-mt-[100px] md:-mt-[120px] relative overflow-x-clip">
-      {/* Hero full-bleed 1 layar */}
+      {/* HERO BACKGROUND */}
       <div className="h-[20svh] md:h-[20dvh] overflow-hidden">
         <Image
           src="/images/term-conditions-bg.svg"
@@ -22,70 +53,97 @@ export default function TermsConditionsPage() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 pb-32 md:pb-52 md:mt-10">
-        <h1 className="text-center font-minion-pro text-[#800000] text-3xl md:text-7xl">
-          {t("title")}
-        </h1>
+      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 pb-24 md:pb-36 md:mt-10">
+        {/* ✅ TITLE */}
+        <Reveal>
+          <h1
+            className="
+              text-center
+              font-minion-pro
+              text-[#800000]
+              uppercase
+              tracking-wide
+              font-normal
+              text-3xl
+              sm:text-4xl
+              md:text-7xl
+            "
+          >
+            {t("title")}
+          </h1>
+        </Reveal>
 
-        <div className="mt-6 md:mt-20">
-          <ol className="space-y-8 md:space-y-10 rounded-[40px] md:rounded-[80px] bg-white/20 backdrop-blur-md shadow-2xl p-6 sm:p-10 md:p-16">
+        {/* ✅ GLASS CARD SECTION */}
+        <div className="mt-10 md:mt-16">
+          <ol
+            className="
+              space-y-7 md:space-y-9
+              rounded-[40px] md:rounded-[72px]
+              bg-white/25 backdrop-blur-md
+              shadow-xl
+              p-6 sm:p-10 md:p-14
+            "
+          >
             {sections.map((sec, i) => (
-              <li key={i} className="relative">
-                <div
-                  data-i={String(i + 1).padStart(2, "0")}
-                  className="relative mb-3 pl-14 sm:pl-16 md:pl-20
-                  font-minion-pro text-[#800000] font-semibold tracking-wide leading-none
-                  text-[clamp(1.125rem,1.2vw+0.9rem,1.625rem)]  
+              <Reveal key={i} delay={i * 90}>
+                <li className="relative">
+                  <div
+                    className="grid grid-cols-[auto_3rem_1fr] items-center mb-2"
+                  >
+                    {/* NUMBER */}
+                    <span className="font-poppins font-bold tabular-nums text-[#CEA660] text-[clamp(1.2rem,2vw+1rem,1.75rem)]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
 
-                  before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2
-                  before:text-[#CEA660] before:font-poppins before:font-semibold before:tabular-nums
-                  before:[content:attr(data-i)]
-                  before:text-[clamp(1.25rem,2vw+1rem,1.875rem)]
+                    {/* DASH — TRUE CENTER CELL */}
+                    <span className="flex justify-center">
+                      <span className="block h-[2px] w-4 bg-[#800000] rounded-full" />
+                    </span>
 
-                  after:absolute after:top-1/2 after:-translate-y-1/2 after:rounded
-                  after:left-9.5 sm:after:left-12 md:after:left-11  
-                  after:w-3   sm:after:w-4   md:after:w-7        
-                  after:h-[2px] after:bg-[#800000]
-                  "
-                >
-                  {sec.title}
-                </div>
+                    {/* TITLE */}
+                    <h3 className="font-minion-pro text-[#800000] uppercase font-medium tracking-wide text-[clamp(1.05rem,1.1vw+0.9rem,1.4rem)]">
+                      {sec.title}
+                    </h3>
+                  </div>
 
-                <div className="flex items-start gap-2">
-                  {sec.intro && (
-                    <p className="mt-2 font-poppins text-sm md:text-lg leading-7 text-[#800000]/90">
-                      {sec.intro}
-                    </p>
-                  )}
+                  {/* ✅ CONTENT */}
+                  <div className="space-y-2">
+                    {sec.intro && (
+                      <p className="font-poppins text-sm md:text-base leading-7 text-[#800000]/90">
+                        {sec.intro}
+                      </p>
+                    )}
 
-                  {Array.isArray(sec.list) && sec.list.length > 0 && (
-                    <ul className="mt-3 list-disc pl-6 font-poppins text-sm md:text-lg leading-7 text-[#800000]/90 space-y-1.5">
-                      {sec.list.map((point, idx) => (
-                        <li key={idx}>{point}</li>
-                      ))}
-                    </ul>
-                  )}
+                    {Array.isArray(sec.list) && sec.list.length > 0 && (
+                      <ul className="list-disc pl-6 font-poppins text-sm md:text-base leading-7 text-[#800000]/90 space-y-1">
+                        {sec.list.map((point, idx) => (
+                          <li key={idx}>{point}</li>
+                        ))}
+                      </ul>
+                    )}
 
-                  {sec.sub && (
-                    <p className="mt-3 font-poppins text-sm md:text-lg text-[#800000]">
-                      <span className="font-semibold">{sec.sub}</span>
-                    </p>
-                  )}
-                  {Array.isArray(sec.list2) && sec.list2.length > 0 && (
-                    <ul className="mt-2 list-disc pl-6 font-poppins text-sm md:text-lg leading-7 text-[#800000]/90 space-y-1.5">
-                      {sec.list2.map((point, idx) => (
-                        <li key={idx}>{point}</li>
-                      ))}
-                    </ul>
-                  )}
+                    {sec.sub && (
+                      <p className="font-poppins text-sm md:text-base text-[#800000] pt-1">
+                        <span className="font-semibold">{sec.sub}</span>
+                      </p>
+                    )}
 
-                  {sec.note && (
-                    <p className="mt-3 font-poppins text-sm md:text-lg text-[#800000]/80">
-                      {sec.note}
-                    </p>
-                  )}
-                </div>
-              </li>
+                    {Array.isArray(sec.list2) && sec.list2.length > 0 && (
+                      <ul className="list-disc pl-6 font-poppins text-sm md:text-base leading-7 text-[#800000]/90 space-y-1">
+                        {sec.list2.map((point, idx) => (
+                          <li key={idx}>{point}</li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {sec.note && (
+                      <p className="font-poppins text-sm md:text-base text-[#800000]/80 pt-1">
+                        {sec.note}
+                      </p>
+                    )}
+                  </div>
+                </li>
+              </Reveal>
             ))}
           </ol>
         </div>

@@ -13,25 +13,26 @@ function safeRaw(t, key, fallback) {
   }
 }
 
+/* -------- SPEC COLUMN -------- */
 function SpecCol({ title, items = {}, className = "" }) {
   const rows = Object.entries(items).filter(
     ([k, v]) => String(k || "").trim() && String(v || "").trim()
   );
   if (!rows.length) return null;
 
+  const isMetal = title === "METAL";
+
   return (
     <div className={`w-full mx-auto flex flex-col items-center ${className}`}>
-      {/* ✅ JUDUL TETAP DI TENGAH */}
       <h3 className="text-center font-minion-pro text-[#800000] text-xl md:text-2xl font-semibold">
         {title}
       </h3>
 
-      {/* ✅ BLOK DT-DD DI-TENGAH, TAPI ISI TETAP KIRI-KANAN */}
-      <div className="mt-8 mx-auto">
+      <div className="mt-8 mx-auto w-full">
         <dl
           className="
             grid
-            grid-cols-[auto_auto]
+            grid-cols-[auto_minmax(0,1fr)]
             gap-x-20
             gap-y-2
             text-[#800000]
@@ -39,13 +40,20 @@ function SpecCol({ title, items = {}, className = "" }) {
         >
           {rows.map(([label, value]) => (
             <React.Fragment key={label}>
-              {/* LABEL – rata kiri */}
               <dt className="font-minion-pro text-lg whitespace-nowrap text-left">
                 {label.replaceAll("·", ".")}
               </dt>
 
-              {/* VALUE – rata kiri juga (seperti di foto kamu) */}
-              <dd className="font-minion-pro text-lg whitespace-nowrap text-left">
+              <dd
+                className={`
+                  font-minion-pro text-lg text-left
+                  ${
+                    isMetal
+                      ? "max-w-[260px] whitespace-normal"
+                      : "whitespace-nowrap"
+                  }
+                `}
+              >
                 {Array.isArray(value) ? value.join(", ") : value}
               </dd>
             </React.Fragment>
@@ -56,6 +64,7 @@ function SpecCol({ title, items = {}, className = "" }) {
   );
 }
 
+/* -------- DOTTED DIVIDER -------- */
 function DottedDividers({ count }) {
   if (count < 2) return null;
 
@@ -77,12 +86,66 @@ function DottedDividers({ count }) {
   );
 }
 
+/* -------- PARAGRAPHS -------- */
 function Paragraphs({ text }) {
-  if (!text) return null;
+  const raw = String(text ?? "");
+
+  const normalized = raw
+    .replace(/<\/?space\s*\/?>/gi, "\n\n")
+    .replace(/\r\n/g, "\n");
+
+  const paragraphs = normalized
+    .split(/\n{2,}/g)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
+  if (!paragraphs.length) return null;
+
   return (
-    <p className="font-minion-pro text-[#800000]/90 text-[15px] md:text-[20px] leading-[1.7]">
-      {text}
-    </p>
+    <div className="space-y-5 md:space-y-6">
+      {paragraphs.map((p, i) => (
+        <p
+          key={i}
+          className="font-minion-pro text-[#800000]/90 text-[15px] md:text-[20px] leading-[1.7] text-justify"
+        >
+          {p.split("\n").map((line, idx) => (
+            <span key={idx}>
+              {line}
+              <br />
+            </span>
+          ))}
+        </p>
+      ))}
+    </div>
+  );
+}
+
+/* -------- SCROLL REVEAL -------- */
+function Reveal({ children, delay = 0 }) {
+  const ref = useRef(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => e.isIntersecting && setShow(true),
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transform-gpu transition-all duration-700 ease-out ${
+        show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      }`}
+    >
+      {children}
+    </div>
   );
 }
 
@@ -105,7 +168,6 @@ export default function DetailCatalog({ item }) {
 
   const colCount = groups.length;
 
-  /* ✅ FIXED GRID LOGIC */
   const gridCols =
     colCount === 3
       ? "md:grid-cols-3"
@@ -122,62 +184,77 @@ export default function DetailCatalog({ item }) {
         {/* IMAGE + DESCRIPTION */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5">
-            <div className="relative w-full aspect-square overflow-hidden rounded-md bg-white shadow-md">
-              <Image
-                src={item.image}
-                alt={item.alt || item.name}
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+            <Reveal>
+              {/* ✅ SHARP IMAGE FIXED HERE */}
+              <div className="group relative w-full max-w-[520px] aspect-square mx-auto overflow-hidden rounded-md bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow duration-500 hover:shadow-[0_16px_50px_rgba(0,0,0,0.14)]">
+                <Image
+                  src={item.image}
+                  alt={item.alt || item.name}
+                  fill
+                  sizes="(min-width: 1024px) 520px, 90vw"
+                  quality={90}
+                  className="object-contain transition-transform duration-500 will-change-transform group-hover:scale-[1.02]"
+                  priority
+                />
+
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 overflow-hidden rounded-md"
+                >
+                  <span className="absolute top-0 -left-1/3 h-full w-1/3 bg-white/20 blur-[2px] -skew-x-12 translate-x-[-160%] transition-transform duration-700 group-hover:translate-x-[360%]" />
+                </span>
+              </div>
+            </Reveal>
           </div>
 
           <div className="lg:col-span-7">
-            <dl className="grid grid-cols-[max-content_1fr] gap-x-32 gap-y-2">
-              <dt className="font-minion-pro text-[15px] md:text-[20px] text-[#800000]">
-                Name
-              </dt>
-              <dd className="font-minion-pro text-[#800000] uppercase tracking-[0.045em] text-[15px] md:text-[20px]">
-                {item.name}
-              </dd>
+            <Reveal delay={120}>
+              <dl className="grid grid-cols-[max-content_1fr] gap-x-32 gap-y-2">
+                <dt className="font-minion-pro text-[15px] md:text-[20px] text-[#800000]">
+                  Name
+                </dt>
+                <dd className="font-minion-pro text-[#800000] uppercase tracking-[0.045em] text-[15px] md:text-[20px]">
+                  {item.name}
+                </dd>
 
-              <dt className="font-minion-pro text-[15px] md:text-[20px] text-[#800000]">
-                Meaning
-              </dt>
-              <dd>
-                <Paragraphs text={description} />
-              </dd>
-            </dl>
+                <dt className="font-minion-pro text-[15px] md:text-[20px] text-[#800000]">
+                  Meaning
+                </dt>
+                <dd>
+                  <Paragraphs text={description} />
+                </dd>
+              </dl>
+            </Reveal>
           </div>
         </div>
 
         {/* DETAIL SECTION */}
         <div className="mt-16 md:mt-20">
-          <div className="text-center">
-            <h2 className="font-minion-pro text-[#D9C293] tracking-widest text-3xl md:text-4xl">
-              DETAIL
-            </h2>
-            <div className="mt-5 mx-auto max-w-[1500px] border-t-[4px] border-[#D9C293]" />
-          </div>
+          <Reveal>
+            <div className="text-center">
+              <h2 className="font-minion-pro text-[#D9C293] tracking-widest text-3xl md:text-4xl">
+                DETAIL
+              </h2>
+              <div className="mt-5 mx-auto max-w-[1500px] border-t-[4px] border-[#D9C293]" />
+            </div>
+          </Reveal>
 
           <div
-            className={`
-              relative mt-12 grid grid-cols-1
+            className={`relative mt-12 grid grid-cols-1
               ${gridCols} ${gridGaps}
               gap-y-16 md:gap-y-0
-              md:items-start md:justify-items-center
-            `}
+              md:items-start md:justify-items-center`}
           >
             <DottedDividers count={colCount} />
 
             {groups.map((g, idx) => (
-              <SpecCol
-                key={idx}
-                title={g.title}
-                items={g.items}
-                className="w-full max-w-[380px]"
-              />
+              <Reveal key={idx} delay={idx * 120}>
+                <SpecCol
+                  title={g.title}
+                  items={g.items}
+                  className="w-full max-w-[380px]"
+                />
+              </Reveal>
             ))}
           </div>
         </div>
