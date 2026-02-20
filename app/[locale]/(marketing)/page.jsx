@@ -11,14 +11,21 @@ import FAQ from "@/app/components/ui/FAQ";
 import CustomerExperience from "@/app/components/ui/CustomerExperience";
 import CollectionShowcase from "@/app/components/ui/CollectionShowcase";
 
+const CONTACT_ENABLED = process.env.NEXT_PUBLIC_CONTACT_ENABLED === "true";
+
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { open, setOpen } = useModalOnLoad();
+  // const { open, setOpen } = useModalOnLoad();
   const t = useTranslations();
+
+  const open = CONTACT_ENABLED ? modalState.open : false;
+  const setOpen = CONTACT_ENABLED ? modalState.setOpen : () => {};
 
   async function onSubmit(e) {
     e.preventDefault();
+
+    if (!CONTACT_ENABLED) return; // safety
     setLoading(true);
     setError("");
 
