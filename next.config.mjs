@@ -9,6 +9,8 @@ const nextConfig = {
     "http://127.0.0.1:3000",
     "http://192.168.68.59:3000", // <- ini yang bikin warning hilang
   ],
+  images: { unoptimized: true },
+  output: "export",
 };
 
 export default withNextIntl(nextConfig);
