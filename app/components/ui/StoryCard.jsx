@@ -14,16 +14,16 @@ export default function StoryCard({
   stepDelay = 0,
   descDelay = 0,
 }) {
-  // tweak these if you want even wider/narrower later
-  const blurWidth = "w-[78%] md:w-[70%] lg:w-[60%]";
-  const contentWidth = "w-[72%] md:w-[65%] lg:w-[60%]";
+  // Mobile dibuat lebih kecil supaya blur tidak terlalu menutup gambar
+  const blurWidth = "w-[52%] sm:w-[58%] md:w-[64%] lg:w-[60%]";
+  const contentWidth = "w-[50%] sm:w-[56%] md:w-[60%] lg:w-[60%]";
 
   return (
     <article
       className="
         relative overflow-hidden shadow-lg
         w-full max-w-[min(100%,637px)]
-        min-h-[68svh] sm:min-h-[60svh]
+        min-h-[62svh] sm:min-h-[60svh]
         lg:w-[637px] lg:min-h-[858px]
         hover:brightness-[1.02] transition-[filter,transform] duration-300
       "
@@ -45,13 +45,13 @@ export default function StoryCard({
         />
       </div>
 
-      {/* BLUR setengah sisi (lebih lebar) */}
+      {/* Blur side */}
       <div
         className={[
           "absolute inset-y-0 z-0",
           blurWidth,
           overlayLeft ? "right-0" : "left-0",
-          "backdrop-blur-[7px]",
+          "backdrop-blur-[4px] sm:backdrop-blur-[6px] md:backdrop-blur-[7px]",
         ].join(" ")}
         aria-hidden
       />
@@ -62,33 +62,35 @@ export default function StoryCard({
         aria-hidden
       />
 
-      {/* KONTEN (ikut melebar) */}
+      {/* Content */}
       <div
         className={[
           "relative z-20 flex flex-col justify-start gap-2",
-          "py-6 sm:py-8 mt-10 md:mt-24",
+          "py-5 sm:py-8 mt-6 sm:mt-10 md:mt-24",
           contentWidth,
           textLeft
-            ? "ml-auto pl-5 sm:pl-7 pr-4 text-left"
-            : "mr-auto pr-5 sm:pr-7 pl-4 text-right",
+            ? "ml-auto pl-3 sm:pl-5 md:pl-7 pr-3 sm:pr-4 text-left"
+            : "mr-auto pr-3 sm:pr-5 md:pr-7 pl-3 sm:pl-4 text-right",
         ].join(" ")}
         data-aos={contentAos}
         data-aos-delay={contentDelay}
       >
         <div
           className={`flex flex-col ${
-            textLeft ? "border-l-4 pl-2" : "border-r-4 pr-2"
-          } gap-2 border-[#800000]`}
+            textLeft
+              ? "border-l-2 sm:border-l-4 pl-2"
+              : "border-r-2 sm:border-r-4 pr-2"
+          } gap-1 sm:gap-2 border-[#800000]`}
           data-aos="fade-up"
           data-aos-delay={titleDelay}
         >
-          <h3 className="font-minion-pro text-[#800000] text-3xl sm:text-2xl md:text-[32px] uppercase">
+          <h3 className="font-minion-pro text-[#800000] text-[18px] sm:text-[24px] md:text-[32px] uppercase leading-tight">
             {item.title}
           </h3>
 
           {item.step && (
             <span
-              className="font-poppins text-[#CEA660] text-3xl md:text-5xl font-bold text-shadow-lg"
+              className="font-poppins text-[#CEA660] text-xl sm:text-3xl md:text-5xl font-bold"
               data-aos="fade-up"
               data-aos-delay={stepDelay}
             >
@@ -99,8 +101,8 @@ export default function StoryCard({
 
         <p
           className={[
-            "mt-2 font-poppins text-sm sm:text-sm md:text-base leading-6 text-[#800000]/90",
-            "max-w-[80%]",
+            "mt-2 font-poppins text-[11px] sm:text-sm md:text-base leading-5 sm:leading-6 text-[#800000]/90",
+            "max-w-full sm:max-w-[90%] md:max-w-[80%]",
             textLeft ? "mr-auto text-left" : "ml-auto text-right",
           ].join(" ")}
           data-aos="fade-up"

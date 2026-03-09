@@ -45,7 +45,7 @@ export default function FAQ() {
       <div className="mx-auto max-w-7xl px-6 md:px-8">
         <h2
           id="faq-heading"
-          className="text-center font-minion-pro text-[#800000] uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+          className="text-center font-minion-pro text-[#800000] uppercase text-3xl sm:text-3xl md:text-6xl lg:text-7xl"
           data-aos="fade-up"
         >
           {t("heading.top")}
@@ -75,7 +75,7 @@ export default function FAQ() {
                       aria-controls={`faq-panel-${idx}`}
                       className="w-full flex items-center justify-between gap-4 py-2 text-left"
                     >
-                      <span className="font-poppins text-[15px] md:text-[21px] leading-7 text-[#800000]">
+                      <span className="font-poppins text-[14px] md:text-[21px] leading-7 text-[#800000]">
                         {it.q}
                       </span>
 

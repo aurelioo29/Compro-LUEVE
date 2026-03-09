@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
-// === AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -18,13 +17,17 @@ export default function CustomerExperience() {
     AOS.init({
       duration: 700,
       easing: "ease-out-cubic",
-      once: true, // animate sekali saja
+      once: true,
       offset: 60,
     });
   }, []);
 
   return (
-    <section aria-labelledby="exp-heading" className="py-12 md:py-16" id="customer-experience">
+    <section
+      aria-labelledby="exp-heading"
+      className="py-12 md:py-16"
+      id="customer-experience"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Heading baris atas */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
@@ -34,9 +37,7 @@ export default function CustomerExperience() {
               className="font-minion-pro text-[#800000] leading-none text-5xl md:text-6xl lg:text-7xl"
             >
               <span className="block">{t("heading.top")}</span>
-              <span className="md:ml-12">
-                {t("heading.bottom")}
-              </span>
+              <span className="md:ml-12">{t("heading.bottom")}</span>
             </h2>
           </div>
 
@@ -70,30 +71,10 @@ export default function CustomerExperience() {
           {slides.map((s, i) => (
             <SplideSlide key={i}>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-start">
-                {/* Kiri: pita + quote */}
-                <div className="lg:col-span-7 lg:col-end-8 mt-6 md:mt-16">
+                {/* Photos - tampil dulu di mobile */}
+                <div className="order-1 lg:order-2 lg:col-span-5 lg:col-start-8 mt-6 md:mt-0">
                   <div
-                    className="bg-[#E0C698] w-full lg:-mr-px"
-                    data-aos="fade-right"
-                  >
-                    <h3 className="px-6 py-4 font-minion-pro text-[#800000] leading-none text-4xl lg:text-5xl">
-                      {s.title}
-                    </h3>
-                  </div>
-
-                  <p
-                    className="mt-6 text-[#800000] font-poppins text-sm sm:text-base lg:text-lg max-w-2xl"
-                    data-aos="fade-up"
-                    data-aos-delay="120"
-                  >
-                    {s.desc}
-                  </p>
-                </div>
-
-                {/* Kanan: gambar */}
-                <div className="lg:col-span-5 lg:col-start-8 mt-10 md:mt-0">
-                  <div
-                    className="relative w-full aspect-[3/3] overflow-hidden rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)]"
+                    className="relative w-full aspect-square overflow-hidden rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)]"
                     data-aos="fade-left"
                   >
                     <Image
@@ -105,6 +86,26 @@ export default function CustomerExperience() {
                       className="object-cover"
                     />
                   </div>
+                </div>
+
+                {/* Title + desc - tampil setelah photo di mobile */}
+                <div className="order-2 lg:order-1 lg:col-span-7 lg:col-end-8 mt-6 md:mt-10 lg:mt-16">
+                  <div
+                    className="bg-[#E0C698] w-full lg:-mr-px"
+                    data-aos="fade-right"
+                  >
+                    <h3 className="px-6 py-4 font-minion-pro text-[#800000] leading-none text-3xl sm:text-4xl lg:text-5xl">
+                      {s.title}
+                    </h3>
+                  </div>
+
+                  <p
+                    className="mt-6 text-[#800000] font-poppins text-sm sm:text-base lg:text-lg max-w-2xl"
+                    data-aos="fade-up"
+                    data-aos-delay="120"
+                  >
+                    {s.desc}
+                  </p>
                 </div>
               </div>
             </SplideSlide>

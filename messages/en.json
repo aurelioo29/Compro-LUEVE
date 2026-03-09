@@ -362,7 +362,7 @@
       "alt": "Woman wearing LUEVE jewelry"
     },
     "cta": "Get Started",
-    "waText": "Hi LUEVE, I’d like to start my custom ring journey. Could you assist me?"
+    "waText": "Halo , aku mau nanya tentang cincin"
   },
   "engagement": {
     "details": {
@@ -391,7 +391,6 @@
         "description": "Pure light that needs no excessive ornamentation. Aurellia is the personification of confident elegance. Every facet of its diamond cut is optimized to dance with light, swirling and hinting at eternity and loyalty.",
         "specs": {
           "centerDiamond": {
-            "Grading & Certification": "Natural GIA Diamond",
             "Weight": "0.05 ct/pcs",
             "Shape": "Round Shape",
             "Cut": "Excellent Cut",
@@ -433,7 +432,6 @@
         "description": "Blossom captures the beauty of a flower in full bloom, bringing joy and pleasure. This ring represents a couple's relationship that progresses gradually, with love growing stronger with each passing day.",
         "specs": {
           "centerDiamond": {
-            "Grading & Certification": "Natural GIA Diamond",
             "Weight": "0.75-1 ct",
             "Shape": "Round Shape",
             "Cut": "Excellent Cut",
@@ -872,8 +870,8 @@
       "florence": {
         "description": "The Florence ring is specifically created as a  celebration for femininity, with brilliantly sculptured design to showcase the irresistible and captivating charm of a blossoming beauty. With its intertwined bands, reflects the intertwining of two lives, two hearts, and two souls into one harmonious journey. Together, they tell a story of devotion: delicate yet strong, simple yet has a deep meaning, as eternal as the love you vow to cherish forever.",
         "specs": {
-          "centerDiamond": {
-            "Weight": "0.15 ct",
+          "sideDiamond": {
+            "Total Weight (Carat)": "0.15 ct",
             "Clarity": "VVS",
             "Colour": "Colourless",
             "Cut": "Round"
@@ -898,8 +896,8 @@
       "katherine": {
         "description": "The Katherine, or she with the heart of gold, takes  the inspiration from the benevolence of  contemporary women. <space>Crafted with timeless grace, the ring reflect more than just a promise but also  a celebration of a bond built on trust, devotion, and endless affection. The smooth harmony of silver and rose gold captures the essence of balance  where two souls meet, complement, and complete each other.</space>",
         "specs": {
-          "centerDiamond": {
-            "Weight": "0.10 ct",
+          "sideDiamond": {
+            "Total Weight (Carat)": "0.10 ct",
             "Clarity": "VVS",
             "Colour": "Colourless",
             "Cut": "Round"
@@ -1234,7 +1232,7 @@
         "description": "Like the stars navigating through the wide ocean, the unique charm of the Crux ring serves as a mesmerizing ornamental piece symbolizing a guide for a life voyage. <space>This is not just a celestial covenant, a glance of passion captured in diamond and gold, whispering the eternal secrets of destiny with a light that shines the vision of the future. Its design evokes the timeless beauty of the night sky, serving as a constant, gentle reminder of a deep and enduring connection. It is more than a piece of jewelry.</space>",
         "specs": {
           "sideDiamond": {
-            "Total Weight (Carat)": "0.05 -0.10 ct",
+            "Total Weight (Carat)": "0.05 - 0.10 ct",
             "Clarity": "VVS",
             "Colour": "Colourless",
             "Cut": "Round"
@@ -1271,14 +1269,14 @@
             "Type": "Natural Diamond"
           },
           "sideDiamond": {
-            "Total Weight (Carat)": "0.05 -0.10 ct",
+            "Total Weight (Carat)": "0.05 - 0.10 ct",
             "Colour": "Colourless",
             "Clarity": "VVS",
             "Cut": "Round"
           },
           "metal": {
             "Band Metal Color": "White, Yellow, Rose, Champagne",
-            "Approx Metal Weight": "11–15 g",
+            "Approx Metal Weight": "11  – 15 g",
             "Metal Finishing": "Glossy"
           }
         },
