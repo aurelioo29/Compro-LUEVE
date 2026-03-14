@@ -15,7 +15,7 @@ function safeRaw(t, key, fallback) {
 
 function SpecCol({ title, items = {}, className = "" }) {
   const rows = Object.entries(items).filter(
-    ([k, v]) => String(k || "").trim() && String(v || "").trim()
+    ([k, v]) => String(k || "").trim() && String(v || "").trim(),
   );
   if (!rows.length) return null;
 
@@ -24,42 +24,44 @@ function SpecCol({ title, items = {}, className = "" }) {
   const isCentre = title === "CENTRE DIAMOND";
 
   return (
-    <div className={`w-full mx-auto flex flex-col items-center ${className}`}>
+    <div
+      className={`w-full min-w-0 mx-auto flex flex-col items-center ${className}`}
+    >
       <h3 className="text-center font-minion-pro text-[#800000] text-xl md:text-2xl font-semibold">
         {title}
       </h3>
 
-      {/* ✅ DI SINI YANG KITA GESER */}
+      {/* ✅ tetap pakai struktur bawaan kamu, cuma dibuat lebih flexible */}
       <div
         className={`mt-8 mx-auto w-full flex justify-center ${
-          isCentre ? "pl-6 md:pl-10" : ""
+          isCentre ? "pl-0 md:pl-4" : ""
         }`}
       >
         <dl
           className="
             grid
-            grid-cols-[auto_1fr]
-            gap-x-20
+            grid-cols-[auto_minmax(0,1fr)]
+            gap-x-6 md:gap-x-10
             gap-y-2
             text-[#800000]
+            w-full
+            min-w-0
           "
         >
           {rows.map(([label, value]) => (
             <React.Fragment key={label}>
               {/* LABEL */}
-              <dt className="font-minion-pro text-lg whitespace-nowrap text-left">
+              <dt className="font-minion-pro text-base md:text-lg whitespace-normal break-words text-left min-w-0">
                 {label.replaceAll("·", ".")}
               </dt>
 
               {/* VALUE */}
               <dd
-                className={`font-minion-pro text-lg
-                  ${
-                    isMetal || isSide
-                      ? "max-w-[260px] whitespace-normal text-left"
-                      : "whitespace-nowrap text-left"
-                  }
-                `}
+                className={`font-minion-pro text-base md:text-lg text-left min-w-0 break-words ${
+                  isMetal || isSide
+                    ? "max-w-[260px] whitespace-normal"
+                    : "whitespace-normal"
+                }`}
               >
                 {Array.isArray(value) ? value.join(", ") : value}
               </dd>
@@ -77,11 +79,11 @@ function DottedDividers({ count }) {
 
   const positions = Array.from(
     { length: count - 1 },
-    (_, i) => ((i + 1) / count) * 100
+    (_, i) => ((i + 1) / count) * 100,
   );
 
   return (
-    <div className="hidden md:block absolute inset-y-0 left-0 right-0 pointer-events-none">
+    <div className="hidden xl:block absolute inset-y-0 left-0 right-0 pointer-events-none">
       {positions.map((pct, idx) => (
         <span
           key={idx}
@@ -141,7 +143,7 @@ function Reveal({ children, delay = 0 }) {
     if (!el) return;
     const io = new IntersectionObserver(
       ([e]) => e.isIntersecting && setShow(true),
-      { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -10% 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -191,13 +193,17 @@ export default function DetailCatalog({ item, scope }) {
 
   const gridCols =
     colCount === 3
-      ? "md:grid-cols-3"
+      ? "xl:grid-cols-3 justify-items-center"
       : colCount === 2
-      ? "md:grid-cols-2"
-      : "md:grid-cols-1";
+        ? "md:grid-cols-2 justify-items-center"
+        : "md:grid-cols-1";
 
   const gridGaps =
-    colCount === 2 ? "md:gap-x-24 lg:gap-x-28" : "md:gap-x-16 lg:gap-x-20";
+    colCount === 2
+      ? "md:gap-x-24 lg:gap-x-28"
+      : colCount === 3
+        ? "md:gap-x-10 xl:gap-x-16 lg:gap-x-12"
+        : "md:gap-x-16 lg:gap-x-20";
 
   return (
     <section className="py-12 md:py-20">
@@ -252,10 +258,10 @@ export default function DetailCatalog({ item, scope }) {
             <div className="mt-5 mx-auto max-w-[2000px] border-t-[4px] border-[#D9C293]" />
           </div>
 
-          {/* ✅ WRAPPER KHUSUS DETAIL BIAR TETAP TENGAH */}
+          {/* ✅ tetap pakai wrapper dan struktur bawaan */}
           <div className="mx-auto max-w-[1800px]">
             <div
-              className={`relative mt-12 grid grid-cols-1 ${gridCols} ${gridGaps} gap-y-16 md:gap-y-0 md:place-content-center`}
+              className={`relative mt-12 grid grid-cols-1 ${gridCols} ${gridGaps} gap-y-16 md:gap-y-0 justify-items-center`}
             >
               <DottedDividers count={colCount} />
 
@@ -264,7 +270,9 @@ export default function DetailCatalog({ item, scope }) {
                   key={idx}
                   title={g.title}
                   items={g.items}
-                  className="w-full max-w-[380px]"
+                  className={`w-full max-w-[380px] min-w-0 ${
+                    idx > 0 ? "mt-6 md:mt-8 xl:mt-0" : ""
+                  }`}
                 />
               ))}
             </div>
