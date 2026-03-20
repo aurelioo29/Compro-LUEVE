@@ -13,45 +13,33 @@ export default function Navbar() {
   const locale = useLocale();
   const pathname = usePathname();
   const other = locale === "en" ? "id" : "en";
+
   const index = React.useMemo(
     () => buildRingsIndexFromMessages(locale, { withAlt: true }),
-    [locale]
+    [locale],
   );
 
   const [open, setOpen] = useState(false); // mobile main
   const [openCollection, setOpenCollection] = useState(false);
   const [openServices, setOpenServices] = useState(false);
 
-  // === HOVER LOCK: cegah dropdown muncul lagi setelah navigasi desktop ===
-  const [hoverLock, setHoverLock] = useState(false);
-
-  // helper: tutup semua panel (dipakai di mobile & klik link)
   const hardClose = useCallback(() => {
     setOpen(false);
     setOpenCollection(false);
     setOpenServices(false);
   }, []);
 
-  // KUNCI hover setiap kali route berubah + reset semua panel
   useEffect(() => {
     hardClose();
-    setHoverLock(true);
   }, [pathname, hardClose]);
 
-  // ===================== RENDER =====================
   return (
-    <header
-      key={pathname} // remount untuk hard reset state jika dibutuhkan
-      className="fixed inset-x-0 top-0 z-50 px-0 md:px-20"
-    >
-      {/* ================= BACKDROP ================= */}
+    <header className="fixed inset-x-0 top-0 z-50 px-0 md:px-20">
+      {/* BACKDROP */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-white/55 backdrop-blur-md border-b border-black/10 shadow-sm [mask-image:linear-gradient(to_bottom,black,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)]" />
 
-      {/* ================= DESKTOP ================= */}
-      <nav
-        className="hidden lg:flex items-center justify-between px-6 py-4 gap-20 relative z-10"
-        onMouseLeave={() => setHoverLock(false)}
-      >
+      {/* DESKTOP */}
+      <nav className="hidden lg:flex items-center justify-between px-6 py-4 gap-20 relative z-10">
         <Link href="/" locale={locale} className="block" onClick={hardClose}>
           <div className="relative h-24 w-[180px]">
             <Image
@@ -81,29 +69,28 @@ export default function Navbar() {
             </Link>
           </li>
 
-          {/* Collection (MEGA MENU) */}
+          {/* Collection */}
           <li
             className="relative group
                        before:content-[''] before:absolute before:inset-x-0 before:top-full
                        before:h-4 before:block"
           >
-            <h1
-              locale={locale}
-              onClick={hardClose}
-              className="relative inline-block uppercase transition-opacity hover:opacity-70 hover:font-semibold after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#800000] after:transition-[width] after:duration-200 group-hover:after:w-full"
+            <button
+              type="button"
+              className="relative inline-block uppercase transition-opacity hover:opacity-70 hover:font-semibold
+                         after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#800000]
+                         after:transition-[width] after:duration-200 group-hover:after:w-full"
             >
               {t("collection")}
-            </h1>
+            </button>
 
-            {/* panel */}
             <div
-              className={[
-                "pointer-events-none opacity-0 translate-y-1",
-                !hoverLock
-                  ? "group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0"
-                  : "",
-                "absolute left-[60%] -translate-x-1/2 top-full w-[150px] md:w-[225px] z-50 rounded-lg bg-[#800000]/[0.16] shadow-xl backdrop-blur-sm transition-all duration-200 ease-out font-futura-dee",
-              ].join(" ")}
+              className="pointer-events-none opacity-0 translate-y-1
+                         group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0
+                         group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0
+                         absolute left-[60%] -translate-x-1/2 top-full w-[150px] md:w-[225px] z-50
+                         rounded-lg bg-[#800000]/[0.16] shadow-xl backdrop-blur-sm
+                         transition-all duration-200 ease-out font-futura-dee"
               role="menu"
               aria-label="Collection menu"
             >
@@ -116,6 +103,7 @@ export default function Navbar() {
                 >
                   Engagement Ring
                 </Link>
+
                 <div className="h-[2px] w-full bg-[#800000] my-3 transition-opacity" />
 
                 <Link
@@ -166,24 +154,28 @@ export default function Navbar() {
             </div>
           </li>
 
-          {/* Services (DROPDOWN KECIL) */}
-          <li className="relative group before:content-[''] before:absolute before:inset-x-0 before:top-full before:h-4 before:block">
-            <h1
-              locale={locale}
-              onClick={hardClose}
-              className="relative inline-block uppercase transition-opacity hover:opacity-70 hover:font-semibold after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#800000] after:transition-[width] after:duration-200 group-hover:after:w-full"
+          {/* Services */}
+          <li
+            className="relative group
+                       before:content-[''] before:absolute before:inset-x-0 before:top-full
+                       before:h-4 before:block"
+          >
+            <button
+              type="button"
+              className="relative inline-block uppercase transition-opacity hover:opacity-70 hover:font-semibold
+                         after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#800000]
+                         after:transition-[width] after:duration-200 group-hover:after:w-full"
             >
               {t("services")}
-            </h1>
+            </button>
 
             <div
-              className={[
-                "pointer-events-none opacity-0 translate-y-1",
-                !hoverLock
-                  ? "group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0"
-                  : "",
-                "absolute left-1/2 -translate-x-1/2 top-full w-[150px] md:w-[150px] z-50 rounded-lg bg-[#800000]/[0.16] shadow-xl backdrop-blur-sm transition-all duration-200 ease-out font-futura-dee",
-              ].join(" ")}
+              className="pointer-events-none opacity-0 translate-y-1
+                         group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0
+                         group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0
+                         absolute left-1/2 -translate-x-1/2 top-full w-[150px] md:w-[150px] z-50
+                         rounded-lg bg-[#800000]/[0.16] shadow-xl backdrop-blur-sm
+                         transition-all duration-200 ease-out font-futura-dee"
               role="menu"
               aria-label="Services menu"
             >
@@ -241,7 +233,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ================= MOBILE / TABLET ================= */}
+      {/* MOBILE / TABLET */}
       <nav className="lg:hidden px-4 py-4 relative z-10">
         <div className="flex items-center justify-between">
           <Link href="/" locale={locale} className="block" onClick={hardClose}>
@@ -257,7 +249,6 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* right controls */}
           <div className="flex items-center gap-2">
             {/* <Link
               href={pathname || "/"}
@@ -307,7 +298,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* SearchBar di baris sendiri (full width) */}
+        {/* SearchBar */}
         <div className="mt-3">
           <SearchBar
             index={index}
@@ -318,15 +309,14 @@ export default function Navbar() {
           />
         </div>
 
-        {/* Panel slide down */}
+        {/* Mobile panel */}
         <div
           id="mobile-menu"
-          className={`overflow-hidden transition-[max-height,opacity,transform] duration-[250ms] ease-out
-            ${
-              open
-                ? "max-h-[60vh] opacity-100 translate-y-0"
-                : "max-h-0 opacity-0 -translate-y-2"
-            }`}
+          className={`overflow-hidden transition-[max-height,opacity,transform] duration-[250ms] ease-out ${
+            open
+              ? "max-h-[60vh] opacity-100 translate-y-0"
+              : "max-h-0 opacity-0 -translate-y-2"
+          }`}
         >
           <div className="mt-6 rounded-xl bg-[#800000] text-[#E0C698] shadow-lg">
             <ul className="divide-y divide-[#CEA66D]/20">
@@ -345,13 +335,13 @@ export default function Navbar() {
               {/* Collection */}
               <li>
                 <div className="w-full px-4 py-3 flex items-center justify-between uppercase tracking-widest font-poppins text-lg font-medium">
-                  <h1
-                    locale={locale}
-                    onClick={hardClose}
-                    className="block pr-3 hover:opacity-80 transition-opacity"
+                  <button
+                    type="button"
+                    onClick={() => setOpenCollection((s) => !s)}
+                    className="block pr-3 hover:opacity-80 transition-opacity text-left"
                   >
                     {t("collection")}
-                  </h1>
+                  </button>
 
                   <button
                     type="button"
@@ -375,12 +365,11 @@ export default function Navbar() {
 
                 <div
                   id="collection-submenu"
-                  className={`grid transition-[grid-template-rows,opacity,transform] duration-[250ms] ease-out
-                    ${
-                      openCollection
-                        ? "grid-rows-[1fr] opacity-100 translate-y-0"
-                        : "grid-rows-[0fr] opacity-0 -translate-y-1"
-                    }`}
+                  className={`grid transition-[grid-template-rows,opacity,transform] duration-[250ms] ease-out ${
+                    openCollection
+                      ? "grid-rows-[1fr] opacity-100 translate-y-0"
+                      : "grid-rows-[0fr] opacity-0 -translate-y-1"
+                  }`}
                 >
                   <div className="overflow-hidden">
                     <div className="px-4 pb-3 space-y-5 text-[#E0C698] font-futura-dee">
@@ -392,7 +381,9 @@ export default function Navbar() {
                       >
                         Engagement Ring
                       </Link>
+
                       <div className="h-px my-3 bg-white/80" />
+
                       <Link
                         href="/collection/wedding-rings"
                         locale={locale}
@@ -442,13 +433,13 @@ export default function Navbar() {
               {/* Services */}
               <li>
                 <div className="w-full px-4 py-3 flex items-center justify-between uppercase tracking-widest font-poppins text-lg font-medium">
-                  <h1
-                    locale={locale}
-                    onClick={hardClose}
-                    className="block pr-3 hover:opacity-80 transition-opacity"
+                  <button
+                    type="button"
+                    onClick={() => setOpenServices((s) => !s)}
+                    className="block pr-3 hover:opacity-80 transition-opacity text-left"
                   >
                     {t("services")}
-                  </h1>
+                  </button>
 
                   <button
                     type="button"
@@ -470,12 +461,11 @@ export default function Navbar() {
 
                 <div
                   id="services-submenu"
-                  className={`grid transition-[grid-template-rows,opacity,transform] duration-[250ms] ease-out
-                    ${
-                      openServices
-                        ? "grid-rows-[1fr] opacity-100 translate-y-0"
-                        : "grid-rows-[0fr] opacity-0 -translate-y-1"
-                    }`}
+                  className={`grid transition-[grid-template-rows,opacity,transform] duration-[250ms] ease-out ${
+                    openServices
+                      ? "grid-rows-[1fr] opacity-100 translate-y-0"
+                      : "grid-rows-[0fr] opacity-0 -translate-y-1"
+                  }`}
                 >
                   <div className="overflow-hidden">
                     <ul className="px-4 pb-3 space-y-2 text-[15px] normal-case tracking-normal">
